@@ -9,19 +9,30 @@ import com.cqupt.software_9.mapper.ModelMapper;
 import com.cqupt.software_9.service.DataTableManagerService;
 import com.cqupt.software_9.service.FileService;
 import com.cqupt.software_9.service.ModelService;
+import com.cqupt.software_9.service.modelResultService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @RequestMapping("/Model")
 @RestController
 public class ModelController {
+
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
     @Resource
     private ModelMapper modelMapper;
 
+    @Autowired
+    private modelResultService modelResultService;
     @Resource
     private ModelService modelService;
 
@@ -37,15 +48,14 @@ public class ModelController {
     @Resource
     private com.cqupt.software_9.mapper.tTableManagerMapper tTableManagerMapper;
 
+
+
     @GetMapping("/getall")
     public List<Model> getallmodel(){
         return modelMapper.getallmodel();
     }
 
-    @PostMapping("/baseInfo")
-    public boolean insertBaseInfo(@RequestBody Model model) {
-        return modelService.saveOrUpdate(model);
-    }
+
 
 
 
@@ -153,6 +163,73 @@ public class ModelController {
         return new R<>(200, "成功", res);
     }
 
+    /**
+     * 获取数据表的基本信息
+     */
+    @GetMapping("/getTableInfo/{tableName}")
+    public List<DataManager> getTableInfo(@PathVariable("tableName") String tableName) {
+        return  dataManagerMapper.getTableInfo(tableName);
+    }
 
+
+    /**
+     * 计算表中，每一个特证的缺失值比例
+     */
+    @GetMapping("getMissingRates/{tableName}")
+    public Map<String, Integer> getMissingRates(@PathVariable("tableName") String tableName) {
+        Map<String, Integer> missingRates = new HashMap<>();
+        int totalRows = jdbcTemplate.queryForObject("SELECT COUNT(*) FROM " + tableName, Integer.class);
+
+        // 动态获取特征列的名称
+        List<String> featureNames = jdbcTemplate.queryForList(
+                "SELECT column_name FROM information_schema.columns WHERE table_name = ? AND table_schema = 'public'",
+                String.class, tableName);
+
+        // 对于每个特征，计算其缺失率
+        for (String feature : featureNames) {
+            int missingCount = jdbcTemplate.queryForObject(
+                    "SELECT COUNT(*) FROM " + tableName + " WHERE \"" + feature + "\" IS NULL",
+                    Integer.class);
+            missingRates.put(feature, (int) ((double) missingCount / totalRows * 100));
+        }
+        return missingRates;
+    }
+
+    @PostMapping("modelResult")
+    public boolean insertModelResult(@RequestBody modelResult modelResult) {
+        return modelResultService.saveOrUpdate(modelResult);
+    }
+
+    @PostMapping("/baseInfo")
+    public boolean insertBaseInfo(@RequestBody Model model) {
+        return modelService.saveOrUpdate(model);
+    }
+
+    /**
+     * 查询数据库中模型吗是否重复
+     */
+    @GetMapping("/isRepeatModel/{modelname}")
+    public boolean isRepeatModel(@PathVariable("modelname") String modelname) {
+       String i = modelMapper.isRepeatModel(modelname);
+       System.out.println(i);
+       if(i == null) {
+           return true;
+       }else {
+           return false;
+       }
+    }
+
+    /**
+     * 查询数据表的样本数量
+     */
+    @GetMapping("/getNumber/{tableName}")
+    public List<Integer> getNumber(@PathVariable("tableName") String tablename){
+        Integer row = dataManagerMapper.getRow(tablename);
+        Integer colum = dataManagerMapper.getColumn(tablename);
+        List<Integer> list = new ArrayList<>();
+        list.add(row);
+        list.add(colum);
+        return list;
+    }
 
 }

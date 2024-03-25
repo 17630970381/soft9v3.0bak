@@ -18,4 +18,6 @@ public class modelResult {
     private String picture;
     private String pkl;
     private Integer uid;
+    private String al;
+
 }

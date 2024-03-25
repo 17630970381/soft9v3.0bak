@@ -18,4 +18,6 @@ public interface ModelMapper extends BaseMapper<Model> {
     List<publicAl> getAlgorithmByAlgorithmName();
 
     List<String> getFeaByTableName(String tableName);
+
+    String isRepeatModel(String modelname);
 }

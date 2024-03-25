@@ -32,8 +32,6 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
 
         Map<String, List<modelResult>> resultMap = new HashMap<>();
         // 调用训练模型算法
-        Integer uid = 516005890;
-        String modelName = "test";
         String tableName = trainAl.getTableName();
         String target = trainAl.getTarget();
         String[] fea = trainAl.getFea();
@@ -62,6 +60,7 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
                 String patternString = "\\{.*\\}";
                 String pathPatternString = "E:\\\\[^\\s]*";
 
+
                 // 编译正则表达式模式
                 Pattern pattern = Pattern.compile(patternString);
                 Pattern pathPattern = Pattern.compile(pathPatternString);
@@ -74,9 +73,11 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
                 String evaluate = "";
                 String picturePath = "";
                 String pklPath = "";
+
                 if (matcher.find()) {
                     evaluate = matcher.group();
                 }
+
                 int count = 0;
                 while (pathMatcher.find()) {
                     String path = pathMatcher.group();
@@ -92,9 +93,11 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
                 System.out.println("评估信息: " + evaluate);
                 System.out.println("图片路径: " + picturePath);
                 System.out.println("模型路径: " + pklPath);
+
                 modelResult.setEvaluate(evaluate);
                 modelResult.setPicture(picturePath);
                 modelResult.setPkl(pklPath);
+
                 List<modelResult> resultList = new ArrayList<>();
                 resultList.add(modelResult);
                 resultMap.put(algorithmName, resultList);

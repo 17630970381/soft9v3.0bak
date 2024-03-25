@@ -43,6 +43,18 @@
     <select id="getTableByDisease" resultType="java.lang.String">
         select tablename from data_manager where diseasename = #{diseasename}
     </select>
+    <select id="getTableInfo" resultType="com.cqupt.software_9.entity.DataManager">
+        select  * from data_manager where tablename = #{tablename}
+    </select>
+    <select id="getRow" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM ${tablename}
+    </select>
+    <select id="getColumn" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM information_schema.columns
+        WHERE
+            table_name = #{tablename};
+    </select>
 
 
 </mapper>

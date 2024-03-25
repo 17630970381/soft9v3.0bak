@@ -1,4 +1,5 @@
 package com.cqupt.software_9.mapper;
+
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.cqupt.software_9.entity.DataManager;
 import org.apache.ibatis.annotations.Mapper;
@@ -26,4 +27,10 @@ public interface DataManagerMapper extends BaseMapper<DataManager> {
     List<String> getDiseaseName();
 
     List<String> getTableByDisease(String diseasename);
+
+    List<DataManager> getTableInfo(String tableName);
+
+    Integer getRow(String tablename);
+
+    Integer getColumn(String tablename);
 }

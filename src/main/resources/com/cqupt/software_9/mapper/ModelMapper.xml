@@ -28,6 +28,9 @@
         FROM information_schema.columns
         WHERE table_name = #{tableName};
     </select>
+    <select id="isRepeatModel" resultType="java.lang.String">
+        SELECT modelname FROM model WHERE modelname = #{modelname}
+    </select>
 
 </mapper>
 

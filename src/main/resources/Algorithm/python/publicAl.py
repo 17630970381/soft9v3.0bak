@@ -18,7 +18,7 @@ import seaborn as sns
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
-
+from sklearn.tree import DecisionTreeClassifier
 
 # 加载数据
 def load_data(tableName,output_file):
@@ -66,7 +66,7 @@ def build_model(algorithmName, algorithmAttributes):
         # 根据算法参数初始化随机森林模型
         model = RandomForestClassifier(**algorithmAttributes)
     elif algorithmName == 'DT':
-        model = RandomForestClassifier(**algorithmAttributes)
+        model = DecisionTreeClassifier(**algorithmAttributes)
     elif algorithmName == 'SVM':
         # 根据算法参数初始化支持向量机模型
         model = SVC(**algorithmAttributes)
@@ -212,7 +212,7 @@ def publicAl(tableName, target, fea, algorithmName, algorithmAttributes):
     # 将结果保存到字典中
     results = {'accuracy': accuracy, 'precision': precision, 'recall': recall, 'f1': f1}
 
-    return results,output_dir,model_path
+    return results,output_dir,model_path, y_test,  y_proba
 
 
 
@@ -271,6 +271,71 @@ if __name__ == "__main__":
         else:
             algorithmAttributes[key] = value
 
-    results, output_dir,model_path= publicAl(tableName, target, fea, algorithmName, algorithmAttributes)
-    print(results, output_dir,model_path)
+    results, output_dir,model_path,y_test,  y_proba = publicAl(tableName, target, fea, algorithmName, algorithmAttributes)
+    y_proba_positive = y_proba[:, 1]
+    y_proba_negative = y_proba[:, 0]
+    data = np.column_stack((y_test, y_proba_positive, y_proba_negative))
+    print(results, output_dir, model_path)
     # print(tableName, target, fea, algorithmName, algorithmAttributes)
+
+    data_list = [{'y_test': row[0], 'y_proba_positive': row[1], 'y_proba_negative': row[2]} for row in data]
+    # df = pd.DataFrame(data, columns=["y_test", "y_proba_positive", "y_proba_negative"])
+
+    host = "10.16.48.219"  # 主机名或IP地址
+    port = "5432"  # 端口号
+    database = "software9"  # 数据库名
+    user = "pg"  # 用户名
+    password = "111111"  # 密码
+
+    # 构建连接字符串
+    conn_string = f"host='{host}' port='{port}' dbname='{database}' user='{user}' password='{password}'"
+    # 构建删除数据的SQL语句
+    if algorithmName == 'RF':
+        delete_query = """
+                DELETE FROM rf_test_data
+            """
+    elif algorithmName == 'DT':
+        delete_query = """
+                       DELETE FROM df_test_data
+                   """
+
+    # 构建插入数据的SQL语句
+    if algorithmName == 'RF':
+        insert_query = """
+                INSERT INTO rf_test_data (y_test, y_proba_positive, y_proba_negative)
+                VALUES (%s, %s, %s)
+            """
+    elif algorithmName == 'DT':
+        insert_query = """
+                      INSERT INTO dt_test_data (y_test, y_proba_positive, y_proba_negative)
+                      VALUES (%s, %s, %s)
+                  """
+
+    # 尝试执行操作
+    try:
+        # 连接到数据库
+        conn = psycopg2.connect(conn_string)
+
+        # 创建一个游标对象
+        cursor = conn.cursor()
+
+        # 删除表中的数据
+        cursor.execute(delete_query)
+
+        # 遍历数据列表，逐条插入数据
+        for data in data_list:
+            cursor.execute(insert_query, (data['y_test'], data['y_proba_positive'], data['y_proba_negative']))
+
+        # 提交事务
+        conn.commit()
+
+        # print("数据插入成功！")
+
+    except (Exception, psycopg2.Error) as error:
+        print("数据插入失败:", error)
+    finally:
+        # 关闭游标和连接
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()

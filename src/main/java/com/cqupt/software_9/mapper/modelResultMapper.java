@@ -6,4 +6,5 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface modelResultMapper extends BaseMapper<modelResult> {
+    boolean save(modelResult modelResult);
 }

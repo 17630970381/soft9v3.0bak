@@ -10,4 +10,6 @@ import java.util.Map;
 
 public interface ModelService extends IService<Model> {
     Map<String, List<modelResult>> trainModel(trainAl trainAl);
+
+
 }
