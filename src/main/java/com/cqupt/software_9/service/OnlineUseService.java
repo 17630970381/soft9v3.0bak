@@ -5,4 +5,6 @@ import com.cqupt.software_9.service.Response.OnlineServiceResponse;
 
 public interface OnlineUseService {
    OnlineServiceResponse onlineUse(onlineUse request)throws Exception;
+
+   OnlineServiceResponse useMulti(onlineUse request) throws Exception;
 }

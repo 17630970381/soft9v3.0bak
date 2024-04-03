@@ -2,10 +2,14 @@ package com.cqupt.software_9.controller;
 
 import com.cqupt.software_9.entity.Patient;
 import com.cqupt.software_9.entity.PatientHeartDisease;
+import com.cqupt.software_9.mapper.DiseasesMapper;
+import com.cqupt.software_9.mapper.ModelMapper;
 import com.cqupt.software_9.service.PatientHeartDiseaseService;
 import com.cqupt.software_9.service.PatientService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -23,6 +27,11 @@ public class PatientController {
     @Resource
     private PatientHeartDiseaseService patientHeartDiseaseService;
 
+    @Resource
+    private DiseasesMapper diseasesMapper;
+
+    @Resource
+    private ModelMapper modelMapper;
     /**
      * Author:陈鹏
      *时间：2023.6.23
@@ -64,4 +73,38 @@ public class PatientController {
         return result;
     }
 
+
+    /**
+     * 通过用户名和用户id获取已训练好的模型信息
+     */
+    @GetMapping("getAllModelByPublisherAndUid/{publisher}/{uid}/{diseasename}")
+    public List<String> getAllModelByPublisherAndUid(@PathVariable("publisher") String publisher,
+                                                     @PathVariable("uid") Integer uid,
+                                                     @PathVariable("diseasename") String diseasename){
+          return modelMapper.getAllModelByPublisherAndUid(publisher,uid,diseasename);
+    }
+
+    /**
+     * 用过模型名称查询该模型保存的地址
+     */
+    @GetMapping("getModelPathByModelName/{modelname}")
+    public String getModelPathByModelName(@PathVariable("modelname") String modelname){
+        return modelMapper.getModelPathByModelName(modelname);
+    }
+
+    /**
+     * 根据疾病获得病灶部位
+     */
+    @GetMapping("getPartByDisease/{diseasename}")
+    public String getPartByDisease(@PathVariable("diseasename") String diseasename){
+        return diseasesMapper.getPartByDisease(diseasename);
+    }
+
+    /**
+     * 根据疾病获得建议
+     */
+    @GetMapping("getPrevent/{diseasename}")
+    public String getPrevent(@PathVariable("diseasename") String diseasename){
+        return diseasesMapper.getPrevent(diseasename);
+    }
 }

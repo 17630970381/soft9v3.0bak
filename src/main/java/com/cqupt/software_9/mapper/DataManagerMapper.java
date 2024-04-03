@@ -33,4 +33,11 @@ public interface DataManagerMapper extends BaseMapper<DataManager> {
     Integer getRow(String tablename);
 
     Integer getColumn(String tablename);
+
+    Integer getTableNum();
+
+    Integer getSampleNum();
+
+
+    List<String> getTableName();
 }

@@ -296,7 +296,7 @@ if __name__ == "__main__":
             """
     elif algorithmName == 'DT':
         delete_query = """
-                       DELETE FROM df_test_data
+                       DELETE FROM dt_test_data
                    """
 
     # 构建插入数据的SQL语句

@@ -20,4 +20,8 @@ public interface DiseasesMapper extends BaseMapper<Diseases> {
     String findsympbycode(String code);
     String findpreventbycode(String code);
     String finddptmentbycode(String code);
+
+    String getPartByDisease(String diseasename);
+
+    String getPrevent(String diseasename);
 }

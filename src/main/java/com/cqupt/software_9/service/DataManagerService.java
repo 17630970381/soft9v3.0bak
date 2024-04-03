@@ -15,4 +15,6 @@ public interface DataManagerService extends IService<DataManager> {
     String getTableNameByID(Integer id);
 
     List<Map<String, String>> getInfoByTableName(String tableName);
+
+    String getStartAndEndTime();
 }

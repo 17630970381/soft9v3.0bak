@@ -1,6 +1,7 @@
 package com.cqupt.software_9.controller;
 
 import com.cqupt.software_9.common.R;
+import com.cqupt.software_9.common.Result;
 import com.cqupt.software_9.mapper.CkdManagerMapper;
 import com.cqupt.software_9.mapper.CkdTableManagerMapper;
 import com.cqupt.software_9.mapper.DataManagerMapper;
@@ -95,6 +96,15 @@ public class DataManagerController {
     @GetMapping("/getDiseaseName")
     public List<String> getDiseaseName(){
         return dataManagerMapper.getDiseaseName();
+    }
+
+
+    /**
+     * 获取表名
+     */
+    @GetMapping("/getTableName")
+    public Result getTableName(){
+        return Result.success("200",dataManagerMapper.getTableName());
     }
 
 }

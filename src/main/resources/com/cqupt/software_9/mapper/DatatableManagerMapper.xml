@@ -17,7 +17,7 @@
     </select>
 
     <select id="getInfoByTableName" resultType="java.util.Map">
-        select  * from ${tableName}  LIMIT 100
+        select  * from ${tableName} LIMIT 300
     </select>
 
     <insert id="save" >

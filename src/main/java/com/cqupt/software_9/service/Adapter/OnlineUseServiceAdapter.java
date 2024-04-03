@@ -11,4 +11,9 @@ public class OnlineUseServiceAdapter implements OnlineUseService {
     public OnlineServiceResponse onlineUse(onlineUse request) throws Exception {
         return null;
     }
+
+    @Override
+    public OnlineServiceResponse useMulti(onlineUse request) throws Exception {
+        return null;
+    }
 }

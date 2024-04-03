@@ -3,9 +3,11 @@ package com.cqupt.software_9.service.Adapter;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.cqupt.software_9.entity.DataManager;
+import com.cqupt.software_9.mapper.DataManagerMapper;
 import com.cqupt.software_9.service.DataManagerService;
 import com.github.pagehelper.PageInfo;
 
+import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +15,8 @@ import java.util.function.Function;
 
 public class DataManagerServiceAdapter implements DataManagerService {
 
+    @Resource
+    private DataManagerMapper dataManagerMapper;
     @Override
     public List<DataManager> getDatawithoutresult() {
         return null;
@@ -82,4 +86,11 @@ public class DataManagerServiceAdapter implements DataManagerService {
     public List<Map<String, String>> getInfoByTableName(String tableName) {
         return null;
     }
+
+    @Override
+    public String getStartAndEndTime() {
+        return null;
+    }
+
+
 }

@@ -54,6 +54,10 @@ public class OnlineUseController {
     }
 
 
-
+    @PostMapping("/useMulti")
+    public OnlineServiceResponse useMulti(@RequestBody onlineUse request) throws Exception {
+        OnlineServiceResponse res = onlineUseService.useMulti(request);
+        return res;
+    }
 
 }

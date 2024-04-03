@@ -2,6 +2,7 @@ package com.cqupt.software_9.controller;
 
 import com.cqupt.software_9.entity.Diseases;
 import com.cqupt.software_9.entity.HeartManager;
+import com.cqupt.software_9.mapper.DiseasesMapper;
 import com.cqupt.software_9.service.DiseasesService;
 import com.cqupt.software_9.service.HeartManagerService;
 import com.cqupt.software_9.service.Request.Query;
@@ -24,6 +25,8 @@ public class DiseasesController {
     @Resource
     private HeartManagerService heartManagerService;
 
+    @Resource
+    private DiseasesMapper diseasesMapper;
     /**
      * 分页查询
      * @param queryDTO
@@ -194,4 +197,10 @@ public class DiseasesController {
         return heartManagerService.getall();
     }
 
+
+
+    @PostMapping("/add")
+    public Integer add(@RequestBody Diseases diseases){
+        return diseasesMapper.insert(diseases);
+    }
 }

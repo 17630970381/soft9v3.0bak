@@ -1,17 +1,23 @@
 package com.cqupt.software_9.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.cqupt.software_9.common.ModelDTO;
 import com.cqupt.software_9.common.R;
+import com.cqupt.software_9.common.Result;
 import com.cqupt.software_9.common.UploadResult;
 import com.cqupt.software_9.entity.*;
 import com.cqupt.software_9.mapper.DataManagerMapper;
 import com.cqupt.software_9.mapper.ModelMapper;
+import com.cqupt.software_9.mapper.modelResultMapper;
 import com.cqupt.software_9.service.DataTableManagerService;
 import com.cqupt.software_9.service.FileService;
 import com.cqupt.software_9.service.ModelService;
 import com.cqupt.software_9.service.modelResultService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -33,6 +39,9 @@ public class ModelController {
 
     @Autowired
     private modelResultService modelResultService;
+
+    @Autowired
+    private modelResultMapper modelResultMapper;
     @Resource
     private ModelService modelService;
 
@@ -190,16 +199,18 @@ public class ModelController {
             int missingCount = jdbcTemplate.queryForObject(
                     "SELECT COUNT(*) FROM " + tableName + " WHERE \"" + feature + "\" IS NULL",
                     Integer.class);
-            missingRates.put(feature, (int) ((double) missingCount / totalRows * 100));
+            missingRates.put(feature, 100 - (int) ((double) missingCount / totalRows * 100));
         }
         return missingRates;
     }
 
-    @PostMapping("modelResult")
-    public boolean insertModelResult(@RequestBody modelResult modelResult) {
-        return modelResultService.saveOrUpdate(modelResult);
+
+    @PostMapping("/modelResult")
+    public boolean insertModelResult(@RequestBody ModelRequestData modelRequestData) {
+        return modelService.insertModelResultAndModel(modelRequestData);
     }
 
+    @Transactional
     @PostMapping("/baseInfo")
     public boolean insertBaseInfo(@RequestBody Model model) {
         return modelService.saveOrUpdate(model);
@@ -230,6 +241,64 @@ public class ModelController {
         list.add(row);
         list.add(colum);
         return list;
+    }
+
+    /**
+     * 按照ModelDTO返回model表中的数据
+     */
+    @GetMapping("/getModel")
+    public List<ModelDTO> getModel(){
+        return modelMapper.getModel();
+    }
+
+    /**
+     * 删除模型
+     * @param modelname
+     * @return
+     */
+    @PutMapping("/remove/{modelname}")
+    public boolean ModelRemove( @PathVariable("modelname") String modelname){
+        boolean a = modelMapper.removeModel(modelname);
+        boolean b = modelResultMapper.removeModelResult(modelname);
+        if (a && b){
+            return true;
+        }else {
+            return false;
+        }
+
+    }
+
+    /**
+     * 根据模型名查到模型详细信息
+     */
+    @GetMapping("/getModelDetail/{modelname}")
+    public List<modelResult> getModelDetail(@PathVariable("modelname")String modelname){
+        return modelResultMapper.getModelDetail(modelname);
+    }
+
+    /**
+     * 分页模糊查询
+     * @param pageNum
+     * @param pageSize
+     * @param disease
+     * @param modelname
+     * @return
+     */
+    @GetMapping("/selectByPage")
+    public Result selectByPage(@RequestParam Integer pageNum,
+                               @RequestParam Integer pageSize,
+                               @RequestParam String disease,
+                               @RequestParam String modelname){
+        QueryWrapper<Model> queryWrapper = new QueryWrapper<Model>().orderByDesc("taskid");
+        queryWrapper.like(StringUtils.isNotBlank(disease),"diseasename",disease);
+        queryWrapper.like(StringUtils.isNotBlank(modelname),"modelname",modelname);
+        Page<Model> page = modelService.page(new Page<>(pageNum, pageSize), queryWrapper);
+        return Result.success(page);
+    }
+
+    @GetMapping("/getDisease")
+    public List<String> getDisease(){
+        return modelMapper.getDisease();
     }
 
 }

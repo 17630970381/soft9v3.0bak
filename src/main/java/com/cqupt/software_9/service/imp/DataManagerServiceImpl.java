@@ -42,4 +42,7 @@ public class DataManagerServiceImpl extends DataManagerServiceAdapter {
     public List<Map<String, String>> getInfoByTableName(String tableName) {
         return dataManagerMapper.getInfoByTableName(tableName);
     }
+
+
+
 }

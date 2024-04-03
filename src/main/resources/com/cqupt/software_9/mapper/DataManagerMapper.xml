@@ -55,6 +55,15 @@
         WHERE
             table_name = #{tablename};
     </select>
+    <select id="getTableNum" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM data_manager;
+    </select>
+    <select id="getSampleNum" resultType="java.lang.Integer">
+        SELECT SUM(datanumber) AS sum_result FROM data_manager;
+    </select>
+    <select id="getTableName" resultType="java.lang.String">
+        SELECT DISTINCT tablename from data_manager
+    </select>
 
 
 </mapper>

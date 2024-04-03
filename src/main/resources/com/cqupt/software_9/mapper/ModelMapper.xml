@@ -5,7 +5,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.cqupt.software_9.mapper.ModelMapper">
-
+    <delete id="removeModel">
+        DELETE FROM model
+        WHERE modelname = #{modelname}
+    </delete>
 
 
     <select id="getallmodel" resultType="com.cqupt.software_9.entity.Model">
@@ -31,6 +34,30 @@
     <select id="isRepeatModel" resultType="java.lang.String">
         SELECT modelname FROM model WHERE modelname = #{modelname}
     </select>
+    <select id="getAllModelByPublisherAndUid" resultType="java.lang.String">
+        SELECT modelname FROM model WHERE publisher = #{publisher} and uid = #{uid} and diseasename = #{diseasename}
+    </select>
+    <select id="getModelPathByModelName" resultType="java.lang.String">
+        select modeurl FROM model WHERE modelname = #{modelname}
+    </select>
+    <select id="getModel" resultType="com.cqupt.software_9.common.ModelDTO">
+        SELECT  modelname,diseasename,createtime,publisher,feature FROM model
+    </select>
+    <select id="getDisease" resultType="java.lang.String">
+        SELECT DISTINCT diseasename FROM model
+    </select>
+
+    <select id="getStartTime" resultType="java.lang.String">
+        SELECT MIN(createtime) AS earliest_time FROM model;
+    </select>
+    <select id="getModelNum" resultType="java.lang.Integer">
+        SELECT COUNT(*) from model
+    </select>
+    <select id="getDiagName" resultType="java.lang.String">
+        SELECT DISTINCT diagname FROM merge;
+    </select>
+
+
 
 </mapper>
 

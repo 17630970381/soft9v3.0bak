@@ -2,9 +2,11 @@ package com.cqupt.software_9.service.imp;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cqupt.software_9.entity.Model;
+import com.cqupt.software_9.entity.ModelRequestData;
 import com.cqupt.software_9.entity.modelResult;
 import com.cqupt.software_9.entity.trainAl;
 import com.cqupt.software_9.mapper.ModelMapper;
+import com.cqupt.software_9.mapper.modelResultMapper;
 import com.cqupt.software_9.service.ModelService;
 import com.cqupt.software_9.tool.PythonRun;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,12 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
 
     @Autowired
     private modelResult modelResult;
+
+    @Autowired
+    private ModelMapper modelMapper;
+
+    @Autowired
+    private modelResultMapper modelResultMapper;
 
     @Override
     public Map<String, List<modelResult>> trainModel(trainAl trainAl) {
@@ -93,6 +101,7 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
                 System.out.println("评估信息: " + evaluate);
                 System.out.println("图片路径: " + picturePath);
                 System.out.println("模型路径: " + pklPath);
+                modelResult modelResult = new modelResult(); // 创建 modelResult 对象
 
                 modelResult.setEvaluate(evaluate);
                 modelResult.setPicture(picturePath);
@@ -110,6 +119,44 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
 
         return resultMap;
     }
+
+    @Override
+    public List<Model> upall() {
+        return null;
+    }
+
+    @Override
+    public boolean insertModelResultAndModel(ModelRequestData modelRequestData) {
+        modelResult modelResult = new modelResult();
+        Model model = new Model();
+        String modelname = modelRequestData.getModelname().concat(modelRequestData.getAl());
+        System.out.println(modelname);
+        modelResult.setPkl(modelRequestData.getPkl());
+        modelResult.setModelname(modelname);
+        modelResult.setEvaluate(modelRequestData.getEvaluate());
+        modelResult.setPicture(modelRequestData.getPicture());
+        modelResult.setUid(modelRequestData.getUid());
+        modelResult.setAl(modelRequestData.getAl());
+        modelResult.setTablename(modelRequestData.getTablename());
+        modelResult.setDiseasename(modelRequestData.getDiseasename());
+
+        model.setModelname(modelname);
+        model.setDiseasename(modelRequestData.getDiseasename());
+        model.setPublisher(modelRequestData.getPublisher());
+        model.setRemarks(modelRequestData.getRemarks());
+        model.setUid(modelRequestData.getUid());
+        model.setModeurl(modelRequestData.getPkl());
+        model.setFeature(modelRequestData.getFeature());
+        int a = modelMapper.insert(model);
+        int b = modelResultMapper.insert(modelResult);
+        if(a*b !=0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+
 }
 
 

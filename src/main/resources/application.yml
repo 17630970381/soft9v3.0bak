@@ -1,0 +1,52 @@
+server:
+  servlet:
+    encoding:
+      force: true
+      charset: UTF-8
+
+  port: 8082
+
+spring:
+  mvc:
+    log-request-details: true
+    dispatch-options-request: true
+  datasource:
+    url: jdbc:postgresql://10.16.48.219:5432/software9
+    username: pg
+    password: 111111
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: create
+  application:
+    name: software_9
+  main:
+    sources: com.cqupt.software_9
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com.cqupt.software_9.dao: debug
+    com.cqupt.software_9.controller: debug
+
+application:
+  python:
+    environment: D:\\Anaconda\\envs\\test\\python.exe
+mybatis:
+  mapper-locations: classpath*:/*Mapper.xml
+  type-aliases-package: com.cqupt.software_9.mapper
+
+
+jwt:
+  tokenHeader: Authorization
+  secret: com.cqupt.software_9
+  expiration: 604800
+  tokenHead: Bearer

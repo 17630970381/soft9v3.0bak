@@ -19,5 +19,7 @@ public class modelResult {
     private String pkl;
     private Integer uid;
     private String al;
+    private String tablename;
+    private String diseasename;
 
 }

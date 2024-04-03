@@ -7,6 +7,13 @@
 <mapper namespace="com.cqupt.software_9.mapper.modelResultMapper">
 
 
+    <delete id="removeModelResult">
+        DELETE FROM modelresult
+        WHERE modelname = #{modelname}
+    </delete>
+    <select id="getModelDetail" resultType="com.cqupt.software_9.entity.modelResult">
+        select * from modelresult where modelname = #{modelname}
+    </select>
 
 </mapper>
 

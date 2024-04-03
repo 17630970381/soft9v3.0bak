@@ -42,5 +42,11 @@
     <select id="findpreventbycode" parameterType="String" resultType="java.lang.String">
         SELECT prevent FROM diseases WHERE code = #{code}
     </select>
+    <select id="getPartByDisease" resultType="java.lang.String">
+        SELECT  part_name FROM diseases WHERE name = #{diseasename}
+    </select>
+    <select id="getPrevent" resultType="java.lang.String">
+        SELECT prevent FROM diseases WHERE name = #{diseasename}
+    </select>
 </mapper>
 
