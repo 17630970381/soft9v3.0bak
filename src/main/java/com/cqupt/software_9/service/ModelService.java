@@ -18,4 +18,6 @@ public interface ModelService extends IService<Model> {
 
 
     boolean insertModelResultAndModel(ModelRequestData modelRequestData);
+
+    String getfeabymodelname(String modelname);
 }

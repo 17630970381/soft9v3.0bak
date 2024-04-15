@@ -18,8 +18,10 @@ public class FeatureEntity implements Serializable {
     private String featureName;
     private String chName;
 
+    private boolean population = false;
     private boolean diseaseStandard = false;
     private boolean diagnosis = false;
+    private boolean physiology = false;
     private boolean examine = false;
     private boolean pathology = false;
     private boolean vitalSigns = false;

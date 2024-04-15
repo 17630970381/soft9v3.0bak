@@ -39,6 +39,11 @@ public class tTableManagerServiceAdapter implements tTableManagerService {
     }
 
     @Override
+    public List<String> getFiledSByTableName(String name) {
+        return null;
+    }
+
+    @Override
     public boolean saveBatch(Collection<tTableManager> entityList, int batchSize) {
         return false;
     }

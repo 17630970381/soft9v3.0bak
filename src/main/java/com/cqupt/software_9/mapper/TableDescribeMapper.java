@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface TableDescribeMapper extends BaseMapper<TableDescribeEntity> {
+    void deleteByTableName(String tablename);
 }

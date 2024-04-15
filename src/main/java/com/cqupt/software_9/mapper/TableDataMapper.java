@@ -1,12 +1,16 @@
 package com.cqupt.software_9.mapper;
 
 
+import com.cqupt.software_9.common.FeatureMatch;
 import com.cqupt.software_9.vo.CreateTableFeatureVo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 // TODO 公共模块新增类
 
@@ -30,4 +34,7 @@ public interface TableDataMapper {
     List<LinkedHashMap<String, Object>> getAllTableData(@Param("tableName") String label);
 
 
+    List<FeatureMatch> feamatch();
+
+    List<FeatureMatch> searchFeatures(List<String> fea);
 }

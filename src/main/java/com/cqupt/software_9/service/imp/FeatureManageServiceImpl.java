@@ -49,7 +49,8 @@ public class FeatureManageServiceImpl extends FeatureMangeServiceAdapter {
             featureEntity.setFeatureName(tableHeader.getFieldName());
             featureEntity.setUnit("character varying"); // TODO  特征类型
             featureEntity.setDiseaseStandard(false);
-            if(tableHeader.getIsDiagnosis()=="1") featureEntity.setDiagnosis(true);
+//            if(tableHeader.getIsDiagnosis()=="1") featureEntity.setDiagnosis(true);
+            if(tableHeader.getIsDiagnosis()=="1") featureEntity.setPopulation(true);
             if(tableHeader.getIsPathology()=="1") featureEntity.setPathology(true);
             if(tableHeader.getIsExamine()=="1") featureEntity.setExamine(true);
             if(tableHeader.getIsLabel()=="1") featureEntity.setLabel(true);

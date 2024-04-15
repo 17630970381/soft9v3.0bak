@@ -14,6 +14,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
@@ -26,6 +27,7 @@ public class DataManagerController {
     @Autowired
     private TableManagerService tableManagerService;
 
+    @Resource
     private DataManagerMapper dataManagerMapper;
 
     private CkdManagerMapper ckdManagerMapper;
@@ -107,4 +109,11 @@ public class DataManagerController {
         return Result.success("200",dataManagerMapper.getTableName());
     }
 
+    /**
+     * 获取疾病和表名的对应关系
+     */
+    @GetMapping("/getDiseaseTableName")
+    public List<Map<String,String>> getDiseaseTableName(){
+        return  dataManagerMapper.getDiseaseTableName();
+    }
 }

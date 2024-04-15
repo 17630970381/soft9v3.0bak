@@ -19,4 +19,5 @@ public interface TableDataService {
     List<LinkedHashMap<String, Object>> getFilterDataByConditions(List<CreateTableFeatureVo> characterList,CategoryEntity nodeData);
 
 
+
 }

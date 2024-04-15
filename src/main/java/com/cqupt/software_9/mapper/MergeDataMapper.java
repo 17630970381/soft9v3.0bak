@@ -2,6 +2,7 @@ package com.cqupt.software_9.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.cqupt.software_9.common.MergeData;
+import com.cqupt.software_9.common.MergeList;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -25,4 +26,6 @@ public interface MergeDataMapper extends BaseMapper<MergeData> {
     Integer getPosNumber(@Param("tablename") String tablename, @Param("type") String type);
 
     Integer getNegNumber(@Param("tablename") String tablename, @Param("type") String type);
+
+    List<MergeList> upallmerge();
 }

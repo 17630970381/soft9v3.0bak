@@ -156,6 +156,11 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
         }
     }
 
+    @Override
+    public String getfeabymodelname(String modelname) {
+        return modelMapper.getFeaBymodelName(modelname);
+    }
+
 
 }
 

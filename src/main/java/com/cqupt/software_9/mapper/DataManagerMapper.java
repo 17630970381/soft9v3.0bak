@@ -40,4 +40,10 @@ public interface DataManagerMapper extends BaseMapper<DataManager> {
 
 
     List<String> getTableName();
+
+    List<Map<String, String>> getDiseaseTableName();
+
+    Boolean deleteByTableName(String tablename);
+
+    void deleteTable(String tablename);
 }

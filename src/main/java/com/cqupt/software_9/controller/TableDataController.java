@@ -2,10 +2,12 @@ package com.cqupt.software_9.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.cqupt.software_9.common.FeatureMatch;
 import com.cqupt.software_9.common.Result;
 import com.cqupt.software_9.entity.CategoryEntity;
 import com.cqupt.software_9.mapper.CategoryMapper;
 import com.cqupt.software_9.mapper.DataManagerMapper;
+import com.cqupt.software_9.mapper.TableDataMapper;
 import com.cqupt.software_9.service.*;
 import com.cqupt.software_9.vo.FilterTableDataVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,8 @@ public class TableDataController {
     @Autowired
     TableDescribeService tableDescribeService;
 
+    @Resource
+    private TableDataMapper tableDataMapper;
 
     @Resource
     private DataManagerMapper dataManagerMapper;
@@ -112,7 +116,15 @@ public class TableDataController {
         return Result.success("200",filterDataByConditions);
     }
 
-
+    /**
+     * 特征中文等匹配
+     *
+     *
+     */
+    @GetMapping("/FeatureMatch")
+    public Result<List<FeatureMatch>> featruematch(){
+        return Result.success("200",tableDataMapper.feamatch());
+    }
 
 
 }

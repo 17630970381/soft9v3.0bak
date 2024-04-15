@@ -20,12 +20,14 @@ public class FieldManagementEntity {
     private Boolean diseaseStandard;
 
     // 人口学
-    private Boolean diagnosis;
+//    private Boolean diagnosis;
+    private Boolean population;
     // 生理指标
-    private Boolean pathology;
+
 
     // 行为学
-    private Boolean vitalSigns;
+//    private Boolean vitalSigns;
+    private Boolean physiology;
     private String tableName;
     private String unit;
     private Boolean isLabel;

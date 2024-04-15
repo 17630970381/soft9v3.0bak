@@ -1,5 +1,6 @@
 package com.cqupt.software_9.service.Adapter;
 
+import com.cqupt.software_9.common.FeatureMatch;
 import com.cqupt.software_9.entity.CategoryEntity;
 import com.cqupt.software_9.service.TableDataService;
 import com.cqupt.software_9.vo.CreateTableFeatureVo;
@@ -9,7 +10,6 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 public class TableDataServiceAdapter implements TableDataService {
 
@@ -32,6 +32,9 @@ public class TableDataServiceAdapter implements TableDataService {
     public List<LinkedHashMap<String, Object>> getFilterDataByConditions(List<CreateTableFeatureVo> characterList, CategoryEntity nodeData) {
         return null;
     }
+
+
+
 
 
 }

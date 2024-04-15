@@ -2,12 +2,10 @@ package com.cqupt.software_9.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.cqupt.software_9.common.ModelDTO;
-import com.cqupt.software_9.common.R;
-import com.cqupt.software_9.common.Result;
-import com.cqupt.software_9.common.UploadResult;
+import com.cqupt.software_9.common.*;
 import com.cqupt.software_9.entity.*;
 import com.cqupt.software_9.mapper.DataManagerMapper;
+import com.cqupt.software_9.mapper.MergeDataMapper;
 import com.cqupt.software_9.mapper.ModelMapper;
 import com.cqupt.software_9.mapper.modelResultMapper;
 import com.cqupt.software_9.service.DataTableManagerService;
@@ -22,10 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RequestMapping("/Model")
 @RestController
@@ -57,7 +52,11 @@ public class ModelController {
     @Resource
     private com.cqupt.software_9.mapper.tTableManagerMapper tTableManagerMapper;
 
+    @Resource
+    private com.cqupt.software_9.service.tTableManagerService  tTableManagerService;
 
+    @Resource
+    private MergeDataMapper mergeDataMapper;
 
     @GetMapping("/getall")
     public List<Model> getallmodel(){
@@ -288,10 +287,12 @@ public class ModelController {
     public Result selectByPage(@RequestParam Integer pageNum,
                                @RequestParam Integer pageSize,
                                @RequestParam String disease,
-                               @RequestParam String modelname){
+                               @RequestParam String modelname,
+                               @RequestParam String publisher){
         QueryWrapper<Model> queryWrapper = new QueryWrapper<Model>().orderByDesc("taskid");
         queryWrapper.like(StringUtils.isNotBlank(disease),"diseasename",disease);
         queryWrapper.like(StringUtils.isNotBlank(modelname),"modelname",modelname);
+        queryWrapper.like(StringUtils.isNotBlank(publisher),"publisher",publisher);
         Page<Model> page = modelService.page(new Page<>(pageNum, pageSize), queryWrapper);
         return Result.success(page);
     }
@@ -301,4 +302,65 @@ public class ModelController {
         return modelMapper.getDisease();
     }
 
+    /**
+     * 根据模型名查询模型所用特征
+     */
+    @GetMapping("/getFea/{modelname}")
+    public String getFea(@PathVariable String modelname){
+        return modelMapper.getFea(modelname);
+    }
+
+
+    @GetMapping("/whetherexists/{modelname}")
+    public Result whetherexists(@PathVariable("modelname") String modelname){
+        List<String> fields = tTableManagerService.getFiledSByTableName("merge");
+        String feat = modelService.getfeabymodelname(modelname);
+        String[] splitArray = feat.split(",");
+        List<String> feats = Arrays.asList(splitArray);
+//        int  res = 1;
+//        for (String element : feats) {
+//            if (!fields.contains(element)) {
+//                res = 0;
+//            }
+//        }
+
+
+        System.out.println("feats");
+        System.out.println(feats);
+        System.out.println("fields");
+        System.out.println(fields);
+        int res = 1;
+        for (String element : feats) {
+            boolean found = false;
+            for (String field : fields) {
+                if (element.equalsIgnoreCase(field)) { // 忽略大小写进行匹配
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                res = 0;
+                break; // 如果有一个字段不匹配，则可以直接跳出循环
+            }
+        }
+        return new Result(res,"成功",200);
+    }
+
+    /**
+     * 获取merge表病人信息
+     *
+     *
+     */
+    @GetMapping("/upallmerge")
+    public R<List<MergeList>> upallmerge(){
+        return new R(200,"成功",mergeDataMapper.upallmerge());
+    }
+
+    /**
+     * 查询模型总数
+     */
+    @GetMapping("/getModelNum")
+    public Integer getModelNum(){
+        return modelMapper.getModelNum();
+    }
 }

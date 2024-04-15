@@ -56,7 +56,14 @@
     <select id="getDiagName" resultType="java.lang.String">
         SELECT DISTINCT diagname FROM merge;
     </select>
-
+    <select id="getFea" resultType="java.lang.String">
+        select  feature from model where modelname = #{modelname}
+    </select>
+    <select id="getFeaBymodelName" resultType="java.lang.String">
+        SELECT feature
+        FROM model
+        WHERE modelname = #{modelname};
+    </select>
 
 
 </mapper>

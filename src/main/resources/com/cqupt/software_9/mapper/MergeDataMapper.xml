@@ -44,4 +44,7 @@
     <select id="getNegNumber" resultType="int">
         SELECT count(*) FROM "${tablename}" where diagname!='${type}';
     </select>
+    <select id="upallmerge" resultType="com.cqupt.software_9.common.MergeList">
+        SELECT patient_id,name,sexname,birthdate,nationname,maritalstatusname from merge
+    </select>
 </mapper>
