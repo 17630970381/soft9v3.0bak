@@ -35,8 +35,8 @@
                 <foreach collection="diseaseData" item="rowMap" separator=",">
                         (
                         <!-- 遍历行中的每个列值 -->
-                        <foreach collection="rowMap.entrySet()" item="value" index="value" separator=",">
-                                #{value}
+                        <foreach collection="diseaseData[0].keySet()" item="key" index="index" separator=",">
+                                '${rowMap[key]}'
                         </foreach>
                         )
                 </foreach>
@@ -213,12 +213,12 @@
 <!--    </select>-->
     <select id="getFilterData" resultType="java.util.LinkedHashMap">
         select * from ${tableName} where
-        <foreach collection="conditions" item="featureVo">
+        <foreach collection="conditions" item="featureVo" >
             ${featureVo.optString} ${featureVo.featureName} ${featureVo.computeOpt} ${featureVo.value}
         </foreach>
     </select>
         <select id="getTableData" resultType="java.util.LinkedHashMap">
-                select * from ${tableName} limit 13;
+                select * from ${tableName} limit 250;
         </select>
         <select id="getColsTableData" resultType="java.util.LinkedHashMap">
                 select
@@ -229,6 +229,15 @@
         </select>
         <select id="getAllTableData" resultType="java.util.LinkedHashMap">
                 select * from ${tableName};
+        </select>
+        <select id="feamatch" resultType="com.cqupt.software_9.common.FeatureMatch">
+                select feature_name,ch_name,unit,is_label,range from field_management
+        </select>
+        <select id="searchFeatures" resultType="com.cqupt.software_9.common.FeatureMatch">
+                SELECT feature_name,ch_name,unit,is_label,range FROM field_management WHERE feature_name IN
+                <foreach item="item" index="index" collection="fea" open="(" separator="," close=")">
+                        #{item}
+                </foreach>
         </select>
 
 

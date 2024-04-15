@@ -49,4 +49,7 @@
     <select id="getFeatureByTableName" resultMap="tTableField">
         SELECT field_name,is_label FROM t_table_manager WHERE table_name = #{tablename}
     </select>
+    <select id="getFiledsByTableName" resultType="java.lang.String">
+        select feature_name from field_management where table_name = #{name}
+    </select>
 </mapper>

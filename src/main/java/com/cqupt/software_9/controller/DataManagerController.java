@@ -107,4 +107,11 @@ public class DataManagerController {
         return Result.success("200",dataManagerMapper.getTableName());
     }
 
+    /**
+     * 获取疾病和表名的对应关系
+     */
+    @GetMapping("/getDiseaseTableName")
+    public List<Map<String,String>> getDiseaseTableName(){
+        return  dataManagerMapper.getDiseaseTableName();
+    }
 }

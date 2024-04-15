@@ -19,4 +19,6 @@ public interface tTableManagerMapper extends BaseMapper<tTableManager> {
     List<tTableField> getFeatureByTableName(String tablename);
 
     void insertTableNameAndFeature(tTableManager tTableManager);
+
+    List<String> getFiledsByTableName(String name);
 }

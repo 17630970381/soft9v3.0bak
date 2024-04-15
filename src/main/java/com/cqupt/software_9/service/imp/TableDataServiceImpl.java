@@ -108,14 +108,17 @@ public class TableDataServiceImpl extends TableDataServiceAdapter {
          *              5、创建目录节点信息，并保存数据库
          *
          */
-        List<LinkedHashMap<String,Object>> diseaseData = tableDataMapper.getAllTableData("merge"); // 传递表名参数
-        System.out.println("考虑疾病所有数据");
-        // 合并考虑疾病和非考虑疾病的所有数据
+        List<LinkedHashMap<String, Object>> res = getFilterDataByConditions(characterList, nodeData);
+//        CategoryEntity mustContainNode = getBelongType(nodeData, new ArrayList<CategoryEntity>());
+//        // 查询考虑疾病的宽表数据
+        //List<LinkedHashMap<String,Object>> diseaseData = tableDataMapper.getAllTableData("merge"); // 传递表名参数
+        List<LinkedHashMap<String,Object>> diseaseData = res;
+//        System.out.println("考虑疾病所有数据");
+//        // 合并考虑疾病和非考虑疾病的所有数据
 //        for (LinkedHashMap<String, Object> re : res) {
 //            diseaseData.add(re);
 //        }
-//        // 创建表头信息 获取宽表字段管理信息
-//        List<FieldManagementEntity> fields = fieldManagementService.list(null);
+        // 创建表头信息 获取宽表字段管理信息
         List<FieldManagementEntity> fields = fieldManagementMapper.selectList(null);
         // System.out.println("字段长度为："+fields.size());
         HashMap<String, String> fieldMap = new HashMap<>();
@@ -170,10 +173,15 @@ public class TableDataServiceImpl extends TableDataServiceAdapter {
         tableDescribeEntity.setTableId(node.getId());
         // 保存表描述信息
         tableDescribeMapper.insert(tableDescribeEntity);
-
-
+        DataManager manager = new DataManager();
+        manager.setTablename(tableName);
+        manager.setDiseasename(nodeData.getLabel());
+        manager.setOperators(createUser);
+        manager.setUploadmethod("纳排");
+        dataManagerMapper.insert(manager);
 
     }
+
     private CategoryEntity getBelongType(CategoryEntity nodeData, ArrayList<CategoryEntity> leafNodes){
         getLeafNode(nodeData, leafNodes);
         if(leafNodes!=null && leafNodes.size()>0){
@@ -189,6 +197,8 @@ public class TableDataServiceImpl extends TableDataServiceAdapter {
     // 根据条件筛选数据
     @Override
     public List<LinkedHashMap<String, Object>> getFilterDataByConditions(List<CreateTableFeatureVo> characterList,CategoryEntity nodeData) {
+        System.out.println("characterList"+characterList);
+        System.out.println("nodeData"+nodeData);
         List<CategoryEntity> categoryEntities = categoryMapper.selectList(null); // 查询所有的目录信息
         // 找到所有的宽表节点
         List<CategoryEntity> allWideTableNodes = categoryEntities.stream().filter(categoryEntity -> {
@@ -226,7 +236,7 @@ public class TableDataServiceImpl extends TableDataServiceAdapter {
         // 处理varchar类型的数据
         for (CreateTableFeatureVo createTableFeatureVo : characterList) {
             System.out.println("当前字段的类型："+createTableFeatureVo.getUnit());
-            if(createTableFeatureVo.getUnit()==null || createTableFeatureVo.getUnit().equals("character varying")){
+            if(createTableFeatureVo.getType()==null || createTableFeatureVo.getType().equals("character varying")){
                 createTableFeatureVo.setValue("'"+createTableFeatureVo.getValue()+"'");
             }
         }

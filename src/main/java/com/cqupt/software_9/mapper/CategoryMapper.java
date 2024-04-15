@@ -12,4 +12,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CategoryMapper extends BaseMapper<CategoryEntity> {
     void removeNode(@Param("id") String id);
+
+    void savetest(CategoryEntity categoryNode);
+
+    Integer countDisease();
+
+    Integer countTable();
+
+    String isRepeatCategory(String label);
 }

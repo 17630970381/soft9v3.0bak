@@ -5,6 +5,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.cqupt.software_9.mapper.DataManagerMapper">
+    <delete id="deleteByTableName">
+        delete from data_manager where tablename = #{tableName}
+    </delete>
+    <delete id="deleteTable">
+        DROP TABLE IF EXISTS ${tableName}
+    </delete>
 
 
     <select id="getdetail" resultType="com.cqupt.software_9.entity.DataManager">
@@ -63,6 +69,9 @@
     </select>
     <select id="getTableName" resultType="java.lang.String">
         SELECT DISTINCT tablename from data_manager
+    </select>
+    <select id="getDiseaseTableName" resultType="java.util.Map">
+        select diseasename,tablename FROM data_manager where uploadmethod != '纳排'
     </select>
 
 

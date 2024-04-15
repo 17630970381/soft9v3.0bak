@@ -47,4 +47,7 @@ public interface ModelMapper extends BaseMapper<Model> {
     List<String> getDiagName();
 
 
+    String getFea(String modelname);
+
+    String getFeaBymodelName(String modelname);
 }

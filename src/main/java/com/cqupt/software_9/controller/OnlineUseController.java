@@ -1,5 +1,6 @@
 package com.cqupt.software_9.controller;
 
+import com.cqupt.software_9.entity.history;
 import com.cqupt.software_9.service.OnlineUseService;
 import com.cqupt.software_9.service.Request.onlineUse;
 import com.cqupt.software_9.service.Response.OnlineServiceResponse;
@@ -34,6 +35,8 @@ public class OnlineUseController {
 //        }
 //    }
 
+
+
     @Resource
     private OnlineUseService onlineUseService;
 
@@ -59,5 +62,20 @@ public class OnlineUseController {
         OnlineServiceResponse res = onlineUseService.useMulti(request);
         return res;
     }
+
+    @PostMapping("/history")
+    public OnlineServiceResponse history(@RequestBody history request) throws Exception {
+        OnlineServiceResponse res = onlineUseService.history(request);
+        return res;
+    }
+
+    @PostMapping("/historySolo")
+    public OnlineServiceResponse historySolo(@RequestBody history request) throws Exception {
+        OnlineServiceResponse res = onlineUseService.historySolo(request);
+        return res;
+    }
+
+
+
 
 }

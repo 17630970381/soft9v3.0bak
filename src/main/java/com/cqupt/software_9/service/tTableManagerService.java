@@ -14,4 +14,6 @@ public interface tTableManagerService extends IService<tTableManager> {
     boolean updateFieldValues(String table_name, tTableField field);
     void insertTableManager(TableManagerDTO tableManagerDTO);
     void deletebyname(String tablename);
+
+    List<String> getFiledSByTableName(String name);
 }

@@ -48,4 +48,9 @@ public class tTableManagerServiceImpl extends tTableManagerServiceAdapter {
 
         return true;
     }
+
+    @Override
+    public List<String> getFiledSByTableName(String name) {
+        return tTableManagerMapper.getFiledsByTableName(name);
+    }
 }

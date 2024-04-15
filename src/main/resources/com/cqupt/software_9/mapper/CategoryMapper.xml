@@ -3,9 +3,22 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cqupt.software_9.mapper.CategoryMapper">
+    <insert id="savetest" parameterType="com.cqupt.software_9.entity.CategoryEntity">
+        INSERT INTO category (id, cat_level, label, parent_id, is_leafs, is_common, path, is_delete, is_wide_table)
+        VALUES (#{id}, #{catLevel}, #{label}, #{parentId}, #{isLeafs}, #{isCommon}, #{path}, #{isDelete}, #{isWideTable})
+    </insert>
 
 
-    <update id="removeNode">
-        update category set is_delete=1 where id = CAST(#{id} AS VARCHAR);;
-    </update>
+    <delete id="removeNode">
+        DELETE FROM category WHERE id = #{id}
+    </delete>
+    <select id="countDisease" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM category WHERE is_leafs = 0
+    </select>
+    <select id="countTable" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM category WHERE is_leafs = 1
+    </select>
+    <select id="isRepeatCategory" resultType="java.lang.String">
+        SELECT label FROM category WHERE label = #{label}
+    </select>
 </mapper>

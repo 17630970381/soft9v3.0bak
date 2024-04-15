@@ -55,6 +55,7 @@ public class CategoryServiceImpl extends CategoryServiceAdapter {
     @Override
     public void removeNode(String id) {
         categoryMapper.removeNode(id);
+
     }
 
     // 获取1级目录下的所有子结构
