@@ -196,7 +196,9 @@ public class UserController {
      */
     @GetMapping("/getmessage/{uid}")
     public Result<List<User>> getall(@PathVariable("uid") Integer uid){
-        return Result.success("200",userMapper.selectById(uid));
+        User user = userMapper.selectById(uid);
+        user.setPassword(null);
+        return Result.success("200",user);
     }
 
     //修改密码，根据用户名匹配密码是否正确
