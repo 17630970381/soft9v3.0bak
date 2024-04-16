@@ -65,6 +65,12 @@
         WHERE modelname = #{modelname};
     </select>
 
+    <select id="getPublisherbumodelname" resultType="java.lang.String">
+        SELECT publisher
+        FROM model
+        WHERE modelname = #{modelname};
+    </select>
+
 
 </mapper>
 

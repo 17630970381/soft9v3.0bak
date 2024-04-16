@@ -50,4 +50,6 @@ public interface ModelMapper extends BaseMapper<Model> {
     String getFea(String modelname);
 
     String getFeaBymodelName(String modelname);
+
+    String getPublisherbumodelname(String modelname);
 }

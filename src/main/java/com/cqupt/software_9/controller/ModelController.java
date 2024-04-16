@@ -8,10 +8,7 @@ import com.cqupt.software_9.mapper.DataManagerMapper;
 import com.cqupt.software_9.mapper.MergeDataMapper;
 import com.cqupt.software_9.mapper.ModelMapper;
 import com.cqupt.software_9.mapper.modelResultMapper;
-import com.cqupt.software_9.service.DataTableManagerService;
-import com.cqupt.software_9.service.FileService;
-import com.cqupt.software_9.service.ModelService;
-import com.cqupt.software_9.service.modelResultService;
+import com.cqupt.software_9.service.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -37,6 +34,14 @@ public class ModelController {
 
     @Autowired
     private modelResultMapper modelResultMapper;
+
+    @Autowired
+    private UserLogService userLogService;
+
+    @Resource
+    private UserService userService;
+
+
     @Resource
     private ModelService modelService;
 
@@ -259,7 +264,23 @@ public class ModelController {
     public boolean ModelRemove( @PathVariable("modelname") String modelname){
         boolean a = modelMapper.removeModel(modelname);
         boolean b = modelResultMapper.removeModelResult(modelname);
+
+        //  操作日志记录
+
+        UserLog userLog = new UserLog();
+        String username = modelMapper.getPublisherbumodelname(modelname);
+        userLog.setUsername(username);
+        QueryWrapper queryWrapper1  = new QueryWrapper<>();
+        queryWrapper1.eq("username",username);
+        User one = userService.getOne(queryWrapper1);
+        Integer uid = one.getUid();
+
+        // userLog.setId(1);
+        userLog.setUid(uid);
+        userLog.setOpTime(new Date());
         if (a && b){
+            userLog.setOpType("用户删除模型"+modelname+"成功");
+            userLogService.save(userLog);
             return true;
         }else {
             return false;

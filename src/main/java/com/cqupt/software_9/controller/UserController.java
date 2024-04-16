@@ -217,14 +217,46 @@ public class UserController {
         try {
             // 假设 userMapper 是 MyBatis 的一个 Mapper 接口
             int updatedRows = userMapper.updateByname(newpassword, username);
+
+            //  操作日志记录
+
+            UserLog userLog = new UserLog();
+
+            QueryWrapper queryWrapper1  = new QueryWrapper<>();
+            queryWrapper1.eq("username",username);
+
+            User one = userService.getOne(queryWrapper1);
+            Integer uid = one.getUid();
+            userLog.setUsername(username);
+            // userLog.setId(1);
+            userLog.setUid(uid);
+            userLog.setOpTime(new Date());
+
+
             if (updatedRows > 0) {
+                userLog.setOpType("用户修改密码成功");
+
+                userLogService.save(userLog);
                 // 更新成功，返回成功结果
                 return Result.success("200", "更新成功");
             } else {
+                userLog.setOpType("用户修改密码失败");
+
+                userLogService.save(userLog);
                 // 更新失败，没有记录被更新
                 return Result.success("404", "更新失败，用户不存在或密码未更改");
             }
         } catch (Exception e) {
+            UserLog userLog = new UserLog();
+            QueryWrapper queryWrapper1  = new QueryWrapper<>();
+            queryWrapper1.eq("username",username);
+            User one = userService.getOne(queryWrapper1);
+            Integer uid = one.getUid();
+            // userLog.setId(1);
+            userLog.setUid(uid);
+            userLog.setOpTime(new Date());
+            userLog.setOpType("用户修改密码失败，发生未知错误");
+            userLogService.save(userLog);
             // 处理可能出现的任何异常，例如数据库连接失败等
             // 记录异常信息，根据实际情况决定是否需要发送错误日志
             // 这里返回一个通用的错误信息
@@ -238,10 +270,24 @@ public class UserController {
         try {
             // 假设 userMapper 是 MyBatis 的一个 Mapper 接口
             int updatedRows = userMapper.updateById(user);
+            //  操作日志记录
+
+            UserLog userLog = new UserLog();
+            // userLog.setId(1);
+            userLog.setUsername(user.getUsername());
+            userLog.setUid(user.getUid());
+            userLog.setOpTime(new Date());
+
             if (updatedRows > 0) {
                 // 更新成功，返回成功结果
+                userLog.setOpType("用户修改个人信息成功");
+                userLogService.save(userLog);
+
                 return Result.success("200", "更新成功");
             } else {
+
+                userLog.setOpType("用户修改个人信息失败");
+                userLogService.save(userLog);
                 // 更新失败，没有记录被更新
                 return Result.success("404", "更新失败，用户不存在");
             }
