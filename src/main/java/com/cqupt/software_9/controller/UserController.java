@@ -2,6 +2,7 @@ package com.cqupt.software_9.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.cqupt.software_9.common.R;
+import com.cqupt.software_9.common.Result;
 import com.cqupt.software_9.entity.AdminLoginParam;
 import com.cqupt.software_9.entity.RespBean;
 import com.cqupt.software_9.entity.User;
@@ -11,12 +12,15 @@ import com.cqupt.software_9.service.UserLogService;
 import com.cqupt.software_9.service.UserService;
 import com.cqupt.software_9.tool.SecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 用户登录
@@ -35,6 +39,9 @@ public class UserController {
     private UserMapper userMapper;
     @Autowired
     private UserLogService userLogService;
+
+    @Autowired
+    private UserDetailsService userDetailsService;
 //
 ////    public UserController(UserService userService,UserLogService userLogService){
 ////        this.userService=userService;
@@ -184,4 +191,24 @@ public class UserController {
     public Integer getUid(@PathVariable("username") String username){
         return userMapper.getUid(username);
     }
+    /**
+     * 获取用户所有信息
+     */
+    @GetMapping("/getmessage/{uid}")
+    public Result<List<User>> getall(@PathVariable("uid") Integer uid){
+        return Result.success("200",userMapper.selectById(uid));
+    }
+
+    //修改密码，根据用户名匹配密码是否正确
+    @GetMapping("VerifyPas")
+    public Result VerifyPas(@RequestParam String password, String username){
+        System.out.println(username);
+        UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+
+        if(!password.equals(userDetails.getPassword())){
+            return Result.success("200","flase");
+        }
+        return Result.success("200","true");
+    }
+
 }

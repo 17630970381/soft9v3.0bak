@@ -30,6 +30,18 @@ public class User implements Serializable, UserDetails {
 
     private Date updateTime;
 
+    private String userStatus;
+
+    private String answer_1;
+
+    private String answer_2;
+
+    private String answer_3;
+
+    private Integer uploadSize;
+
+
+
     private static final long serialVersionUID = 1L;
 
 

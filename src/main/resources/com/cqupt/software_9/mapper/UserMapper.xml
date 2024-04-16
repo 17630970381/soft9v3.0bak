@@ -23,4 +23,8 @@
         SELECT uid from "user"  WHERE username=#{username}
     </select>
 
+    <select id="getall" resultType="com.cqupt.software_9.entity.User">
+        SELECT * from "user"
+    </select>
+
 </mapper>
