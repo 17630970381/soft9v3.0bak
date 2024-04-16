@@ -232,4 +232,25 @@ public class UserController {
         }
     }
 
+    //修改个人信息
+    @PostMapping("updataUsermes")
+    public Result updataUsermes(@RequestBody User user) {
+        try {
+            // 假设 userMapper 是 MyBatis 的一个 Mapper 接口
+            int updatedRows = userMapper.updateById(user);
+            if (updatedRows > 0) {
+                // 更新成功，返回成功结果
+                return Result.success("200", "更新成功");
+            } else {
+                // 更新失败，没有记录被更新
+                return Result.success("404", "更新失败，用户不存在");
+            }
+        } catch (Exception e) {
+            // 处理可能出现的任何异常，例如数据库连接失败等
+            // 记录异常信息，根据实际情况决定是否需要发送错误日志
+            // 这里返回一个通用的错误信息
+            return Result.success("500", "更新失败，发生未知错误");
+        }
+    }
+
 }
