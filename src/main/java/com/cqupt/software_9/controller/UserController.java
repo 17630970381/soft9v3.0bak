@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 用户登录
@@ -202,23 +203,29 @@ public class UserController {
     }
 
     //修改密码，根据用户名匹配密码是否正确
-    @GetMapping("VerifyPas")
-    public Result VerifyPas(@RequestParam String password, String username){
+    @PostMapping("/VerifyPas")
+    public Result VerifyPas(@RequestBody Map<String, String> request){
+        String username = request.get("username");
+        String password = request.get("password");
         System.out.println(username);
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 
         if(!password.equals(userDetails.getPassword())){
-            return Result.success("200","flase");
+            return Result.success(200,"密码不匹配",false);
         }
-        return Result.success("200","true");
+        return Result.success(200,"密码匹配",true);
     }
 
+
+
     //修改密码
-    @PostMapping("updatapas")
-    public Result updatapas(@RequestParam String newpassword, String username) {
+    @PostMapping("/updatePas")
+    public Result updatePas(@RequestBody Map<String, String> requests) {
         try {
+            String username = requests.get("username");
+            String password = requests.get("password");
             // 假设 userMapper 是 MyBatis 的一个 Mapper 接口
-            int updatedRows = userMapper.updateByname(newpassword, username);
+            int updatedRows = userMapper.updateByname(password, username);
 
             //  操作日志记录
 
@@ -249,6 +256,7 @@ public class UserController {
                 return Result.success("404", "更新失败，用户不存在或密码未更改");
             }
         } catch (Exception e) {
+            String username = requests.get("username");
             UserLog userLog = new UserLog();
             QueryWrapper queryWrapper1  = new QueryWrapper<>();
             queryWrapper1.eq("username",username);
@@ -267,11 +275,14 @@ public class UserController {
     }
 
     //修改个人信息
-    @PostMapping("updataUsermes")
-    public Result updataUsermes(@RequestBody User user) {
+    @PostMapping("/updateUser")
+    public Result updateUser(@RequestBody User user) {
         try {
             // 假设 userMapper 是 MyBatis 的一个 Mapper 接口
-            int updatedRows = userMapper.updateById(user);
+
+            QueryWrapper<User> wrapper = new QueryWrapper<>();
+            wrapper.eq("uid",user.getUid());
+            int updatedRows = userMapper.update(user, wrapper);
             //  操作日志记录
 
             UserLog userLog = new UserLog();
@@ -300,5 +311,7 @@ public class UserController {
             return Result.success("500", "更新失败，发生未知错误");
         }
     }
+
+
 
 }

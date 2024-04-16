@@ -19,6 +19,10 @@
         password,role,create_time,
         update_time
     </sql>
+    <update id="updatePas">
+        UPDATE "user" SET password=#{password} WHERE username=#{username}
+    </update>
+
     <select id="getUid" resultType="java.lang.Integer">
         SELECT uid from "user"  WHERE username=#{username}
     </select>

@@ -1,17 +1,19 @@
 package com.cqupt.software_9.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.cqupt.software_9.common.R;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.cqupt.software_9.common.Result;
 import com.cqupt.software_9.entity.UserLog;
+import com.cqupt.software_9.mapper.UserLogMapper;
 import com.cqupt.software_9.service.UserLogService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.List;
+import javax.annotation.Resource;
 
 /**
  *
@@ -29,21 +31,23 @@ public class UserLogController {
     @Autowired
     private UserLogService userLogService;
 
+    @Resource
+    private UserLogMapper userLogMapper;
 
     @GetMapping("/allLog")
-    public R<List<UserLog>> queryAllLog(HttpServletRequest request , HttpServletResponse response){
+    public Result queryAllLog(){
+        return Result.success(userLogMapper.selectList(null));
+    }
 
+    @GetMapping("/getLogByPage")
+    public Result queryLogByPage(@RequestParam Integer pageNum,
+                                 @RequestParam Integer pageSize,
+                                 @RequestParam String username
+                                 ){
+        QueryWrapper<UserLog> queryWrapper = new QueryWrapper<UserLog>().orderByDesc("id");
+        queryWrapper.like(StringUtils.isNotBlank(username),"username",username);
 
-        Integer userId = (Integer) request.getSession().getAttribute("userId");
-
-        System.out.println(userId);
-
-        QueryWrapper queryWrapper = new QueryWrapper();
-
-        queryWrapper.eq("uid",userId);
-
-        List list = userLogService.list(queryWrapper);
-
-        return new R<>(200,"成功",list);
+        Page<UserLog> page = userLogService.page(new Page<>(pageNum, pageSize), queryWrapper);
+        return Result.success(page);
     }
 }
