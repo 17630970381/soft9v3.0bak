@@ -12,4 +12,6 @@ public interface UserMapper extends BaseMapper<User> {
     Integer getUid(String username);
 
     List<User> getall();
+
+    Integer updateByname(String newpassword,String username);
 }

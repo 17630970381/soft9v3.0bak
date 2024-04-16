@@ -211,4 +211,25 @@ public class UserController {
         return Result.success("200","true");
     }
 
+    //修改密码
+    @PostMapping("updatapas")
+    public Result updatapas(@RequestParam String newpassword, String username) {
+        try {
+            // 假设 userMapper 是 MyBatis 的一个 Mapper 接口
+            int updatedRows = userMapper.updateByname(newpassword, username);
+            if (updatedRows > 0) {
+                // 更新成功，返回成功结果
+                return Result.success("200", "更新成功");
+            } else {
+                // 更新失败，没有记录被更新
+                return Result.success("404", "更新失败，用户不存在或密码未更改");
+            }
+        } catch (Exception e) {
+            // 处理可能出现的任何异常，例如数据库连接失败等
+            // 记录异常信息，根据实际情况决定是否需要发送错误日志
+            // 这里返回一个通用的错误信息
+            return Result.success("500", "更新失败，发生未知错误");
+        }
+    }
+
 }
