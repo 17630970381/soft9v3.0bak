@@ -2,9 +2,12 @@ package com.cqupt.software_9.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.cqupt.software_9.entity.CategoryEntity;
+import org.apache.ibatis.annotations.Lang;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 // TODO 公共模块新增类
 
@@ -20,4 +23,7 @@ public interface CategoryMapper extends BaseMapper<CategoryEntity> {
     Integer countTable();
 
     String isRepeatCategory(String label);
+
+
+    List<CategoryEntity> getall();
 }

@@ -8,6 +8,10 @@
         VALUES (#{id}, #{catLevel}, #{label}, #{parentId}, #{isLeafs}, #{isCommon}, #{path}, #{isDelete}, #{isWideTable})
     </insert>
 
+    <select id="getall" resultType="com.cqupt.software_9.entity.CategoryEntity">
+        SELECT * FROM category
+    </select>
+
 
     <delete id="removeNode">
         DELETE FROM category WHERE id = #{id}

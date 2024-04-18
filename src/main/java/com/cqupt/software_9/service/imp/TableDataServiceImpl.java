@@ -67,9 +67,9 @@ public class TableDataServiceImpl extends TableDataServiceAdapter {
         categoryEntity.setLabel(tableName);
         CategoryEntity parentCate = categoryMapper.selectById(parentId);
         categoryEntity.setCatLevel(parentCate.getCatLevel()+1);
-        categoryEntity.setIsCommon(parentCate.getIsCommon());
+//        categoryEntity.setIsCommon(parentCate.getIsCommon());
         categoryEntity.setIsLeafs(1);
-        categoryEntity.setPath(parentCate.getPath()+"/"+tableName);
+//        categoryEntity.setPath(parentCate.getPath()+"/"+tableName);
         categoryEntity.setParentId(parentId);
         categoryEntity.setIsDelete(0);
         // 保存数据库
@@ -156,11 +156,11 @@ public class TableDataServiceImpl extends TableDataServiceAdapter {
         CategoryEntity node = new CategoryEntity();
         node.setIsDelete(0);
         node.setParentId(nodeData.getId());
-        node.setPath(nodeData.getPath()+"/"+tableName);
+//        node.setPath(nodeData.getPath()+"/"+tableName);
         node.setIsLeafs(1);
-        node.setIsCommon(nodeData.getIsCommon());
+//        node.setIsCommon(nodeData.getIsCommon());
         node.setCatLevel(nodeData.getCatLevel()+1);
-        node.setIsWideTable(0);
+//        node.setIsWideTable(0);
         node.setLabel(tableName);
         categoryMapper.insert(node); // 保存目录信息
 
@@ -169,7 +169,7 @@ public class TableDataServiceImpl extends TableDataServiceAdapter {
         tableDescribeEntity.setTableName(tableName);
         tableDescribeEntity.setCreateUser(createUser);
         tableDescribeEntity.setCreateTime(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
-        tableDescribeEntity.setClassPath(nodeData.getPath()+"/"+tableName);
+//        tableDescribeEntity.setClassPath(nodeData.getPath()+"/"+tableName);
         tableDescribeEntity.setTableId(node.getId());
         // 保存表描述信息
         tableDescribeMapper.insert(tableDescribeEntity);
@@ -182,79 +182,79 @@ public class TableDataServiceImpl extends TableDataServiceAdapter {
 
     }
 
-    private CategoryEntity getBelongType(CategoryEntity nodeData, ArrayList<CategoryEntity> leafNodes){
-        getLeafNode(nodeData, leafNodes);
-        if(leafNodes!=null && leafNodes.size()>0){
-            for (CategoryEntity leafNode : leafNodes) {
-                if(leafNode.getIsWideTable()!=null && leafNode.getIsWideTable()==1) {
-                    return leafNode;
-                }
-            }
-        }
-        return null;
-    }
+//    private CategoryEntity getBelongType(CategoryEntity nodeData, ArrayList<CategoryEntity> leafNodes){
+//        getLeafNode(nodeData, leafNodes);
+//        if(leafNodes!=null && leafNodes.size()>0){
+//            for (CategoryEntity leafNode : leafNodes) {
+//                if(leafNode.getIsWideTable()!=null && leafNode.getIsWideTable()==1) {
+//                    return leafNode;
+//                }
+//            }
+//        }
+//        return null;
+//    }
 
     // 根据条件筛选数据
-    @Override
-    public List<LinkedHashMap<String, Object>> getFilterDataByConditions(List<CreateTableFeatureVo> characterList,CategoryEntity nodeData) {
-        System.out.println("characterList"+characterList);
-        System.out.println("nodeData"+nodeData);
-        List<CategoryEntity> categoryEntities = categoryMapper.selectList(null); // 查询所有的目录信息
-        // 找到所有的宽表节点
-        List<CategoryEntity> allWideTableNodes = categoryEntities.stream().filter(categoryEntity -> {
-            return categoryEntity.getIsWideTable()!=null && categoryEntity.getIsWideTable() == 1;
-        }).collect(Collectors.toList());
-        System.out.println("所有的宽表节点："+ JSON.toJSONString(allWideTableNodes));
-        // 遍历当前节点的所有叶子节点，找到这个宽表节点
-        ArrayList<CategoryEntity> leafNodes = new ArrayList<>();
-        getLeafNode(nodeData, leafNodes);
-        /** 找到所有的非考虑疾病的宽表节点 **/
-        List<CategoryEntity> otherWideTable = null;
-        if(leafNodes!=null && leafNodes.size()>0){
-            System.out.println("非空！！！！！！！！！！！！");
-            for (CategoryEntity leafNode : leafNodes) {
-                if(leafNode.getIsWideTable()!=null && leafNode.getIsWideTable()==1) {
-                    otherWideTable = allWideTableNodes.stream().filter(categoryEntity -> { // 所有的非考虑疾病的宽表节点
-                        return !categoryEntity.getLabel().equals(leafNode.getLabel());
-                    }).collect(Collectors.toList());
-                    System.out.println("非空wideNOde："+JSON.toJSONString(otherWideTable));
-                }
-            }
-        }else{
-            otherWideTable = allWideTableNodes;
-        }
-        if(otherWideTable==null) otherWideTable = allWideTableNodes;
-        // 筛选所有非考虑疾病的宽表数据
-        /** select * from ${tableName} where ${feature} ${computeOpt} ${value} ${connector} ... **/
-        // 前端传过来的 AND OR NOT 是数字形式0,1,2，需要变成字符串拼接sql
-        for (CreateTableFeatureVo createTableFeatureVo : characterList) {
-            if(createTableFeatureVo.getOpt()==null) createTableFeatureVo.setOptString("");
-            else if(createTableFeatureVo.getOpt()==0) createTableFeatureVo.setOptString("AND");
-            else if(createTableFeatureVo.getOpt()==1) createTableFeatureVo.setOptString("OR");
-            else createTableFeatureVo.setOptString("AND NOT");
-        }
-        // 处理varchar类型的数据
-        for (CreateTableFeatureVo createTableFeatureVo : characterList) {
-            System.out.println("当前字段的类型："+createTableFeatureVo.getUnit());
-            if(createTableFeatureVo.getType()==null || createTableFeatureVo.getType().equals("character varying")){
-                createTableFeatureVo.setValue("'"+createTableFeatureVo.getValue()+"'");
-            }
-        }
-        // 依次查询每一个表中符合条件的数据
-        List<List<LinkedHashMap<String, Object>>> otherWideTableData = new ArrayList<>();
-        for (CategoryEntity wideTable : otherWideTable) {
-            otherWideTableData.add(tableDataMapper.getFilterData(wideTable.getLabel(),characterList)); // TODO 筛选SQl xml
-        }
-        /** 数据合并List<List<Map<String, Object>>> otherWideTableData(多张表) 合并到 List<Map<String,Object>> diseaseData（一张表） **/
-        ArrayList<LinkedHashMap<String, Object>> res = new ArrayList<>();
-        for (List<LinkedHashMap<String, Object>> otherWideTableDatum : otherWideTableData) {
-            for (LinkedHashMap<String, Object> rowData : otherWideTableDatum) {
-                res.add(rowData);
-            }
-        }
-
-        return res;
-    }
+//    @Override
+//    public List<LinkedHashMap<String, Object>> getFilterDataByConditions(List<CreateTableFeatureVo> characterList,CategoryEntity nodeData) {
+//        System.out.println("characterList"+characterList);
+//        System.out.println("nodeData"+nodeData);
+//        List<CategoryEntity> categoryEntities = categoryMapper.selectList(null); // 查询所有的目录信息
+//        // 找到所有的宽表节点
+//        List<CategoryEntity> allWideTableNodes = categoryEntities.stream().filter(categoryEntity -> {
+//            return categoryEntity.getIsWideTable()!=null && categoryEntity.getIsWideTable() == 1;
+//        }).collect(Collectors.toList());
+//        System.out.println("所有的宽表节点："+ JSON.toJSONString(allWideTableNodes));
+//        // 遍历当前节点的所有叶子节点，找到这个宽表节点
+//        ArrayList<CategoryEntity> leafNodes = new ArrayList<>();
+//        getLeafNode(nodeData, leafNodes);
+//        /** 找到所有的非考虑疾病的宽表节点 **/
+//        List<CategoryEntity> otherWideTable = null;
+//        if(leafNodes!=null && leafNodes.size()>0){
+//            System.out.println("非空！！！！！！！！！！！！");
+//            for (CategoryEntity leafNode : leafNodes) {
+//                if(leafNode.getIsWideTable()!=null && leafNode.getIsWideTable()==1) {
+//                    otherWideTable = allWideTableNodes.stream().filter(categoryEntity -> { // 所有的非考虑疾病的宽表节点
+//                        return !categoryEntity.getLabel().equals(leafNode.getLabel());
+//                    }).collect(Collectors.toList());
+//                    System.out.println("非空wideNOde："+JSON.toJSONString(otherWideTable));
+//                }
+//            }
+//        }else{
+//            otherWideTable = allWideTableNodes;
+//        }
+//        if(otherWideTable==null) otherWideTable = allWideTableNodes;
+//        // 筛选所有非考虑疾病的宽表数据
+//        /** select * from ${tableName} where ${feature} ${computeOpt} ${value} ${connector} ... **/
+//        // 前端传过来的 AND OR NOT 是数字形式0,1,2，需要变成字符串拼接sql
+//        for (CreateTableFeatureVo createTableFeatureVo : characterList) {
+//            if(createTableFeatureVo.getOpt()==null) createTableFeatureVo.setOptString("");
+//            else if(createTableFeatureVo.getOpt()==0) createTableFeatureVo.setOptString("AND");
+//            else if(createTableFeatureVo.getOpt()==1) createTableFeatureVo.setOptString("OR");
+//            else createTableFeatureVo.setOptString("AND NOT");
+//        }
+//        // 处理varchar类型的数据
+//        for (CreateTableFeatureVo createTableFeatureVo : characterList) {
+//            System.out.println("当前字段的类型："+createTableFeatureVo.getUnit());
+//            if(createTableFeatureVo.getType()==null || createTableFeatureVo.getType().equals("character varying")){
+//                createTableFeatureVo.setValue("'"+createTableFeatureVo.getValue()+"'");
+//            }
+//        }
+//        // 依次查询每一个表中符合条件的数据
+//        List<List<LinkedHashMap<String, Object>>> otherWideTableData = new ArrayList<>();
+//        for (CategoryEntity wideTable : otherWideTable) {
+//            otherWideTableData.add(tableDataMapper.getFilterData(wideTable.getLabel(),characterList)); // TODO 筛选SQl xml
+//        }
+//        /** 数据合并List<List<Map<String, Object>>> otherWideTableData(多张表) 合并到 List<Map<String,Object>> diseaseData（一张表） **/
+//        ArrayList<LinkedHashMap<String, Object>> res = new ArrayList<>();
+//        for (List<LinkedHashMap<String, Object>> otherWideTableDatum : otherWideTableData) {
+//            for (LinkedHashMap<String, Object> rowData : otherWideTableDatum) {
+//                res.add(rowData);
+//            }
+//        }
+//
+//        return res;
+//    }
 
     private void getLeafNode(CategoryEntity nodeData,List<CategoryEntity> leafNodes){
         for (CategoryEntity child : nodeData.getChildren()) {
