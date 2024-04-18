@@ -22,12 +22,22 @@ public class CategoryEntity {
     private String label;
     private String parentId;
     private Integer isLeafs;
-    private Integer isCommon;
-    private String path;
     private Integer isDelete;
-    private Integer isWideTable;
+    private String uid;
+    private String status;
+    private String username;
+    private String is_filter;
+    private String is_upload;
     @TableField(exist = false)
     private List<CategoryEntity> children;
+
+    //    疾病管理新增
+    @TableField(exist = false)
+    private int tableNum0;
+    @TableField(exist = false)
+    private int tableNum1;
+    @TableField(exist = false)
+    private int tableNum2;
 
 
 }

@@ -9,6 +9,8 @@ import com.cqupt.software_9.mapper.DataManagerMapper;
 import com.cqupt.software_9.mapper.TableDescribeMapper;
 import com.cqupt.software_9.service.Category2Service;
 import com.cqupt.software_9.service.CategoryService;
+import com.cqupt.software_9.vo.AddDiseaseVo;
+import com.cqupt.software_9.vo.UpdateDiseaseVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -112,6 +114,32 @@ public class CategoryController {
         }else {
             return false;
         }
+    }
+
+
+    //    zongqing新增疾病管理模块
+    @GetMapping("/category/getAllDisease")
+    public Result<List<CategoryEntity>> getAllDisease(){
+        List<CategoryEntity> list = categoryService.getAllDisease();
+        System.out.println(JSON.toJSONString(list));
+        return Result.success("200",list);
+    }
+    @PostMapping("/category/addCategory")
+    public Result addCategory(@RequestBody AddDiseaseVo addDiseaseVo){
+        return categoryService.addCategory(addDiseaseVo);
+    }
+    @PostMapping("/category/updateCategory")
+    public Result updateCategory(@RequestBody UpdateDiseaseVo updateDiseaseVo){
+        return categoryService.updateCategory(updateDiseaseVo);
+
+//        return categoryService.updateById(categoryEntity)? Result.success("修改成功"):Result.fail("修改失败");
+    }
+    @PostMapping("/category/deleteCategory")
+    public Result deleteCategory(@RequestBody List<String> deleteIds){
+        System.out.println("删除");
+        System.out.println(deleteIds);
+        categoryService.removeCategorys(deleteIds);
+        return Result.success("删除成功");
     }
 
 }

@@ -2,10 +2,14 @@ package com.cqupt.software_9.service.Adapter;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.cqupt.software_9.common.Result;
 import com.cqupt.software_9.entity.CategoryEntity;
 import com.cqupt.software_9.service.CategoryService;
+import com.cqupt.software_9.vo.AddDiseaseVo;
+import com.cqupt.software_9.vo.UpdateDiseaseVo;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -25,6 +29,26 @@ public class CategoryServiceAdapter implements CategoryService {
 
     @Override
     public void addParentDisease(String diseaseName) {
+
+    }
+
+    @Override
+    public List<CategoryEntity> getAllDisease() {
+        return Collections.emptyList();
+    }
+
+    @Override
+    public Result addCategory(AddDiseaseVo addDiseaseVo) {
+        return null;
+    }
+
+    @Override
+    public Result updateCategory(UpdateDiseaseVo updateDiseaseVo) {
+        return null;
+    }
+
+    @Override
+    public void removeCategorys(List<String> deleteIds) {
 
     }
 

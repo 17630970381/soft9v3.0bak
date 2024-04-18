@@ -1,7 +1,10 @@
 package com.cqupt.software_9.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.cqupt.software_9.common.Result;
 import com.cqupt.software_9.entity.CategoryEntity;
+import com.cqupt.software_9.vo.AddDiseaseVo;
+import com.cqupt.software_9.vo.UpdateDiseaseVo;
 
 import java.util.List;
 
@@ -11,4 +14,10 @@ public interface CategoryService extends IService<CategoryEntity> {
     void removeNode(String id);
 
     void addParentDisease(String diseaseName);
+
+    //    新增疾病管理模块
+    List<CategoryEntity> getAllDisease();
+    Result addCategory(AddDiseaseVo addDiseaseVo);
+    Result updateCategory(UpdateDiseaseVo updateDiseaseVo);
+    void removeCategorys(List<String> deleteIds);
 }
