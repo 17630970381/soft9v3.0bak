@@ -10,18 +10,18 @@ import java.util.List;
 
 // TODO 公共模块新增类
 public interface AdminDataManageService extends IService<AdminDataManage> {
-    List<String>  uploadDataTable(MultipartFile file, String tableName, String userName, String classPath, String uid, String tableStatus) throws IOException, ParseException;
+    List<String>  uploadDataTable(MultipartFile file, String pid, String tableName, String userName, String classPath, String uid, String tableStatus, float tableSize, String current_uid) throws IOException, ParseException;
 
     List<AdminDataManage> selectAllDataInfo();
 
-    //根据表名搜索
-    List<AdminDataManage> selectDataByTableName(String tableName);
-    //根据用户名搜索
-    List<AdminDataManage> selectDataByUserName(String userName);
-    //根据疾病模糊搜索
-    List<AdminDataManage> selectDataByDiseaseName(String diseaseName);
+    List<AdminDataManage> selectDataByName(String searchType, String name);
+    AdminDataManage selectDataById(String id);
 
-    boolean deleteByTableName(String tablename);
+    void deleteByTableName(String tablename);
+    void deleteByTableId(String tableId);
 
-    boolean updateById(String id, String tableName, String tableStatus);
+    void updateById(String id, String tableName, String tableStatus);
+    void updateDataBaseTableName(String old_name, String new_name);
+
+    void updateInfo(String id, String tableid, String oldTableName, String tableName, String tableStatus, String current_uid);
 }

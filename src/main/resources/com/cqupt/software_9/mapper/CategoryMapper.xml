@@ -25,4 +25,17 @@
     <select id="isRepeatCategory" resultType="java.lang.String">
         SELECT label FROM category WHERE label = #{label}
     </select>
+
+
+    <select id="getLevel2Label" resultType="com.cqupt.software_9.entity.CategoryEntity">
+        SELECT * FROM category WHERE cat_level=2;
+    </select>
+
+    <select id="getLabelsByPid" resultType="com.cqupt.software_9.entity.CategoryEntity">
+        SELECT * FROM category WHERE parent_id = #{pid};
+    </select>
+
+    <update id="updateTableNameByTableId">
+        update category set label=#{tableName}, status=#{tableStatus} where id = CAST(#{tableid} AS VARCHAR);;
+    </update>
 </mapper>

@@ -2,7 +2,6 @@ package com.cqupt.software_9.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.cqupt.software_9.entity.CategoryEntity;
-import org.apache.ibatis.annotations.Lang;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -26,4 +25,10 @@ public interface CategoryMapper extends BaseMapper<CategoryEntity> {
 
 
     List<CategoryEntity> getall();
+
+    List<CategoryEntity> getLevel2Label();
+    String getLabelByPid(@Param("pid") String pid);
+    List<CategoryEntity> getLabelsByPid(@Param("pid") String pid);
+
+    void updateTableNameByTableId(@Param("tableid") String tableid, @Param("tableName") String tableName, @Param("tableStatus") String tableStatus);
 }

@@ -90,6 +90,7 @@ public class CategoryServiceImpl extends CategoryServiceAdapter {
     public List<CategoryEntity> getAllDisease(){
         // 获取所有目录行程树形结构
         List<CategoryEntity> categoryEntities = dataManagerMapper.selectList(null);
+
         // 获取所有级结构
         List<CategoryEntity> treeData = categoryEntities.stream().filter((categoryEntity) -> {
             return categoryEntity.getParentId().equals("0") && categoryEntity.getIsDelete()==0;
@@ -257,5 +258,20 @@ public class CategoryServiceImpl extends CategoryServiceAdapter {
                     .set("is_delete", 1);
             categoryMapper.update(null, updateWrapper);
         }
+    }
+
+    @Override
+    public List<CategoryEntity> getLevel2Label() {
+        return categoryMapper.getLevel2Label();
+    }
+
+    @Override
+    public List<CategoryEntity> getLabelsByPid(String pid) {
+        return categoryMapper.getLabelsByPid(pid);
+    }
+    public void updateTableNameByTableId(String tableid, String tableName, String tableStatus) {
+        System.out.println("status: " + tableStatus);
+        categoryMapper.updateTableNameByTableId(tableid, tableName, tableStatus);
+
     }
 }

@@ -14,4 +14,10 @@ public interface UserMapper extends BaseMapper<User> {
     List<User> getall();
 
     Integer updateByname(String newpassword,String username);
+
+    String getUidByUsername(String username);
+
+    User selectByUid(String uid);
+    void addTableSize(String uid, float tableSize);
+    void minusTableSize(String uid, float tableSize);
 }

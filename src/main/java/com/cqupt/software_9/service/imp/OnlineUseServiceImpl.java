@@ -1,6 +1,8 @@
 package com.cqupt.software_9.service.imp;
 
+import com.cqupt.software_9.entity.UserLog;
 import com.cqupt.software_9.entity.history;
+import com.cqupt.software_9.mapper.UserLogMapper;
 import com.cqupt.software_9.service.Adapter.OnlineUseServiceAdapter;
 import com.cqupt.software_9.service.Request.RuntimeTaskRequest;
 import com.cqupt.software_9.service.Request.onlineUse;
@@ -19,9 +21,14 @@ public class OnlineUseServiceImpl extends OnlineUseServiceAdapter {
     @Resource
     private RuntimeTaskService runtimeTaskService;
 
+    @Resource
+    private UserLogMapper userLogMapper;
 
     @Override
     public OnlineServiceResponse onlineUse(onlineUse request) throws Exception {
+        UserLog userLog = new UserLog();
+        userLog.setOpType("在线使用模型，进行疾病预测");
+        userLogMapper.insert(userLog);
         OnlineServiceResponse response=new OnlineServiceResponse();
         BeanUtils.copyProperties(request,response);
         List<String> args=new LinkedList<>();
@@ -49,6 +56,9 @@ public class OnlineUseServiceImpl extends OnlineUseServiceAdapter {
 
     @Override
     public OnlineServiceResponse useMulti(onlineUse request) throws Exception {
+        UserLog userLog = new UserLog();
+        userLog.setOpType("在线使用模型，进行疾病预测");
+        userLogMapper.insert(userLog);
         OnlineServiceResponse response=new OnlineServiceResponse();
         BeanUtils.copyProperties(request,response);
         List<String> args=new LinkedList<>();
@@ -76,6 +86,9 @@ public class OnlineUseServiceImpl extends OnlineUseServiceAdapter {
 
     @Override
     public OnlineServiceResponse history(history request) throws Exception {
+        UserLog userLog = new UserLog();
+        userLog.setOpType("在线使用模型，进行批量疾病预测");
+        userLogMapper.insert(userLog);
         OnlineServiceResponse response=new OnlineServiceResponse();
         BeanUtils.copyProperties(request,response);
         List<String> args=new LinkedList<>();
@@ -110,6 +123,9 @@ public class OnlineUseServiceImpl extends OnlineUseServiceAdapter {
 
     @Override
     public OnlineServiceResponse historySolo(history request) throws Exception {
+        UserLog userLog = new UserLog();
+        userLog.setOpType("在线使用模型，进行单例疾病预测");
+        userLogMapper.insert(userLog);
         OnlineServiceResponse response=new OnlineServiceResponse();
         BeanUtils.copyProperties(request,response);
         List<String> args=new LinkedList<>();

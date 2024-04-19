@@ -22,7 +22,7 @@ public class Model implements Serializable {
     private String publisher;
     private String remarks;
     private LocalDateTime createtime;
-    private Integer uid;
+    private String uid;
     private String modeurl;
     private String feature;
 }

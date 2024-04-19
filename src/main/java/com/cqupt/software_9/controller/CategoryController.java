@@ -122,6 +122,8 @@ public class CategoryController {
     public Result<List<CategoryEntity>> getAllDisease(){
         List<CategoryEntity> list = categoryService.getAllDisease();
         System.out.println(JSON.toJSONString(list));
+        System.out.println("list");
+        System.out.println(list);
         return Result.success("200",list);
     }
     @PostMapping("/category/addCategory")

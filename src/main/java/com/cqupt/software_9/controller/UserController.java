@@ -11,13 +11,17 @@ import com.cqupt.software_9.mapper.UserMapper;
 import com.cqupt.software_9.service.UserLogService;
 import com.cqupt.software_9.service.UserService;
 import com.cqupt.software_9.tool.SecurityUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.security.Principal;
 import java.util.Date;
 import java.util.List;
@@ -57,7 +61,7 @@ public class UserController {
 //        user.setUid(0);
         QueryWrapper queryWrapper = new QueryWrapper();
         queryWrapper.eq("username",user.getUsername());
-
+        Integer role = user.getRole();
         User existUser = userService.getOne(queryWrapper);
 
         if (existUser != null){
@@ -71,8 +75,10 @@ public class UserController {
         String password = SecurityUtil.hashDataSHA256(pwd);
 
         user.setPassword(password);
+        user.setRole(role);
         user.setCreateTime(new Date());
         user.setUpdateTime(null);
+        user.setUserStatus("0");
         System.out.println(user);
         userService.save(user);
 
@@ -85,7 +91,7 @@ public class UserController {
         queryWrapper1.eq("username",user.getUsername());
 
         User one = userService.getOne(queryWrapper1);
-        Integer uid = one.getUid();
+        String uid = one.getUid();
 
         // userLog.setId(1);
         userLog.setUid(uid);
@@ -98,56 +104,66 @@ public class UserController {
 
     }
 //
-//    @PostMapping("/login")
-//    public R login(@RequestBody User user, HttpServletResponse response, HttpServletRequest request){
-//
-//        String userName = user.getUsername();
-//
-//        System.out.println(userName+"1");
-//
-//        QueryWrapper queryWrapper = new QueryWrapper<>();
-//
-//        queryWrapper.eq("username",user.getUsername());
-//        System.out.println(queryWrapper+"3");
-//        User getUser = userService.getOne(queryWrapper);
-//        System.out.println(getUser+"2");
-//
-//        if (getUser != null){
-//            String password = getUser.getPassword();
-//            // 进行验证密码
-//            String pwd = user.getPassword();
-//            String sha256 = SecurityUtil.hashDataSHA256(pwd);
-//            if (sha256.equals(password)){
-//                // 验证成功
-//                UserLog userLog = new UserLog();
-//                userLog.setUid(getUser.getUid());
-//                userLog.setOpTime(new Date());
-//                userLog.setOpType("登录系统");
-//                userLog.setUsername(userName);
-//                userLogService.save(userLog);
-//                // session认证
-//                HttpSession session = request.getSession();
-//                session.setAttribute("username",user.getUsername());
-//                session.setAttribute("userId",getUser.getUid());
-//
-//                String uid = getUser.getUid().toString();
-//                Cookie cookie = new Cookie("userId",uid );
-//                response.addCookie(cookie);
-//
-//                //封装user对象返回
-//                User user1 = new User();
-//                user1.setUid(getUser.getUid());
-//                user1.setUsername(getUser.getUsername());
-//
-//                return new R<>(200,"登录成功",user1);
-//            }else {
-//                return new R<>(500,"密码错误请重新输入",null);
-//            }
-//
-//        }else {
-//            return new R<>(500,"用户不存在",null);
-//        }
-//    }
+    @PostMapping("/login")
+    public R login(@RequestBody AdminLoginParam adminLoginParam, HttpServletResponse response, HttpServletRequest request){
+
+        String code = adminLoginParam.getCode();
+        String captcha = (String)request.getSession().getAttribute("captcha");
+        if(StringUtils.isEmpty(code)){
+            return new R<>(500,"验证码不能为空",null);
+        }
+        if(!captcha.equalsIgnoreCase(code)){
+            return new R<>(500,"验证码输入错误，请重新输入",null);
+        }
+        String userName = adminLoginParam.getUsername();
+
+        System.out.println(userName+"1");
+
+        QueryWrapper queryWrapper = new QueryWrapper<>();
+
+        queryWrapper.eq("username",adminLoginParam.getUsername());
+        System.out.println(queryWrapper+"3");
+        User getUser = userService.getOne(queryWrapper);
+        System.out.println(getUser+"2");
+
+        if (getUser != null){
+            String password = getUser.getPassword();
+            // 进行验证密码
+            String pwd = adminLoginParam.getPassword();
+            String sha256 = SecurityUtil.hashDataSHA256(pwd);
+            if (sha256.equals(password)){
+                // 验证成功
+                UserLog userLog = new UserLog();
+                userLog.setUid(getUser.getUid());
+                userLog.setOpTime(new Date());
+                userLog.setOpType("登录系统");
+                userLog.setUsername(userName);
+                userLogService.save(userLog);
+                // session认证
+                HttpSession session = request.getSession();
+                session.setAttribute("username",adminLoginParam.getUsername());
+                session.setAttribute("userId",getUser.getUid());
+
+                String uid = getUser.getUid().toString();
+                Cookie cookie = new Cookie("userId",uid );
+                response.addCookie(cookie);
+
+                //封装user对象返回
+                User user1 = new User();
+                user1.setUid(getUser.getUid());
+                user1.setUsername(getUser.getUsername());
+                user1.setRole(getUser.getRole());
+                user1.setUserStatus(getUser.getUserStatus());
+
+                return new R<>(200,"登录成功",user1);
+            }else {
+                return new R<>(500,"密码错误请重新输入",null);
+            }
+
+        }else {
+            return new R<>(500,"用户不存在",null);
+        }
+    }
 //
 //
 //    @PostMapping("/logout")
@@ -162,11 +178,11 @@ public class UserController {
     /**
      * 登录之后返回token
      */
-    @PostMapping("/login")
-    public RespBean login(@RequestBody AdminLoginParam adminLoginParam, HttpServletRequest request){
-        return userService.login(adminLoginParam.getUsername(),adminLoginParam.getPassword(),adminLoginParam.getCode(),request);
-
-    }
+//    @PostMapping("/login")
+//    public RespBean login(@RequestBody AdminLoginParam adminLoginParam, HttpServletRequest request){
+//        return userService.login(adminLoginParam.getUsername(),adminLoginParam.getPassword(),adminLoginParam.getCode(),request);
+//
+//    }
 
     @GetMapping("/info")
     public User getUserInfo(Principal principal){
@@ -196,7 +212,7 @@ public class UserController {
      * 获取用户所有信息
      */
     @GetMapping("/getmessage/{uid}")
-    public Result<List<User>> getall(@PathVariable("uid") Integer uid){
+    public Result<List<User>> getall(@PathVariable("uid") String uid){
         User user = userMapper.selectById(uid);
         user.setPassword(null);
         return Result.success("200",user);
@@ -217,15 +233,15 @@ public class UserController {
     }
 
 
-
-    //修改密码
+        //修改密码
     @PostMapping("/updatePas")
     public Result updatePas(@RequestBody Map<String, String> requests) {
         try {
             String username = requests.get("username");
             String password = requests.get("password");
             // 假设 userMapper 是 MyBatis 的一个 Mapper 接口
-            int updatedRows = userMapper.updateByname(password, username);
+            String pwd = SecurityUtil.hashDataSHA256(password);
+            int updatedRows = userMapper.updateByname(pwd, username);
 
             //  操作日志记录
 
@@ -235,7 +251,7 @@ public class UserController {
             queryWrapper1.eq("username",username);
 
             User one = userService.getOne(queryWrapper1);
-            Integer uid = one.getUid();
+            String uid = one.getUid();
             userLog.setUsername(username);
             // userLog.setId(1);
             userLog.setUid(uid);
@@ -247,13 +263,13 @@ public class UserController {
 
                 userLogService.save(userLog);
                 // 更新成功，返回成功结果
-                return Result.success("200", "更新成功");
+                return Result.success(200, "更新成功");
             } else {
                 userLog.setOpType("用户修改密码失败");
 
                 userLogService.save(userLog);
                 // 更新失败，没有记录被更新
-                return Result.success("404", "更新失败，用户不存在或密码未更改");
+                return Result.success(404, "更新失败，用户不存在或密码未更改");
             }
         } catch (Exception e) {
             String username = requests.get("username");
@@ -261,7 +277,7 @@ public class UserController {
             QueryWrapper queryWrapper1  = new QueryWrapper<>();
             queryWrapper1.eq("username",username);
             User one = userService.getOne(queryWrapper1);
-            Integer uid = one.getUid();
+            String uid = one.getUid();
             // userLog.setId(1);
             userLog.setUid(uid);
             userLog.setOpTime(new Date());
@@ -270,7 +286,7 @@ public class UserController {
             // 处理可能出现的任何异常，例如数据库连接失败等
             // 记录异常信息，根据实际情况决定是否需要发送错误日志
             // 这里返回一个通用的错误信息
-            return Result.success("500", "更新失败，发生未知错误");
+            return Result.success(500, "更新失败，发生未知错误");
         }
     }
 
@@ -282,6 +298,7 @@ public class UserController {
 
             QueryWrapper<User> wrapper = new QueryWrapper<>();
             wrapper.eq("uid",user.getUid());
+
             int updatedRows = userMapper.update(user, wrapper);
             //  操作日志记录
 
@@ -312,6 +329,22 @@ public class UserController {
         }
     }
 
+    /**
+     *  检查用户名是否重复
+     * @param username
+     * @return
+     */
+    @GetMapping("/checkRepetition/{username}")
+    public Result checkRepetition(@PathVariable("username") String username) {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("username", username);
+        User user = userMapper.selectOne(wrapper);
+        if(user != null){
+            return Result.success(200, "用户名已存在");
+        }else {
+            return Result.success(200, "用户名可用");
+        }
+    }
 
 
 }

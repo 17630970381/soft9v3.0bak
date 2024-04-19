@@ -4,10 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cqupt.software_9.common.*;
 import com.cqupt.software_9.entity.*;
-import com.cqupt.software_9.mapper.DataManagerMapper;
-import com.cqupt.software_9.mapper.MergeDataMapper;
-import com.cqupt.software_9.mapper.ModelMapper;
-import com.cqupt.software_9.mapper.modelResultMapper;
+import com.cqupt.software_9.mapper.*;
 import com.cqupt.software_9.service.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,6 +59,9 @@ public class ModelController {
 
     @Resource
     private MergeDataMapper mergeDataMapper;
+
+    @Resource
+    private UserMapper userMapper;
 
     @GetMapping("/getall")
     public List<Model> getallmodel(){
@@ -270,14 +270,10 @@ public class ModelController {
         UserLog userLog = new UserLog();
         String username = modelMapper.getPublisherbumodelname(modelname);
         userLog.setUsername(username);
-        QueryWrapper queryWrapper1  = new QueryWrapper<>();
-        queryWrapper1.eq("username",username);
-        User one = userService.getOne(queryWrapper1);
-        Integer uid = one.getUid();
+        String uid = userMapper.getUidByUsername(username);
 
         // userLog.setId(1);
         userLog.setUid(uid);
-        userLog.setOpTime(new Date());
         if (a && b){
             userLog.setOpType("用户删除模型"+modelname+"成功");
             userLogService.save(userLog);

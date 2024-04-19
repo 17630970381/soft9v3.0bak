@@ -83,6 +83,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return userMapper.selectOne(new QueryWrapper<User>().eq("username",username));
     }
 
+    @Override
+    public void addTableSize(String uid,float tableSize) {
+        userMapper.addTableSize(uid, tableSize);
+    }
 
+    @Override
+    public void minusTableSize(String uid, float tableSize) {
+
+        userMapper.minusTableSize(uid, tableSize);
+    }
 
 }

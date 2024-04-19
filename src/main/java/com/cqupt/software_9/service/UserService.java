@@ -22,4 +22,7 @@ public interface UserService extends IService<User> {
      * @return
      */
     User getUserByUserName(String username);
+
+    void addTableSize(String uid, float tableSize);
+    void minusTableSize(String uid, float tableSize);
 }

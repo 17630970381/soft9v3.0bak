@@ -18,7 +18,7 @@ import java.util.Date;
 public class User implements Serializable, UserDetails {
 
     @TableId
-    private Integer uid;
+    private String uid;
 
     private String username;
 

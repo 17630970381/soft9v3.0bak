@@ -53,6 +53,16 @@ public class CategoryServiceAdapter implements CategoryService {
     }
 
     @Override
+    public List<CategoryEntity> getLevel2Label() {
+        return null;
+    }
+
+    @Override
+    public List<CategoryEntity> getLabelsByPid(String pid) {
+        return null;
+    }
+
+    @Override
     public boolean saveBatch(Collection<CategoryEntity> entityList, int batchSize) {
         return false;
     }

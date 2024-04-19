@@ -1,182 +1,149 @@
 package com.cqupt.software_9.controller;
 
 
-import com.alibaba.fastjson.JSON;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+
 import com.cqupt.software_9.common.Result;
 import com.cqupt.software_9.entity.AdminDataManage;
-import com.cqupt.software_9.entity.TableDescribeEntity;
-import com.cqupt.software_9.entity.User;
-import com.cqupt.software_9.entity.UserLog;
-import com.cqupt.software_9.mapper.AdminDataManageMapper;
-import com.cqupt.software_9.service.AdminDataManageService;
-import com.cqupt.software_9.service.TableDescribeService;
-import com.cqupt.software_9.service.UserLogService;
+import com.cqupt.software_9.entity.CategoryEntity;
+import com.cqupt.software_9.service.*;
 import com.cqupt.software_9.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.Resource;
-import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-
-// TODO 公共模块新增类
+// TODO 因为操作该模块的用户肯定是管理员，因此在插入日志时将role角色固定为0， 管理员状态
 
 @RestController
 @RequestMapping("/api/sysManage")
 public class AdminDataManageController {
     @Autowired
-    AdminDataManageService adminDataManageService;
-
+    private AdminDataManageService adminDataManageService;
     @Autowired
-    private UserLogService userLogService;
-
+    CategoryService categoryService;
     @Autowired
-    private UserService userService;
-
-    @Resource
-    private AdminDataManageMapper adminDataManageMapper;
-
+    UserService userService;
+    @Autowired
+    private UserLogService logService;
     // 文件上传
     @PostMapping("/uploadDataTable")
     public Result uploadDataTable(@RequestParam("file") MultipartFile file,
+//                             @RequestParam("tableId") String tableId,
+                             @RequestParam("pid") String pid,
                              @RequestParam("tableName") String tableName,
                              @RequestParam("userName") String userName,
                              @RequestParam("classPath") String classPath,
-                             @RequestParam("uid") String uid,
-                             @RequestParam("tableStatus") String tableStatus
+                             @RequestParam("uid") String uid,   // 传表中涉及到的用户的uid
+                             @RequestParam("tableStatus") String tableStatus,
+                             @RequestParam("tableSize") float tableSize,
+                             @RequestParam("current_uid") String current_uid //操作用户的uid
         ){
         // 保存表数据信息
-
         try {
-            //  操作日志记录
-            UserLog userLog = new UserLog();
-            userLog.setUsername(userName);
-            // userLog.setId(1);
-            userLog.setUid(Integer.parseInt(uid));
-            userLog.setOpTime(new Date());
-            List<String> featureList = adminDataManageService.uploadDataTable(file, tableName, userName, classPath, uid, tableStatus);
-
-            userLog.setOpType("管理员上传"+tableName+"成功");
-            userLogService.save(userLog);
-
+//            String tableId="";
+            List<String> featureList = adminDataManageService.uploadDataTable(file, pid, tableName, userName, classPath, uid, tableStatus, tableSize, current_uid);
             return Result.success("200",featureList); // 返回表头信息
         }catch (Exception e){
             e.printStackTrace();
+            logService.insertLog(current_uid, 0, e.getMessage());
             return Result.success(500,"文件上传异常");
         }
     }
 
     @GetMapping("/selectAdminDataManage")
-    public Result<AdminDataManage> selectAdminDataManage(){ // 参数表的Id
+    public Result<AdminDataManage> selectAdminDataManage(
+//            @RequestParam("current_uid") String current_uid
+    ){ // 参数表的Id
         List<AdminDataManage> adminDataManages = adminDataManageService.selectAllDataInfo();
 //        System.out.println("数据为："+ JSON.toJSONString(tableDescribeEntity));
-        return Result.success("200",adminDataManages);
+        Map<String, Object> ret =  new HashMap<>();
+        ret.put("list", adminDataManages);
+        ret.put("total", adminDataManages.size());
+
+        return Result.success("200",ret);
+//        return Result.success("200",adminDataManages);
     }
 
-    @GetMapping("/selectDataByTableName")
-    public Result<AdminDataManage> selectDataByTableName(@RequestParam("tableName") String tableName){
-        List<AdminDataManage> adminDataManages = adminDataManageService.selectDataByTableName(tableName);
+    @GetMapping("/selectDataByName")
+    public Result<AdminDataManage> selectDataByName(
+            @RequestParam("searchType") String searchType,
+            @RequestParam("name") String name
+//            @RequestParam("current_uid") String current_uid
+    ){
+        List<AdminDataManage> adminDataManages = adminDataManageService.selectDataByName(searchType, name);
 //        System.out.println("数据为："+ JSON.toJSONString(tableDescribeEntity));
-        return Result.success("200",adminDataManages);
+        Map<String, Object> ret =  new HashMap<>();
+        ret.put("list", adminDataManages);
+        ret.put("total", adminDataManages.size());
+
+        return Result.success("200",ret);
     }
 
-    @GetMapping("/selectDataByUserName")
-    public Result<AdminDataManage> selectDataByUserName(@RequestParam("userName") String userName){
-        List<AdminDataManage> adminDataManages = adminDataManageService.selectDataByUserName(userName);
-        return Result.success("200",adminDataManages);
+    @GetMapping("/selectDataById")
+    public Result<AdminDataManage> selectDataById(
+            @RequestParam("id") String id
+//            @RequestParam("current_uid") String current_uid
+    ){
+        AdminDataManage adminDataManage = adminDataManageService.selectDataById(id);
+//        System.out.println("数据为："+ JSON.toJSONString(tableDescribeEntity));
+
+        return Result.success("200",adminDataManage);
     }
 
-    @GetMapping("/selectDataByDiseaseName")
-    public Result<AdminDataManage> selectDataByDiseaseName(@RequestParam("diseaseName") String diseaseName){
-        List<AdminDataManage> adminDataManages = adminDataManageService.selectDataByDiseaseName(diseaseName);
-        return Result.success("200",adminDataManages);
-    }
-
-    @GetMapping("/updateById")
-    public Result<AdminDataManage> updateById(
+    @GetMapping("/updateAdminDataManage")
+    public Result<AdminDataManage> updateAdminDataManage(
             @RequestParam("id") String id,
+            @RequestParam("tableid") String tableid,
+            @RequestParam("oldTableName") String oldTableName,
             @RequestParam("tableName") String tableName,
             @RequestParam("tableStatus") String tableStatus,
-            @RequestParam("uid") String uid
+            @RequestParam("current_uid") String current_uid
             ){
-//        adminDataManageService.updateById(id, tableName, tableStatus);
-//        return Result.success("200","已经更改到数据库");
-        //  操作日志记录
+        adminDataManageService.updateInfo(id, tableid, oldTableName, tableName, tableStatus, current_uid);
 
+        return Result.success("200","已经更改到数据库");
+    }
 
-        try {
-            UserLog userLog = new UserLog();
-            User user = new User();
-            user = userService.getById(Integer.parseInt(uid));
-            userLog.setUsername(user.getUsername());
-            // userLog.setId(1);
-            userLog.setUid(Integer.parseInt(uid));
-            userLog.setOpTime(new Date());
-
-            // 假设 adminDataManageService 是一个服务层组件，并且 updateById 方法执行更新操作
-            // 这里假设 updateById 方法返回一个布尔值，表示更新是否成功
-            boolean updateResult = adminDataManageService.updateById(id, tableName, tableStatus);
-
-            if (updateResult) {
-                userLog.setOpType("管理员修改表"+tableName+"信息成功");
-
-                userLogService.save(userLog);
-                // 更新成功，返回成功结果，这里假设 AdminDataManage 是更新后的数据对象
-                AdminDataManage updatedData = adminDataManageMapper.selectById(id); // 假设有一个方法可以获取更新后的数据
-
-                return Result.success(200, "更新成功", updatedData);
-            } else {
-                // 更新失败，返回失败结果
-                return Result.success("400", "更新失败");
-            }
-        } catch (Exception e) {
-            // 处理可能出现的任何异常，例如数据库连接失败等
-            // 记录异常信息，根据实际情况决定是否需要发送错误日志
-            // 这里返回一个通用的错误信息
-            return Result.success("500", "更新失败，发生未知错误");
-        }
+    @GetMapping("/getLevel2Label")
+    public Result<List<CategoryEntity>> getLevel2Label(
+//            @RequestParam("current_uid") String current_uid
+    ){
+        List<CategoryEntity> res = categoryService.getLevel2Label();
+        return Result.success("200",res);
+    }
+    @GetMapping("/getLabelByPid")
+    public Result<List<CategoryEntity>> getLabelsByPid(
+            @RequestParam("pid") String pid
+//            @RequestParam("current_uid") String current_uid
+    ){
+        List<CategoryEntity> res = categoryService.getLabelsByPid(pid);
+        return Result.success("200",res);
     }
 
     @GetMapping("/deleteByTableName")
     public Result<AdminDataManage> deleteByTableName(
+            @RequestParam("id") String id,
+            @RequestParam("uid") String uid,
+            @RequestParam("tableSize") float tableSize,
+            @RequestParam("tableId") String tableId,
             @RequestParam("tableName") String tableName,
-            @RequestParam("uid") String uid
+            @RequestParam("current_uid") String current_uid
     ){
-//        adminDataManageService.deleteByTableName(tableName);
-//        return Result.success("200","已在数据库中删除了"+tableName+"表");
+//        System.out.println();
 
-        try {
-            // 假设 adminDataManageService 是一个服务层组件，并且 deleteByTableName 方法执行删除操作
-            // 这里假设 deleteByTableName 方法返回一个布尔值，表示删除是否成功
-            boolean deleteResult = adminDataManageService.deleteByTableName(tableName);
+        adminDataManageService.deleteByTableName(tableName);// 【因为数据库中表名是不能重名的】
+        logService.insertLog(current_uid, 0, "删除了public模式下储存的表:" + tableName);
+        adminDataManageService.deleteByTableId(tableId);// 在table_describe中删除记录
+        logService.insertLog(current_uid, 0, "删除了table_describe表中的"+tableName+"记录信息");
+        categoryService.removeNode(tableId);// 在category中设置is_delete为1
+        logService.insertLog(current_uid, 0, "在category中设置is_delete为1" );
 
-            //  操作日志记录
-
-            UserLog userLog = new UserLog();
-            User user = new User();
-            user = userService.getById(Integer.parseInt(uid));
-            userLog.setUsername(user.getUsername());
-            // userLog.setId(1);
-            userLog.setUid(Integer.parseInt(uid));
-            userLog.setOpTime(new Date());
-
-            if (deleteResult) {
-                userLog.setOpType("管理员删除表"+tableName+"成功");
-                userLogService.save(userLog);
-                // 删除成功，返回成功结果
-                return Result.success(200, "已在数据库中删除了表: " + tableName,adminDataManageMapper.selectAllDataInfo());
-            } else {
-                // 删除失败，返回失败结果
-                return Result.success("400", "删除失败，表: " + tableName + " 不存在或删除操作未执行");
-            }
-        } catch (Exception e) {
-            // 处理可能出现的任何异常，例如数据库连接失败等
-            // 记录异常信息，根据实际情况决定是否需要发送错误日志
-            // 这里返回一个通用的错误信息
-            return Result.success("500", "删除失败，发生未知错误");
-        }
+//        float tableSize = adminDataManage.getTableSize();
+        userService.addTableSize(uid, tableSize);
+        logService.insertLog(current_uid, 0, "在user表中修改容量" );
+        return Result.success("200","已在数据库中删除了"+tableName+"表");
     }
 }

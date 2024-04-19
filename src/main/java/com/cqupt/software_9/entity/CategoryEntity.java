@@ -26,8 +26,8 @@ public class CategoryEntity {
     private String uid;
     private String status;
     private String username;
-    private String is_filter;
-    private String is_upload;
+    private String isFilter;
+    private String isUpload;
     @TableField(exist = false)
     private List<CategoryEntity> children;
 

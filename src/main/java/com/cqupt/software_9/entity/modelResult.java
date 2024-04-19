@@ -17,7 +17,7 @@ public class modelResult {
     private String evaluate;
     private String picture;
     private String pkl;
-    private Integer uid;
+    private String uid;
     private String al;
     private String tablename;
     private String diseasename;

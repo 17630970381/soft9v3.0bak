@@ -30,6 +30,9 @@
     <select id="getall" resultType="com.cqupt.software_9.entity.User">
         SELECT * from "user"
     </select>
+    <select id="getUidByUsername" resultType="java.lang.String">
+        SELECT uid from "user"  WHERE username=#{username}
+    </select>
 
     <update id="updateByname">
     UPDATE software9.public."user"
@@ -37,4 +40,16 @@
     WHERE username = #{username}
   </update>
 
+    <update id="addTableSize">
+        update software9.public."user"  set upload_size = upload_size + ${tableSize} where uid = #{uid}
+    </update>
+
+    <update id="minusTableSize">
+        update software9.public."user"  set upload_size = upload_size - ${tableSize} where uid = #{uid}
+    </update>
+
+    <!--  User selectByUid(String uid); -->
+    <select id="selectByUid" resultType="com.cqupt.software_9.entity.User">
+        select * from software9.public."user" where uid = #{uid}
+    </select>
 </mapper>

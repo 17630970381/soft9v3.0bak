@@ -1,17 +1,18 @@
 package com.cqupt.software_9.service.imp;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.cqupt.software_9.entity.Model;
-import com.cqupt.software_9.entity.ModelRequestData;
-import com.cqupt.software_9.entity.modelResult;
-import com.cqupt.software_9.entity.trainAl;
+import com.cqupt.software_9.entity.*;
 import com.cqupt.software_9.mapper.ModelMapper;
+import com.cqupt.software_9.mapper.UserLogMapper;
+import com.cqupt.software_9.mapper.UserMapper;
 import com.cqupt.software_9.mapper.modelResultMapper;
 import com.cqupt.software_9.service.ModelService;
 import com.cqupt.software_9.tool.PythonRun;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -35,9 +36,16 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
     @Autowired
     private modelResultMapper modelResultMapper;
 
+    @Resource
+    private UserLogMapper userLogMapper;
+    @Resource
+    private UserMapper userMapper;
+
     @Override
     public Map<String, List<modelResult>> trainModel(trainAl trainAl) {
-
+        UserLog userLog = new UserLog();
+        userLog.setOpType("进行在线训练模型");
+        userLogMapper.insert(userLog);
         Map<String, List<modelResult>> resultMap = new HashMap<>();
         // 调用训练模型算法
         String tableName = trainAl.getTableName();
@@ -150,8 +158,24 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
         int a = modelMapper.insert(model);
         int b = modelResultMapper.insert(modelResult);
         if(a*b !=0){
+            UserLog userLog = new UserLog();
+            userLog.setUid(modelRequestData.getUid());
+            userLog.setOpType("保存模型成功");
+            QueryWrapper<User> wrapper = new QueryWrapper<>();
+            wrapper.eq("uid",modelRequestData.getUid());
+            User user = userMapper.selectOne(wrapper);
+            userLog.setUsername(user.getUsername());
+            userLogMapper.insert(userLog);
             return true;
         }else {
+            UserLog userLog2 = new UserLog();
+            userLog2.setUid(modelRequestData.getUid());
+            userLog2.setOpType("保存模型失败");
+            QueryWrapper<User> wrapper = new QueryWrapper<>();
+            wrapper.eq("uid",modelRequestData.getUid());
+            User user = userMapper.selectOne(wrapper);
+            userLog2.setUsername(user.getUsername());
+            userLogMapper.insert(userLog2);
             return false;
         }
     }

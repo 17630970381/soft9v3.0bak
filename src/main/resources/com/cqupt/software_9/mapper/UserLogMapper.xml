@@ -16,4 +16,7 @@
         id,uid,op_time,
         op_type,username
     </sql>
+    <select id="getAllLogs" resultType="com.cqupt.software_9.entity.UserLog">
+        SELECT * FROM user_log
+    </select>
 </mapper>
