@@ -21,4 +21,8 @@ public class TableDescribeEntity {
     private String createUser;
     private String createTime;
     private String classPath;
+    private String uid;
+    private String tableStatus;
+    private Double tableSize;
+
 }

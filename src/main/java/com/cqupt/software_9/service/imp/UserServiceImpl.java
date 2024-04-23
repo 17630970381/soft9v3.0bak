@@ -5,16 +5,22 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cqupt.software_9.entity.RespBean;
 import com.cqupt.software_9.entity.User;
 import com.cqupt.software_9.mapper.UserMapper;
+import com.cqupt.software_9.service.UserLogService;
 import com.cqupt.software_9.service.UserService;
+import com.cqupt.software_9.vo.UserPwd;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
@@ -27,6 +33,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Resource
     private UserMapper userMapper;
+
+    @Autowired
+    private UserLogService logService;
 
     @Resource
 //    private JwtTokenUtil jwtTokenUtil;
@@ -92,6 +101,55 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public void minusTableSize(String uid, float tableSize) {
 
         userMapper.minusTableSize(uid, tableSize);
+    }
+
+    //yx  新增
+    @Override
+    public void saveUser(User user) {
+        userMapper.saveUser(user);
+    }
+
+    @Override
+    public Map<String, Object> getUserPage(int pageNum, int pageSize) {
+        int offset = (pageNum - 1) * pageSize;
+        List<User> userList = userMapper.selectUserPage(offset, pageSize);
+        int total = userMapper.countUsers();
+
+        Map<String, Object> result = new HashMap<>();
+        result.put("total", total);
+        result.put("data", userList);
+        return result;
+    }
+
+    @Override
+    public List<User> querUser() {
+        List<User> users = userMapper.selectList(null);
+        return users;
+    }
+
+    @Override
+    @Transactional
+    public boolean updateStatusById(String uid, Integer role, double uploadSize, String status ,String userid) {
+        boolean b =  userMapper.updateStatusById(uid, role ,uploadSize,  status);
+        logService.insertLog(userid, 0, "修改了用户id为" + uid+"的信息");
+        if ( b )  return true;
+        return false;
+    }
+
+    @Override
+    @Transactional
+    public boolean removeUserById(String uid,String userid) {
+        User user = userMapper.selectByUid(uid);
+        userMapper.removeUserById(uid);
+        String uname = user.getUsername();
+        logService.insertLog(userid, 0, "删除了用户名为" + uname+"的信息");
+        return true;
+    }
+
+    @Override
+    public boolean updatePwd(UserPwd user) {
+        userMapper.updatePwd(user);
+        return false;
     }
 
 }

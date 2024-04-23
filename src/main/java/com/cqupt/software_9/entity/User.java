@@ -1,5 +1,6 @@
 package com.cqupt.software_9.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -44,6 +45,9 @@ public class User implements Serializable, UserDetails {
 
     private static final long serialVersionUID = 1L;
 
+    // 新增字段
+    @TableField(exist = false)
+    private String code;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

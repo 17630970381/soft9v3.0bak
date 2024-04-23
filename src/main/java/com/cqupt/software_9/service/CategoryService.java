@@ -13,6 +13,8 @@ public interface CategoryService extends IService<CategoryEntity> {
     List<CategoryEntity> getCategory();
     void removeNode(String id);
 
+    void removeNode(String id, String label);
+
     void addParentDisease(String diseaseName);
 
     //    新增疾病管理模块
@@ -23,4 +25,12 @@ public interface CategoryService extends IService<CategoryEntity> {
 
     List<CategoryEntity> getLevel2Label();
     List<CategoryEntity> getLabelsByPid(@Param("pid") String pid);
+
+    //ssq
+     List<CategoryEntity> getCategory(String uid);
+    void changeStatus(CategoryEntity categoryEntity);
+    List<CategoryEntity> getTaskCategory();
+
+
+
 }

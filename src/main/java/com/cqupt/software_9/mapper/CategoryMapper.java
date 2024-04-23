@@ -15,6 +15,7 @@ import java.util.List;
 public interface CategoryMapper extends BaseMapper<CategoryEntity> {
     void removeNode(@Param("id") String id);
 
+
     void savetest(CategoryEntity categoryNode);
 
     Integer countDisease();
@@ -31,4 +32,15 @@ public interface CategoryMapper extends BaseMapper<CategoryEntity> {
     List<CategoryEntity> getLabelsByPid(@Param("pid") String pid);
 
     void updateTableNameByTableId(@Param("tableid") String tableid, @Param("tableName") String tableName, @Param("tableStatus") String tableStatus);
+
+
+    //ssq
+    void removeTable(@Param("label") String label);
+    void changeStatusToShare(@Param("id") String id);
+
+    void changeStatusToPrivate(@Param("id") String id);
+
+    List<CategoryEntity> getSpDisease();
+    List<CategoryEntity> getComDisease();
+
 }

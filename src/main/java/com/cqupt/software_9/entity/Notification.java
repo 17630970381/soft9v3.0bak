@@ -1,5 +1,8 @@
 package com.cqupt.software_9.entity;
 
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -9,31 +12,19 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Data
-@NoArgsConstructor
+@TableName(value = "public.notification")
 @AllArgsConstructor
-@TableName(value ="notification",schema = "public")
+@NoArgsConstructor
 public class Notification {
-    @TableId
+    @TableField(value = "info_id")
+    @TableId(type = IdType.AUTO)
     private Integer infoId;
-
     private Integer uid;
-
     private String username;
-
     private Date createTime;
-
     private String title;
-
     private String content;
-
     private Date updateTime;
-
     private String isDelete;
-
     private String type;
-
-
-
-
-
 }

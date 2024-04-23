@@ -8,21 +8,24 @@ import com.cqupt.software_9.mapper.UserLogMapper;
 import com.cqupt.software_9.mapper.UserMapper;
 import com.cqupt.software_9.mapper.modelResultMapper;
 import com.cqupt.software_9.service.ModelService;
+import com.cqupt.software_9.service.Request.RuntimeTaskRequest;
+import com.cqupt.software_9.service.Response.OnlineServiceResponse;
+import com.cqupt.software_9.service.Response.RuntimeTaskResponse;
+import com.cqupt.software_9.service.RuntimeTaskService;
 import com.cqupt.software_9.tool.PythonRun;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Service
 public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements ModelService {
 
+    @Resource
+    private RuntimeTaskService runtimeTaskService;
 
     @Autowired
     private PythonRun pythonRun; // 注入 PythonRun 类的实例
@@ -134,7 +137,7 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
     }
 
     @Override
-    public boolean insertModelResultAndModel(ModelRequestData modelRequestData) {
+    public boolean insertModelResultAndModel(ModelRequestData modelRequestData) throws Exception {
         modelResult modelResult = new modelResult();
         Model model = new Model();
         String modelname = modelRequestData.getModelname().concat(modelRequestData.getAl());
@@ -157,6 +160,7 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
         model.setFeature(modelRequestData.getFeature());
         int a = modelMapper.insert(model);
         int b = modelResultMapper.insert(modelResult);
+        saveModelResult(modelRequestData);
         if(a*b !=0){
             UserLog userLog = new UserLog();
             userLog.setUid(modelRequestData.getUid());
@@ -164,8 +168,9 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
             QueryWrapper<User> wrapper = new QueryWrapper<>();
             wrapper.eq("uid",modelRequestData.getUid());
             User user = userMapper.selectOne(wrapper);
-            userLog.setUsername(user.getUsername());
+            userLog.setUsername(modelRequestData.getPublisher());
             userLogMapper.insert(userLog);
+
             return true;
         }else {
             UserLog userLog2 = new UserLog();
@@ -174,16 +179,43 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
             QueryWrapper<User> wrapper = new QueryWrapper<>();
             wrapper.eq("uid",modelRequestData.getUid());
             User user = userMapper.selectOne(wrapper);
-            userLog2.setUsername(user.getUsername());
+            userLog2.setUsername(modelRequestData.getPublisher());
             userLogMapper.insert(userLog2);
             return false;
         }
+    }
+
+    protected boolean saveModelResult(ModelRequestData modelRequestData) throws Exception {
+        List<String> args=new LinkedList<>();
+        String feature = "--feature=" + modelRequestData.getFeature();
+        String target = "--target=" + modelRequestData.getTarget();
+        String p_calculation_rates = "--p_calculation_rates="+ modelRequestData.getP_calculation_rates();
+        String b_calculation_rates = "--b_calculation_rates="+ modelRequestData.getB_calculation_rates();
+        String modelname = "--modelname="+ modelRequestData.getModelname().concat(modelRequestData.getAl());;
+        String tablename = "--tablename="+ modelRequestData.getTablename();
+        args.add(feature);
+        args.add(p_calculation_rates);
+        args.add(b_calculation_rates);
+        args.add(modelname);
+        args.add(tablename);
+        args.add(target);
+        System.out.println(args);
+        RuntimeTaskRequest runtimeTaskRequest=new RuntimeTaskRequest();
+        runtimeTaskRequest.setPyPath("E:\\soft\\software9-3\\software9\\src\\main\\resources\\Algorithm\\python\\detail.py");
+        OnlineServiceResponse response=new OnlineServiceResponse();
+        runtimeTaskRequest.setArgs(args);
+        RuntimeTaskResponse taskResponse=runtimeTaskService.submitTask(runtimeTaskRequest);
+        response.setRes(taskResponse.getRes());
+        return true;
+
     }
 
     @Override
     public String getfeabymodelname(String modelname) {
         return modelMapper.getFeaBymodelName(modelname);
     }
+
+
 
 
 }

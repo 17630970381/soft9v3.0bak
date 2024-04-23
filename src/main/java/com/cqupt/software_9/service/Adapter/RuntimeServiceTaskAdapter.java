@@ -16,6 +16,8 @@ public class RuntimeServiceTaskAdapter implements RuntimeTaskService {
         return null;
     }
 
+
+
     @Override
     public void killTask() {
 
@@ -33,6 +35,11 @@ public class RuntimeServiceTaskAdapter implements RuntimeTaskService {
 
     @Override
     public List<RuntimeTaskResponse> queryByTaskTypeAndBizIdList(String taskType, Integer bizId) {
+        return null;
+    }
+
+    @Override
+    public RuntimeTaskResponse submitTask2(RuntimeTaskRequest runtimeTaskRequest) throws Exception {
         return null;
     }
 }

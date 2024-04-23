@@ -17,7 +17,9 @@ public interface ModelService extends IService<Model> {
     List<Model> upall();
 
 
-    boolean insertModelResultAndModel(ModelRequestData modelRequestData);
+    boolean insertModelResultAndModel(ModelRequestData modelRequestData) throws Exception;
 
     String getfeabymodelname(String modelname);
+
+
 }

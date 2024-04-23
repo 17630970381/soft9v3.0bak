@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.cqupt.software_9.entity.CategoryEntity.*;
+
 @Service
 public class CategoryServiceImpl extends CategoryServiceAdapter {
     @Autowired
@@ -23,28 +25,70 @@ public class CategoryServiceImpl extends CategoryServiceAdapter {
     @Autowired
     CategoryMapper categoryMapper;
     @Override
-    public List<CategoryEntity> getCategory() {
-
+//    public List<CategoryEntity> getCategory() {
+//
+//        // 获取所有目录行程树形结构
+//        List<CategoryEntity> categoryEntities = dataManagerMapper.selectList(null);
+//        // 获取所有级结构
+//        List<CategoryEntity> treeData = categoryEntities.stream().filter((categoryEntity) -> {
+//            return categoryEntity.getParentId().equals("0") && categoryEntity.getIsDelete()==0;
+//        }).map((level1Cat) -> {
+//            level1Cat.setChildren(getCatChildren(level1Cat, categoryEntities));;
+//            return level1Cat;
+//        }).collect(Collectors.toList());
+//
+//        return treeData;
+//    }
+    //ssq
+    public List<CategoryEntity> getCategory(String uid) {
+        List<CategoryEntity> categoryEntities_private = new ArrayList<CategoryEntity>();
+        List<CategoryEntity> categoryEntities_share = new ArrayList<CategoryEntity>();
+        List<CategoryEntity> categoryEntities_common = new ArrayList<CategoryEntity>();
         // 获取所有目录行程树形结构
-        List<CategoryEntity> categoryEntities = dataManagerMapper.selectList(null);
+        List<CategoryEntity> categoryEntities = categoryMapper.selectList(null);
         // 获取所有级结构
         List<CategoryEntity> treeData = categoryEntities.stream().filter((categoryEntity) -> {
             return categoryEntity.getParentId().equals("0") && categoryEntity.getIsDelete()==0;
         }).map((level1Cat) -> {
-            level1Cat.setChildren(getCatChildren(level1Cat, categoryEntities));;
+            level1Cat.setChildren(getCatChildren(level1Cat, categoryEntities));
             return level1Cat;
         }).collect(Collectors.toList());
 
-        return treeData;
+
+        CategoryEntity copiedTree1 = copyPrivareTreeStructure(treeData.get(0),uid);
+        copiedTree1.setLabel("私有数据集");
+        CategoryEntity copiedTree2 = copyShareTreeStructure(treeData.get(0));
+        copiedTree2.setLabel("共享数据集");
+        CategoryEntity copiedTree3 = copyCommonTreeStructure(treeData.get(0));
+        copiedTree3.setLabel("公共数据集");
+        List<CategoryEntity> res = new ArrayList<CategoryEntity>();
+        res.add(copiedTree1);
+        res.add(copiedTree2);
+        res.add(copiedTree3);
+        return res;
     }
 
 
 
 
+
     // 获取第二层目录
+//    private List<CategoryEntity> getSecondLevelChildren(String parentId) {
+//        // 获取所有第二层目录
+//        List<CategoryEntity> secondLevelCategories = dataManagerMapper.selectList(null).stream()
+//                .filter(categoryEntity -> categoryEntity.getParentId().equals(parentId) && categoryEntity.getIsDelete() == 0)
+//                .map(level2Cat -> {
+//                    level2Cat.setChildren(new ArrayList<>()); // 第二层目录没有子目录
+//                    return level2Cat;
+//                })
+//                .collect(Collectors.toList());
+//
+//        return secondLevelCategories;
+//    }
+    //ssq
     private List<CategoryEntity> getSecondLevelChildren(String parentId) {
         // 获取所有第二层目录
-        List<CategoryEntity> secondLevelCategories = dataManagerMapper.selectList(null).stream()
+        List<CategoryEntity> secondLevelCategories = categoryMapper.selectList(null).stream()
                 .filter(categoryEntity -> categoryEntity.getParentId().equals(parentId) && categoryEntity.getIsDelete() == 0)
                 .map(level2Cat -> {
                     level2Cat.setChildren(new ArrayList<>()); // 第二层目录没有子目录
@@ -63,8 +107,24 @@ public class CategoryServiceImpl extends CategoryServiceAdapter {
         categoryMapper.removeNode(id);
 
     }
+    //ssq
+    public void removeNode(String id, String label) {
+        categoryMapper.removeNode(id);
+        categoryMapper.removeTable(label);
+    }
 
     // 获取1级目录下的所有子结构
+//    private List<CategoryEntity> getCatChildren(CategoryEntity level1Cat, List<CategoryEntity> categoryEntities) {
+//        List<CategoryEntity> children = categoryEntities.stream().filter((categoryEntity) -> {
+//            return categoryEntity.getParentId().equals(level1Cat.getId()) && categoryEntity.getIsDelete()==0; // 获取当前分类的所有子分类
+//        }).map((child) -> {
+//            // 递归设置子分类的所有子分类
+//            child.setChildren(getCatChildren(child, categoryEntities));
+//            return child;
+//        }).collect(Collectors.toList());
+//        return children;
+//    }
+    //ssq
     private List<CategoryEntity> getCatChildren(CategoryEntity level1Cat, List<CategoryEntity> categoryEntities) {
         List<CategoryEntity> children = categoryEntities.stream().filter((categoryEntity) -> {
             return categoryEntity.getParentId().equals(level1Cat.getId()) && categoryEntity.getIsDelete()==0; // 获取当前分类的所有子分类
@@ -77,12 +137,43 @@ public class CategoryServiceImpl extends CategoryServiceAdapter {
     }
 
     @Override
+//    public void addParentDisease(String diseaseName) {
+//        CategoryEntity categoryEntity = new CategoryEntity(null, 1, diseaseName, "0", 0, 0, "1", null, "admin", null,null,null,0,0,0);
+//        categoryMapper.insert(categoryEntity);
+//    }
+    //ssq
     public void addParentDisease(String diseaseName) {
-        CategoryEntity categoryEntity = new CategoryEntity(null, 1, diseaseName, "0", 0, 0, "1", null, "admin", null,null,null,0,0,0);
+        CategoryEntity categoryEntity = new CategoryEntity(null, 1, diseaseName, "0", 0, 0, null, null,null,null,null,null,0,0,0);
         categoryMapper.insert(categoryEntity);
     }
 
+    @Override
+    public void changeStatus(CategoryEntity categoryEntity) {
+        System.out.println(categoryEntity.getStatus());
+        if (categoryEntity.getStatus().equals("0")){
+            categoryMapper.changeStatusToShare(categoryEntity.getId());
+        }
+        else if(categoryEntity.getStatus().equals("1")){
+            categoryMapper.changeStatusToPrivate(categoryEntity.getId());
+        }
 
+    }
+
+    @Override
+    public List<CategoryEntity> getTaskCategory() {
+
+        // 获取所有目录行程树形结构
+        List<CategoryEntity> categoryEntities = categoryMapper.selectList(null);
+        // 获取所有级结构
+        List<CategoryEntity> treeData = categoryEntities.stream().filter((categoryEntity) -> {
+            return categoryEntity.getParentId().equals("0") && categoryEntity.getIsDelete()==0;
+        }).map((level1Cat) -> {
+            level1Cat.setChildren(getCatChildren(level1Cat, categoryEntities));
+            return level1Cat;
+        }).collect(Collectors.toList());
+
+        return treeData;
+    }
 
 
     //添加疾病管理模块
@@ -93,7 +184,7 @@ public class CategoryServiceImpl extends CategoryServiceAdapter {
 
         // 获取所有级结构
         List<CategoryEntity> treeData = categoryEntities.stream().filter((categoryEntity) -> {
-            return categoryEntity.getParentId().equals("0") && categoryEntity.getIsDelete()==0;
+            return categoryEntity.getParentId().equals("1") && categoryEntity.getIsDelete()==0;
         }).map((level1Cat) -> {
             Pair<List<CategoryEntity>,int[]> pair = getSecondLevelChildren1((level1Cat.getId()));
             level1Cat.setChildren(pair.getKey());
@@ -180,12 +271,12 @@ public class CategoryServiceImpl extends CategoryServiceAdapter {
     private Result addFirstDisease(AddDiseaseVo addDiseaseVo){
         //判断该病种是否已经存在
         QueryWrapper<CategoryEntity> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("parent_id", "0")
+        queryWrapper.eq("parent_id", "1")
                 .eq("label", addDiseaseVo.getFirstDisease())
                 .eq("is_delete",0);
         CategoryEntity category = categoryMapper.selectOne(queryWrapper);
         if(category==null){
-            CategoryEntity categoryEntity = new CategoryEntity(null, 1, addDiseaseVo.getFirstDisease(), "0", 0, 0, addDiseaseVo.getUid(), null, addDiseaseVo.getUsername(), null,null,null,0,0,0);
+            CategoryEntity categoryEntity = new CategoryEntity(null, 2, addDiseaseVo.getFirstDisease(), "1", 0, 0, addDiseaseVo.getUid(), null, addDiseaseVo.getUsername(), null,null,null,0,0,0);
             categoryMapper.insert(categoryEntity);
             return Result.success("添加成功");
         }else{
@@ -195,17 +286,17 @@ public class CategoryServiceImpl extends CategoryServiceAdapter {
     private Result addSecondDisease(AddDiseaseVo addDiseaseVo){
         //获取一级病种，若不存在则插入,并取得一级病种id
         QueryWrapper<CategoryEntity> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("parent_id", "0")
+        queryWrapper.eq("parent_id", "1")
                 .eq("label", addDiseaseVo.getFirstDisease())
                 .eq("is_delete",0);
         CategoryEntity category = categoryMapper.selectOne(queryWrapper);
         String categoryId;
         if(category==null){
             System.out.println("该一级目录不存在，已添加");
-            CategoryEntity categoryEntity = new CategoryEntity(null, 1, addDiseaseVo.getFirstDisease(), "0", 0, 0, addDiseaseVo.getUid(), null, addDiseaseVo.getUsername(),null,null, null,0,0,0);
+            CategoryEntity categoryEntity = new CategoryEntity(null, 2, addDiseaseVo.getFirstDisease(), "1", 0, 0, addDiseaseVo.getUid(), null, addDiseaseVo.getUsername(),null,null, null,0,0,0);
             categoryMapper.insert(categoryEntity);
             QueryWrapper<CategoryEntity> queryWrapper1 = new QueryWrapper<>();
-            queryWrapper.eq("parent_id", "0")
+            queryWrapper.eq("parent_id", "1")
                     .eq("label", addDiseaseVo.getFirstDisease())
                     .eq("is_delete",0);
             CategoryEntity category1 = categoryMapper.selectOne(queryWrapper);
@@ -222,7 +313,7 @@ public class CategoryServiceImpl extends CategoryServiceAdapter {
         CategoryEntity category2 = categoryMapper.selectOne(queryWrapper2);
         System.out.println(category2);
         if(category2==null){
-            CategoryEntity categoryEntity2 = new CategoryEntity(null, 2, addDiseaseVo.getSecondDisease(), categoryId, 0, 0, addDiseaseVo.getUid(), null, addDiseaseVo.getUsername(), null,null,null,0,0,0);
+            CategoryEntity categoryEntity2 = new CategoryEntity(null, 3, addDiseaseVo.getSecondDisease(), categoryId, 0, 0, addDiseaseVo.getUid(), null, addDiseaseVo.getUsername(), null,null,null,0,0,0);
             categoryMapper.insert(categoryEntity2);
             System.out.println("Chenggong");
             return Result.success("添加成功");
@@ -233,7 +324,7 @@ public class CategoryServiceImpl extends CategoryServiceAdapter {
     @Override
     public Result updateCategory(UpdateDiseaseVo updateDiseaseVo){
         //如果修改的是一级疾病目录
-        if(updateDiseaseVo.getParentId().equals("0")){
+        if(updateDiseaseVo.getParentId().equals("1")){
             UpdateWrapper<CategoryEntity> updateWrapper = new UpdateWrapper<>();
             updateWrapper.eq("id", updateDiseaseVo.getCategoryId())
                     .set("label", updateDiseaseVo.getFirstDisease())

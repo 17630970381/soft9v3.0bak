@@ -73,6 +73,37 @@ public class PythonRun {
         in.close();
         return result.toString();
     }
+    public String run2(String path, String request) throws Exception {
+//        path = createNewPy(path);
+        List<String> inputArgs = new LinkedList<>(Arrays.asList(environment, path));//设定命令行
+        inputArgs.add(request);
+        inputArgs.removeIf(Objects::isNull);//移除可能的 null 值
+
+        System.out.println(inputArgs+"检验");
+        Process proc;
+        String line;
+        StringBuilder result = new StringBuilder();
+        System.out.println(inputArgs.toArray(new String[0]));
+        System.out.println(JSONObject.toJSONString(inputArgs.toArray(new String[0])));
+        proc = Runtime.getRuntime().exec(inputArgs.toArray(new String[0]));  //执行py文件
+        BufferedReader in = getConsoleReader(proc.getInputStream());
+        while ((line = in.readLine()) != null) {
+            result.append(line).append("\n");
+        }
+        int exitValue = proc.waitFor();
+        log.info("Python exitValue：" + exitValue);
+        if (exitValue == 0) log.info("Python 代码结果：" + result);
+        else {
+            BufferedReader errorReader = getConsoleReader(proc.getErrorStream());
+            while ((line = errorReader.readLine()) != null) {
+                log.error(line);
+            }
+            throw new Exception("脚本运行出错详见日志");
+        }
+        in.close();
+        return result.toString();
+    }
+
 
     public String publicAl(String path, String tableName, String target, String[] fea,
                            String algorithmName, Map<String, String> algorithmAttributes) throws Exception {

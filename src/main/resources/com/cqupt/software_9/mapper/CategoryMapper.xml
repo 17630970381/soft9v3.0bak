@@ -16,6 +16,9 @@
     <delete id="removeNode">
         DELETE FROM category WHERE id = #{id}
     </delete>
+    <delete id="removeTable">
+        drop table "${label}";
+    </delete>
     <select id="countDisease" resultType="java.lang.Integer">
         SELECT COUNT(*) FROM category WHERE is_leafs = 0
     </select>
@@ -34,8 +37,23 @@
     <select id="getLabelsByPid" resultType="com.cqupt.software_9.entity.CategoryEntity">
         SELECT * FROM category WHERE parent_id = #{pid};
     </select>
-
+    <select id="getLabelByPid" resultType="java.lang.String">
+        SELECT "label" FROM software9.category WHERE id = #{pid};
+    </select>
+    <select id="getSpDisease" resultType="com.cqupt.software_9.entity.CategoryEntity">
+        SELECT * FROM category WHERE is_common = 0 and is_leafs = 1;
+    </select>
+    <select id="getComDisease" resultType="com.cqupt.software_9.entity.CategoryEntity">
+    SELECT * FROM category WHERE is_common = 1 and is_leafs = 1; </select>
     <update id="updateTableNameByTableId">
         update category set label=#{tableName}, status=#{tableStatus} where id = CAST(#{tableid} AS VARCHAR);;
+    </update>
+    <update id="changeStatusToShare">
+        update category set status=1 where id = #{id} ;
+        update table_describe set table_status=1 where table_id = #{id};
+    </update>
+    <update id="changeStatusToPrivate">
+        update category set status=0 where id = #{id};
+        update table_describe set table_status=0 where table_id = #{id};
     </update>
 </mapper>

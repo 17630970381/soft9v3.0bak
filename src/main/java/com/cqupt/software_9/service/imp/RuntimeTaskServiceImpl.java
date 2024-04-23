@@ -59,4 +59,23 @@ public class RuntimeTaskServiceImpl extends RuntimeServiceTaskAdapter {
         System.out.println("res" + res);
         return taskResponse;
     }
+
+    @Override
+    public RuntimeTaskResponse submitTask2(RuntimeTaskRequest request) throws Exception {
+        //System.out.println(request+"1");
+        RuntimeTaskResponse taskResponse = new RuntimeTaskResponse();
+        BeanUtils.copyProperties(request, taskResponse);
+        taskResponse.setTaskStartTime(new Date().getTime());
+        System.out.println("接收到的PyPath" + request.getPyPath());
+        System.out.println("接收到的request" + request.getRequest());
+        //任务信息入库
+        //提交任务
+        taskResponse.setTaskFinishTime(new Date().getTime());
+        String a1 = pythonRun.run2(request.getPyPath(), request.getRequest());
+        System.out.println("a1=" + a1);
+        List<String> res = JSONObject.parseArray(pythonRun.run2(request.getPyPath(), request.getRequest()), String.class);
+        taskResponse.setRes(res);
+        System.out.println("res" + res);
+        return taskResponse;
+    }
 }

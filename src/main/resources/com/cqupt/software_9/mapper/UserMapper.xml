@@ -52,4 +52,21 @@
     <select id="selectByUid" resultType="com.cqupt.software_9.entity.User">
         select * from software9.public."user" where uid = #{uid}
     </select>
+
+    <!-- 用户管理新增-->
+    <insert id="saveUser" parameterType="com.cqupt.software_9.entity.User">
+        INSERT INTO software9.public."user" ("uid","username", "password", "create_time","update_time", "role", "user_status", "answer_1" , "answer_2", "answer_3" , "upload_size" )
+        VALUES ('${user.uid}','${user.username}', '${user.password}', '${user.createTime}','${user.updateTime}','${user.role}','${user.userStatus}','${user.answer_1}','${user.answer_2}','${user.answer_3}','${user.uploadSize}')
+    </insert>
+    <select id="selectUserPage" resultType="com.cqupt.software_9.entity.User">
+        SELECT * FROM software9.public."user" LIMIT #{pageSize} OFFSET #{offset}
+    </select>
+    <select id="countUsers" resultType="int"> SELECT COUNT(*) FROM software9.public."user" </select>
+    <update id="updateStatusById">
+        update software9.public."user" set user_status = ${status} , role = ${role} , upload_size = ${uploadSize}
+        where uid = #{uid}
+    </update>
+    <update id="removeUserById"> DELETE FROM software9.public."user" WHERE uid= #{uid} </update>
+
+    <update id="updatePwd"> update software9.public."user" set password = '${password}' where username = #{username} </update>
 </mapper>

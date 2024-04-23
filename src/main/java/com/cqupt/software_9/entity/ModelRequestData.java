@@ -23,4 +23,7 @@ public class ModelRequestData {
     private LocalDateTime createtime;
     private String modeurl;
     private String feature;
+    private float  p_calculation_rates;
+    private float  b_calculation_rates;
+    private String  target;
 }

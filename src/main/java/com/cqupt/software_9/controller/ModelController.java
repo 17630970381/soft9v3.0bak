@@ -210,7 +210,7 @@ public class ModelController {
 
 
     @PostMapping("/modelResult")
-    public boolean insertModelResult(@RequestBody ModelRequestData modelRequestData) {
+    public boolean insertModelResult(@RequestBody ModelRequestData modelRequestData) throws Exception {
         return modelService.insertModelResultAndModel(modelRequestData);
     }
 
@@ -380,4 +380,8 @@ public class ModelController {
     public Integer getModelNum(){
         return modelMapper.getModelNum();
     }
+
+
+
+
 }

@@ -10,6 +10,7 @@ public interface RuntimeTaskService {
 
     RuntimeTaskResponse submitTask1(RuntimeTaskRequest request) throws Exception;
 
+
     void killTask();
 
     RuntimeTaskResponse queryById(Integer id);
@@ -17,4 +18,6 @@ public interface RuntimeTaskService {
     List<RuntimeTaskResponse> queryByBizId(Integer bizId);
 
     List<RuntimeTaskResponse> queryByTaskTypeAndBizIdList(String taskType, Integer bizId);
+
+    RuntimeTaskResponse submitTask2(RuntimeTaskRequest runtimeTaskRequest) throws Exception;
 }

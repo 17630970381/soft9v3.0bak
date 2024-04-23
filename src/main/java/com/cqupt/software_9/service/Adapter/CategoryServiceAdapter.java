@@ -28,6 +28,11 @@ public class CategoryServiceAdapter implements CategoryService {
     }
 
     @Override
+    public void removeNode(String id, String label) {
+
+    }
+
+    @Override
     public void addParentDisease(String diseaseName) {
 
     }
@@ -59,6 +64,21 @@ public class CategoryServiceAdapter implements CategoryService {
 
     @Override
     public List<CategoryEntity> getLabelsByPid(String pid) {
+        return null;
+    }
+
+    @Override
+    public List<CategoryEntity> getCategory(String uid) {
+        return null;
+    }
+
+    @Override
+    public void changeStatus(CategoryEntity categoryEntity) {
+
+    }
+
+    @Override
+    public List<CategoryEntity> getTaskCategory() {
         return null;
     }
 
