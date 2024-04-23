@@ -4,16 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UpdateDiseaseVo {
-    private String categoryId;
-    private String diseaseName;
-    private String oldName;
-    private String parentDisease;
-    private String parentId;
-    private String icdCode;
+public class DeleteDiseaseVo {
+    private List<String> deleteIds;
+    private List<String> deleteNames;
     private String username;
     private String uid;
 }

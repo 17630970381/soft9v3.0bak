@@ -43,8 +43,8 @@ public class CategoryServiceAdapter implements CategoryService {
     }
 
     @Override
-    public Result addCategory(AddDiseaseVo addDiseaseVo) {
-        return null;
+    public int addCategory(AddDiseaseVo addDiseaseVo) {
+        return 1;
     }
 
     @Override

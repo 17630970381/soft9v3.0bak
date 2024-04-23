@@ -2,17 +2,20 @@ package com.cqupt.software_9.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.cqupt.software_9.common.Result;
 import com.cqupt.software_9.entity.Category2Entity;
 import com.cqupt.software_9.entity.CategoryEntity;
 import com.cqupt.software_9.entity.TableDescribeEntity;
 import com.cqupt.software_9.mapper.CategoryMapper;
 import com.cqupt.software_9.mapper.DataManagerMapper;
-import com.cqupt.software_9.mapper.UserMapper;
 import com.cqupt.software_9.mapper.TableDescribeMapper;
+import com.cqupt.software_9.mapper.UserMapper;
 import com.cqupt.software_9.service.Category2Service;
 import com.cqupt.software_9.service.CategoryService;
+import com.cqupt.software_9.service.UserLogService;
 import com.cqupt.software_9.vo.AddDiseaseVo;
+import com.cqupt.software_9.vo.DeleteDiseaseVo;
 import com.cqupt.software_9.vo.UpdateDiseaseVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +25,7 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.StringJoiner;
 
 // TODO 公共模块新增类
 @RestController
@@ -33,10 +37,16 @@ public class CategoryController {
     Category2Service category2Service;
 
     @Autowired
+    private UserLogService logService;
+
+    @Autowired
     private CategoryMapper categorymapper;
 
     @Resource
     private DataManagerMapper dataManagerMapper;
+
+    @Autowired
+    CategoryMapper categoryMapper;
 
     @Resource
     private TableDescribeMapper tableDescribeMapper;
@@ -242,25 +252,47 @@ public class CategoryController {
     public Result<List<CategoryEntity>> getAllDisease(){
         List<CategoryEntity> list = categoryService.getAllDisease();
         System.out.println(JSON.toJSONString(list));
-        System.out.println("list");
-        System.out.println(list);
         return Result.success("200",list);
+    }
+
+    /**
+     * 新增检查疾病名是否存在
+     */
+    @GetMapping("/category/checkDiseaseName/{diseaseName}")
+    public Result checkDiseaseName(@PathVariable String diseaseName){
+        QueryWrapper<CategoryEntity> queryWrapper = Wrappers.query();
+        queryWrapper.eq("label", diseaseName)
+                .eq("is_delete", 0);
+        CategoryEntity category = categoryMapper.selectOne(queryWrapper);
+        return category==null?Result.success("200","病种名可用"):Result.fail("400","病种名已存在");
     }
     @PostMapping("/category/addCategory")
     public Result addCategory(@RequestBody AddDiseaseVo addDiseaseVo){
-        return categoryService.addCategory(addDiseaseVo);
+        if(categoryService.addCategory(addDiseaseVo)>0){
+
+            logService.insertLog(addDiseaseVo.getUid(), 0, "添加病种"+addDiseaseVo.getFirstDisease());
+
+            return Result.success("添加病种成功");
+        }else{
+
+            logService.insertLog(addDiseaseVo.getUid(), 0, "添加病种失败");
+            return Result.fail("添加病种失败");
+        }
     }
     @PostMapping("/category/updateCategory")
     public Result updateCategory(@RequestBody UpdateDiseaseVo updateDiseaseVo){
+        logService.insertLog(updateDiseaseVo.getUid(), 0, "修改病种"+updateDiseaseVo.getOldName()+"为"+updateDiseaseVo.getDiseaseName());
         return categoryService.updateCategory(updateDiseaseVo);
-
-//        return categoryService.updateById(categoryEntity)? Result.success("修改成功"):Result.fail("修改失败");
     }
     @PostMapping("/category/deleteCategory")
-    public Result deleteCategory(@RequestBody List<String> deleteIds){
-        System.out.println("删除");
-        System.out.println(deleteIds);
-        categoryService.removeCategorys(deleteIds);
+    public Result deleteCategory(@RequestBody DeleteDiseaseVo deleteDiseaseVo){
+        StringJoiner joiner = new StringJoiner(",");
+        for (String str : deleteDiseaseVo.getDeleteNames()) {
+            joiner.add(str);
+        }
+        logService.insertLog(deleteDiseaseVo.getUid(), 0, "删除病种："+joiner.toString());
+
+        categoryService.removeCategorys(deleteDiseaseVo.getDeleteIds());
         return Result.success("删除成功");
     }
 
