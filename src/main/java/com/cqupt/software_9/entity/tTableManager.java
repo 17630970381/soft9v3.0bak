@@ -87,6 +87,6 @@ public class tTableManager implements Serializable {
     private String  is_clinical_feature;
     private String  is_social_environment;
     private String  is_label;
-    private Integer userid;
+    private String userid;
 }
 

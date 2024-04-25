@@ -488,7 +488,7 @@ public class FileServiceImpl extends FileServiceAdapter {
 
     //在线训练
     @Override
-    public UploadResult fileUpload(MultipartFile file, String modelname, String diseasename,String publisher,Integer uid) throws IOException {
+    public UploadResult fileUpload(MultipartFile file, String modelname, String diseasename,String publisher,String uid) throws IOException {
         System.out.println(file.getOriginalFilename());
         DataManager dataManager = new DataManager();
         tTableManager tTableManager = new tTableManager();

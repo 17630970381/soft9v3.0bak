@@ -1,44 +1,40 @@
 package com.cqupt.software_9.controller;
 
-import com.cqupt.software_9.common.UploadResult;
-import com.cqupt.software_9.service.DataTableManagerService;
-import com.cqupt.software_9.service.FileService;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.annotation.Resource;
+import java.io.IOException;
 
 @RequestMapping("/File")
 @RestController
 public class FileController {
 
-    @Resource
-    private  FileService fileService;
+    @Value("${file.path}")
+    private String dirPath;
 
-    @Resource
-    private DataTableManagerService dataTableManagerService;
+    @Value("softOperation.docx")
+    private String optFileName;
+    @Value("softInfo.pdf")
+    private String introFile;
+    @RequestMapping("/getOptFile")
+    public String getOptFile() throws IOException {
+        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path(optFileName)
+                .toUriString();
 
-    /**
-     * 文件上传
-     *
-     * @param file
-     * @param newName
-     * @param disease  疾病名称
-     * @return 上传结果
-     */
+        return fileDownloadUri;
 
-    @PostMapping("/upload")
-    public UploadResult uploadFile(@RequestPart("file") MultipartFile file,
-                                   @RequestParam("newName") String newName,
-                                   @RequestParam("disease") String disease) {
-        try {
-            UploadResult res =  fileService.fileUpload(file, newName,disease);
-            dataTableManagerService.updateDataTable(newName,disease,"胡双",100,"66");
-            return res;
-        } catch (Exception e) {
-            UploadResult result =new UploadResult();
-            result.setE(e);
-            return result;
-        }
     }
+    @RequestMapping( "/getIntroFile")
+    public String getIntroFile() throws IOException {
+        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path(introFile)
+                .toUriString();
+
+        return fileDownloadUri;
+
+    }
+
 }

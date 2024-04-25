@@ -12,7 +12,7 @@ import java.util.List;
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
 
-    Integer getUid(String username);
+    String getUid(String username);
 
     List<User> getall();
 
@@ -29,16 +29,16 @@ public interface UserMapper extends BaseMapper<User> {
     void saveUser(User user);
     List<User> selectUserPage(int offset, int pageSize);
     int countUsers();
-    boolean updateStatusById(String uid, Integer role, double uploadSize, String status);
+    boolean updateStatusById(String uid, Integer role, double allSize, String status, double uploadSize);
     void removeUserById(String uid);
 
     void updatePwd(UserPwd user);
 
     //ssq
-    @Update("UPDATE software4.software4user SET upload_size = upload_size-#{size} WHERE uid = #{id}")
+    @Update("UPDATE \"user\" SET upload_size = upload_size-#{size} WHERE uid = #{id}")
     int decUpdateUserColumnById(@Param("id") String id, @Param("size") Double size);
 
-    @Update("UPDATE software4.software4user SET upload_size = upload_size+#{size} WHERE uid = #{id}")
+    @Update("UPDATE \"user\" SET upload_size = upload_size+#{size} WHERE uid = #{id}")
     int recoveryUpdateUserColumnById(@Param("id") String id, @Param("size") Double size);
 
 }

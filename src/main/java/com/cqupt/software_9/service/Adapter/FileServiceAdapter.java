@@ -6,7 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 
-public class FileServiceAdapter implements FileService {
+public abstract class FileServiceAdapter implements FileService {
 
 
     @Override
@@ -23,5 +23,8 @@ public class FileServiceAdapter implements FileService {
     public UploadResult creatUpTable(MultipartFile file, String newName, String disease, String user, Integer uid, String chinesename) {
         return null;
     }
+
+    //在线训练
+    public abstract UploadResult fileUpload(MultipartFile file, String modelname, String diseasename, String publisher, String uid) throws IOException;
 }
 

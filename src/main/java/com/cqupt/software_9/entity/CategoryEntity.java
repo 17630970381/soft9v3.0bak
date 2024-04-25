@@ -30,6 +30,7 @@ public class CategoryEntity {
     private String isFilter;
     private String isUpload;
     private String icdCode;
+
     @TableField(exist = false)
     private List<CategoryEntity> children;
 
@@ -117,6 +118,10 @@ public class CategoryEntity {
             return null;
         }
     }
+
+
+
+
     //数据管理新增结束
 
 

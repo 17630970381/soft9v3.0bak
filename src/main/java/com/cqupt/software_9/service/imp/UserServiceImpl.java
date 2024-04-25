@@ -129,11 +129,20 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     @Transactional
-    public boolean updateStatusById(String uid, Integer role, double uploadSize, String status ,String userid) {
-        boolean b =  userMapper.updateStatusById(uid, role ,uploadSize,  status);
+    public boolean updateStatusById(String uid, Integer role, double allSize, String status, String userid) {
+        QueryWrapper<User> wrapper = new QueryWrapper<User>();
+        User user = userMapper.selectByUid(uid);
+        Double uploadSize
+ = user.getUploadSize();
+        //upload_size = #{allSize} - all_size + upload_size
+        uploadSize = allSize - user.getAllSize() + uploadSize;
+        System.out.println(uploadSize);
+        boolean b =  userMapper.updateStatusById(uid, role ,allSize, status,uploadSize);
         logService.insertLog(userid, 0, "修改了用户id为" + uid+"的信息");
         if ( b )  return true;
         return false;
+
+
     }
 
     @Override
@@ -151,5 +160,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         userMapper.updatePwd(user);
         return false;
     }
+
 
 }

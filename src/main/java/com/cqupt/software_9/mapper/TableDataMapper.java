@@ -7,10 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
+import java.util.*;
 
 // TODO 公共模块新增类
 
@@ -37,4 +34,6 @@ public interface TableDataMapper {
     List<FeatureMatch> feamatch();
 
     List<FeatureMatch> searchFeatures(List<String> fea);
+
+    List<Map<String, Object>> getInfoByTableName(String tableName);
 }

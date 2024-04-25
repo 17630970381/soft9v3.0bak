@@ -25,6 +25,13 @@ spring:
     name: software_9
   main:
     sources: com.cqupt.software_9
+  resources:
+    static-locations: >
+      classpath:/META-INF/resources/,
+      classpath:/resources/,
+      classpath:/static/,
+      classpath:/public/,
+      file:${file.path}
 
 
 mybatis-plus:
@@ -36,6 +43,8 @@ logging:
   level:
     com.cqupt.software_9.dao: debug
     com.cqupt.software_9.controller: debug
+  file:
+    path: src/main/resources/Files
 
 application:
   python:
@@ -50,3 +59,6 @@ jwt:
   secret: com.cqupt.software_9
   expiration: 604800
   tokenHead: Bearer
+
+file:
+  path: src/main/resources/Files

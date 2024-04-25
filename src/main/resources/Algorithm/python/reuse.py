@@ -14,11 +14,16 @@ def preprocess_new_data(feature_values):
     X = np.array(feature_values).reshape(1, -1)
     return X
 
+# def make_predictions_proba(model, X):
+#     # 使用加载的模型进行预测，并获取预测概率
+#     prediction = model.predict(X)
+#     return prediction
+
 def make_predictions_proba(model, X):
     # 使用加载的模型进行预测，并获取预测概率
-    prediction = model.predict(X)
-    return prediction
-
+    prediction_proba = model.predict_proba(X)
+    # 返回预测为1的概率
+    return prediction_proba[0, 1]
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
@@ -31,8 +36,11 @@ if __name__ == "__main__":
     feature = args.feature[0].split()
     fea_float = [float(num_str) for num_str in feature]
     X = preprocess_new_data(fea_float)
+    # prediction = make_predictions_proba(model, X)
+    # print(prediction)
     prediction = make_predictions_proba(model, X)
-    print(prediction)
+    prediction_proba = [prediction]
+    print(prediction_proba)
     # 使用加载的模型进行预测
 
 

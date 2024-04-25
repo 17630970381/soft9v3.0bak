@@ -1,16 +1,18 @@
 package com.cqupt.software_9.controller;
 
 
-
 import com.cqupt.software_9.common.Result;
 import com.cqupt.software_9.entity.AdminDataManage;
 import com.cqupt.software_9.entity.CategoryEntity;
-import com.cqupt.software_9.service.*;
+import com.cqupt.software_9.service.AdminDataManageService;
+import com.cqupt.software_9.service.CategoryService;
+import com.cqupt.software_9.service.UserLogService;
 import com.cqupt.software_9.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -51,6 +53,45 @@ public class AdminDataManageController {
             logService.insertLog(current_uid, 0, e.getMessage());
             return Result.success(500,"文件上传异常");
         }
+    }
+
+    // 管理员端-数据管理新更改
+    @GetMapping("/selectDataDiseases")
+    public Result<AdminDataManage> selectDataDiseases(
+//            @RequestParam("current_uid") String current_uid
+    ) { // 参数表的Id
+        List<CategoryEntity> res = categoryService.getLevel2Label();
+
+        List<Object> retList = new ArrayList<>();
+        for (CategoryEntity category : res) {
+            Map<String, Object> ret = new HashMap<>();
+            ret.put("label", category.getLabel());
+            ret.put("value", category.getId());
+            if (selectCategoryDataDiseases(category.getId()).size() > 0) {
+                ret.put("children", selectCategoryDataDiseases(category.getId()));
+            }
+
+            retList.add(ret);
+        }
+        System.out.println(retList);
+
+
+        return Result.success("200", retList);
+    }
+    // 管理员端-数据管理新更改
+    public List<Map<String, Object>> selectCategoryDataDiseases(String pid){
+        List<Map<String, Object>> retList = new ArrayList<>();
+        List<CategoryEntity> res = categoryService.getLabelsByPid(pid);
+        for (CategoryEntity category : res) {
+            Map<String, Object> ret =  new HashMap<>();
+            ret.put("label", category.getLabel());
+            ret.put("value", category.getId());
+            if (selectCategoryDataDiseases(category.getId()).size() > 0) {
+                ret.put("children", selectCategoryDataDiseases(category.getId()));
+            }
+            retList.add(ret);
+        }
+        return retList;
     }
 
     @GetMapping("/selectAdminDataManage")

@@ -59,16 +59,22 @@ public class TableDataController {
                              @RequestParam("newName") String tableName,
                              @RequestParam("disease") String type,
                              @RequestParam("user") String user,
-                             @RequestParam("uid") int userId,
+                             @RequestParam("uid") String userId,
                              @RequestParam("parentId") String parentId,
-                             @RequestParam("parentType") String parentType){
+                             @RequestParam("parentType") String parentType,
+                             @RequestParam("status") String status,
+                             @RequestParam("size") Double size,
+                             @RequestParam("is_upload") String is_upload,
+                             @RequestParam("is_filter") String is_filter){
         // 保存表数据信息
         try {
-            List<String> featureList = tableDataService.uploadFile(file, tableName, type, user, userId, parentId, parentType);
+            System.out.println(userId);
+            List<String> featureList = tableDataService.ParseFileCol(file,tableName);
+            tableDataService.uploadFile(file, tableName, type, user, userId, parentId, parentType,status, size, is_upload,is_filter);
             return Result.success("200",featureList); // 返回表头信息
         }catch (Exception e){
             e.printStackTrace();
-            return Result.success(500,"文件上传异常");
+            return Result.fail(500,"文件上传异常");
         }
     }
 
@@ -102,12 +108,11 @@ public class TableDataController {
     @PostMapping("/createTable")
     public Result createTable(@RequestBody FilterTableDataVo filterTableDataVo){
 
-         tableDataService.createTable(filterTableDataVo.getAddDataForm().getDataName(),filterTableDataVo.getAddDataForm().getCharacterList(),
-                filterTableDataVo.getAddDataForm().getCreateUser(),filterTableDataVo.getNodeData());
+        tableDataService.createTable(filterTableDataVo.getAddDataForm().getDataName(),filterTableDataVo.getAddDataForm().getCharacterList(),
+                filterTableDataVo.getAddDataForm().getCreateUser(),filterTableDataVo.getNodeData(),filterTableDataVo.getAddDataForm().getUid(),filterTableDataVo.getAddDataForm().getUsername(),filterTableDataVo.getAddDataForm().getIsFilter(),filterTableDataVo.getAddDataForm().getIsUpload());
         System.out.println("开始新建表："+JSON.toJSONString(filterTableDataVo));
         return Result.success(200,"SUCCESS");
     }
-
     // 根据条件筛选数据
     @PostMapping("/filterTableData")
     public Result<List<Map<String,Object>>> getFilterTableData(@RequestBody FilterTableDataVo filterTableDataVo){
@@ -126,5 +131,10 @@ public class TableDataController {
         return Result.success("200",tableDataMapper.feamatch());
     }
 
-
+    @GetMapping("/getInfoByTableName/{tableName}")
+    public Result<List<Map<String,Object>>> getInfoByTableName(@PathVariable("tableName") String tableName){
+        tableName = tableName.replace("\"", "");
+        List<Map<String, Object>> res = tableDataService.getInfoByTableName(tableName);
+        return Result.success(200, "成功", res);
+    }
 }

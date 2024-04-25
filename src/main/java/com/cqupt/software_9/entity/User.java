@@ -39,7 +39,11 @@ public class User implements Serializable, UserDetails {
 
     private String answer_3;
 
-    private Integer uploadSize;
+    private double uploadSize;
+
+    private double allSize;
+
+
 
 
 

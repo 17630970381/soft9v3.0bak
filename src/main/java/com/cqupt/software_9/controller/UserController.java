@@ -101,7 +101,7 @@ public class UserController {
         userLog.setUid(uid);
         userLog.setOpTime(new Date());
         userLog.setOpType("用户注册");
-
+        userLog.setRole(1);
         userLogService.save(userLog);
 
         return new R<>(200,"成功",null);
@@ -211,7 +211,7 @@ public class UserController {
     }
 
     @GetMapping("/getUid/{username}")
-    public Integer getUid(@PathVariable("username") String username){
+    public String getUid(@PathVariable("username") String username){
         return userMapper.getUid(username);
     }
     /**
@@ -247,8 +247,8 @@ public class UserController {
             String username = requests.get("username");
             String password = requests.get("password");
             // 假设 userMapper 是 MyBatis 的一个 Mapper 接口
-            String pwd = SecurityUtil.hashDataSHA256(password);
-            int updatedRows = userMapper.updateByname(pwd, username);
+
+            int updatedRows = userMapper.updateByname(password, username);
 
             //  操作日志记录
 
@@ -259,16 +259,17 @@ public class UserController {
 
             User one = userService.getOne(queryWrapper1);
             String uid = one.getUid();
-            userLog.setUsername(username);
+//            userLog.setUsername(username);
             // userLog.setId(1);
-            userLog.setUid(uid);
-            userLog.setOpTime(new Date());
+//            userLog.setUid(uid);
+//            userLog.setOpTime(new Date());
 
 
             if (updatedRows > 0) {
                 userLog.setOpType("用户修改密码成功");
 
-                userLogService.save(userLog);
+//                userLogService.save(userLog);
+                userLogService.insertLog(uid,0,userLog.getOpType());
                 // 更新成功，返回成功结果
                 return Result.success(200, "更新成功");
             } else {
@@ -385,9 +386,10 @@ public class UserController {
         Date date1 = inputFormat.parse(date);
         user.setCreateTime(date1);
         user.setUpdateTime(null);
-        user.setRole(0);
+        user.setRole(1);
         user.setUid( String.valueOf(new Random().nextInt()) );
         user.setUploadSize(200);
+        user.setAllSize(200);
         userService.save(user);
 //          操作日志记录
         UserLog userLog = new UserLog();
@@ -507,7 +509,7 @@ public class UserController {
     @PostMapping("updateStatus")
     public Result  updateStatus(@RequestBody UpdateStatusVo updateStatusVo){
         // 根据 id  修改用户状态   角色
-        boolean b = userService.updateStatusById(updateStatusVo.getUid() ,updateStatusVo.getRole(),updateStatusVo.getUploadSize(), updateStatusVo.getStatus(),updateStatusVo.getUserid());
+        boolean b = userService.updateStatusById(updateStatusVo.getUid() ,updateStatusVo.getRole(),updateStatusVo.getAllSize(), updateStatusVo.getStatus(), updateStatusVo.getUserid());
         if (b) return  Result.success(200 , "修改用户状态成功");
         return  Result.fail("修改失败");
     }

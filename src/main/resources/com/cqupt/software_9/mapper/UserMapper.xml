@@ -23,7 +23,7 @@
         UPDATE "user" SET password=#{password} WHERE username=#{username}
     </update>
 
-    <select id="getUid" resultType="java.lang.Integer">
+    <select id="getUid" resultType="java.lang.String">
         SELECT uid from "user"  WHERE username=#{username}
     </select>
 
@@ -63,8 +63,14 @@
     </select>
     <select id="countUsers" resultType="int"> SELECT COUNT(*) FROM software9.public."user" </select>
     <update id="updateStatusById">
-        update software9.public."user" set user_status = ${status} , role = ${role} , upload_size = ${uploadSize}
-        where uid = #{uid}
+        UPDATE software9.public.user
+        <set>
+            <if test="status != null">user_status = #{status},</if>
+            <if test="role != null">role = #{role},</if>
+            <if test="allSize != null">all_size = #{allSize},</if>
+            <if test="uploadSize != null">upload_size = #{uploadSize},</if>
+        </set>
+        WHERE uid = #{uid}
     </update>
     <update id="removeUserById"> DELETE FROM software9.public."user" WHERE uid= #{uid} </update>
 

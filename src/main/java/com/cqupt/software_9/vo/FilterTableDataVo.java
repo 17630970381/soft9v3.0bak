@@ -13,4 +13,7 @@ import lombok.NoArgsConstructor;
 public class FilterTableDataVo {
     private AddDataFormVo addDataForm;
     private CategoryEntity nodeData;
+
+
+
 }

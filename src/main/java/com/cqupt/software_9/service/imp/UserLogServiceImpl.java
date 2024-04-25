@@ -41,7 +41,7 @@ public class UserLogServiceImpl extends ServiceImpl<UserLogMapper, UserLog>
         UserLog logEntity = new UserLog();
         logEntity.setUid(uid);
         logEntity.setUsername(user.getUsername());
-        logEntity.setRole(role);
+        logEntity.setRole(user.getRole());
         logEntity.setOpType(operation);
         // 创建 DateTimeFormatter 对象，定义日期时间的格式
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");

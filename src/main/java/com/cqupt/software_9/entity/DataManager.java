@@ -33,7 +33,7 @@ public class DataManager implements Serializable {
     private String affiliationdatabase;
     private String tabletype;
     private String uploadmethod;
-    private Integer uid;
+    private String uid;
 
 
 }

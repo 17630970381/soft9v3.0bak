@@ -11,6 +11,9 @@
     <delete id="deleteTable">
         DROP TABLE IF EXISTS ${tableName}
     </delete>
+    <delete id="remove">
+        DELETE FROM data_manager WHERE tablename = #{label}
+    </delete>
 
 
     <select id="getdetail" resultType="com.cqupt.software_9.entity.DataManager">
@@ -71,7 +74,7 @@
         SELECT DISTINCT tablename from data_manager
     </select>
     <select id="getDiseaseTableName" resultType="java.util.Map">
-        select diseasename,tablename FROM data_manager where uploadmethod != '纳排'
+        SELECT diseasename, tablename FROM data_manager WHERE uploadmethod IS NULL OR uploadmethod != '纳排';
     </select>
 
 

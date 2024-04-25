@@ -177,6 +177,7 @@ public class CategoryController {
             categoryService.removeNode(categoryEntity.getId());
         }
         else {
+            dataManagerMapper.remove(categoryEntity.getLabel());
             categoryService.removeNode(categoryEntity.getId(),categoryEntity.getLabel());
             TableDescribeEntity tableDescribeEntity = tableDescribeMapper.selectOne(new QueryWrapper<TableDescribeEntity>().eq("table_id",categoryEntity.getId()));
             if(tableDescribeEntity.getTableSize()!=0){
@@ -186,6 +187,7 @@ public class CategoryController {
 //            tTableMapper.delete(new QueryWrapper<tTable>().eq("table_name",categoryEntity.getLabel()));
 
         }
+
         return Result.success(200,"删除成功");
     }
 
@@ -262,29 +264,27 @@ public class CategoryController {
     public Result checkDiseaseName(@PathVariable String diseaseName){
         QueryWrapper<CategoryEntity> queryWrapper = Wrappers.query();
         queryWrapper.eq("label", diseaseName)
-                .eq("is_delete", 0);
+                .eq("is_delete", 0)
+                .isNull("status");
         CategoryEntity category = categoryMapper.selectOne(queryWrapper);
         return category==null?Result.success("200","病种名可用"):Result.fail("400","病种名已存在");
     }
+
+
     @PostMapping("/category/addCategory")
     public Result addCategory(@RequestBody AddDiseaseVo addDiseaseVo){
-        if(categoryService.addCategory(addDiseaseVo)>0){
-
-            logService.insertLog(addDiseaseVo.getUid(), 0, "添加病种"+addDiseaseVo.getFirstDisease());
-
-            return Result.success("添加病种成功");
-        }else{
-
-            logService.insertLog(addDiseaseVo.getUid(), 0, "添加病种失败");
-            return Result.fail("添加病种失败");
-        }
+        System.out.println("==========================================");
+        System.out.println(addDiseaseVo);
+        System.out.println("==========================================");
+        categoryService.addCategory(addDiseaseVo);
+        return Result.success("200","新增成功");
     }
     @PostMapping("/category/updateCategory")
-    public Result updateCategory(@RequestBody UpdateDiseaseVo updateDiseaseVo){
-        logService.insertLog(updateDiseaseVo.getUid(), 0, "修改病种"+updateDiseaseVo.getOldName()+"为"+updateDiseaseVo.getDiseaseName());
+    public Result updateCategory(@RequestBody UpdateDiseaseVo updateDiseaseVo) {
+        System.out.println(updateDiseaseVo);
         return categoryService.updateCategory(updateDiseaseVo);
     }
-    @PostMapping("/category/deleteCategory")
+        @PostMapping("/category/deleteCategory")
     public Result deleteCategory(@RequestBody DeleteDiseaseVo deleteDiseaseVo){
         StringJoiner joiner = new StringJoiner(",");
         for (String str : deleteDiseaseVo.getDeleteNames()) {

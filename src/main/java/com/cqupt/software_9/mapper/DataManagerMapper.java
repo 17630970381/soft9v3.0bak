@@ -46,4 +46,6 @@ public interface DataManagerMapper extends BaseMapper<DataManager> {
     Boolean deleteByTableName(String tablename);
 
     void deleteTable(String tablename);
+
+    void remove(String label);
 }

@@ -31,11 +31,11 @@
 
 
     <select id="getLevel2Label" resultType="com.cqupt.software_9.entity.CategoryEntity">
-        SELECT * FROM category WHERE cat_level=2;
+        SELECT * FROM category WHERE cat_level=2 and parent_id='1' and is_delete=0;
     </select>
 
     <select id="getLabelsByPid" resultType="com.cqupt.software_9.entity.CategoryEntity">
-        SELECT * FROM category WHERE parent_id = #{pid};
+        SELECT * FROM category WHERE parent_id = #{pid} and is_leafs=0 and is_delete=0;
     </select>
     <select id="getLabelByPid" resultType="java.lang.String">
         SELECT "label" FROM software9.category WHERE id = #{pid};

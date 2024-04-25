@@ -271,12 +271,14 @@ public class ModelController {
         String username = modelMapper.getPublisherbumodelname(modelname);
         userLog.setUsername(username);
         String uid = userMapper.getUidByUsername(username);
-
+        User user = userMapper.selectByUid(uid);
+        userLog.setRole(user.getRole());
         // userLog.setId(1);
         userLog.setUid(uid);
         if (a && b){
             userLog.setOpType("用户删除模型"+modelname+"成功");
             userLogService.save(userLog);
+//            userLogService.insertLog(uid,0,"用户删除模型"+modelname+"成功");
             return true;
         }else {
             return false;

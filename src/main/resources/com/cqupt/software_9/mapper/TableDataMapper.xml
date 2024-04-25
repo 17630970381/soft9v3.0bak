@@ -239,6 +239,9 @@
                         #{item}
                 </foreach>
         </select>
+    <select id="getInfoByTableName" resultType="java.util.Map">
+            select * from "${tableName}";
+    </select>
 
 
 </mapper>

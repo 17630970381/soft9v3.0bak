@@ -8,16 +8,21 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public interface TableDataService {
     List<LinkedHashMap<String,Object>> getTableData(String TableId, String tableName);
 
-    List<String> uploadFile(MultipartFile file, String tableName, String type, String user, int userId, String parentId, String parentType) throws IOException, ParseException;
+    List<String> uploadFile(MultipartFile file, String tableName, String type, String user, String userId, String parentId, String parentType, String status, double size, String is_upload, String is_filter) throws IOException, ParseException;
 
-    void createTable(String tableName, List<CreateTableFeatureVo> characterList, String createUser, CategoryEntity nodeData);
+
 
     List<LinkedHashMap<String, Object>> getFilterDataByConditions(List<CreateTableFeatureVo> characterList,CategoryEntity nodeData);
 
 
+    List<String> ParseFileCol(MultipartFile file, String tableName) throws IOException;
 
+    List<Map<String, Object>> getInfoByTableName(String tableName);
+
+    void createTable(String dataName, List<CreateTableFeatureVo> characterList, String createUser, CategoryEntity nodeData, String uid, String username, String isFilter, String isUpload);
 }

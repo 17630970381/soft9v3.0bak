@@ -7,6 +7,11 @@
 <mapper namespace="com.cqupt.software_9.mapper.DetailMapper">
 
 
-
+    <select id="getDetail" resultType="com.cqupt.software_9.common.DetailDTO">
+        SELECT feature, importance,fpercentage,fvalue,bpercentage,bvalue FROM detail WHERE modelname  = #{modelname}
+    </select>
+    <select id="getAll" resultType="com.cqupt.software_9.common.DetailDTO">
+        SELECT feature, importance,fpercentage,fvalue,bpercentage,bvalue FROM detail WHERE modelname  = #{modelname}
+    </select>
 </mapper>
 

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.cqupt.software_9.entity.RespBean;
 import com.cqupt.software_9.entity.User;
 import com.cqupt.software_9.vo.UserPwd;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -33,7 +34,12 @@ public interface UserService extends IService<User> {
     void saveUser(User user);
     Map<String, Object> getUserPage(int pageNum, int pageSize);
     List<User> querUser();
-    boolean updateStatusById(String uid, Integer role ,double uploadSize, String status,String userid);
-    boolean removeUserById(String uid,String userid);
+
+    @Transactional
+    boolean updateStatusById(String uid, Integer role, double allSize, String status, String userid);
+
+    boolean removeUserById(String uid, String userid);
     boolean updatePwd(UserPwd user);
+
+
 }
