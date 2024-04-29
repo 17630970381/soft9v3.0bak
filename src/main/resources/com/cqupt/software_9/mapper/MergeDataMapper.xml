@@ -47,4 +47,27 @@
     <select id="upallmerge" resultType="com.cqupt.software_9.common.MergeList">
         SELECT patient_id,name,sexname,birthdate,nationname,maritalstatusname from merge
     </select>
+    <select id="getAllMergeByCondition" resultType="com.cqupt.software_9.common.MergeList">
+        SELECT  patient_id,name,sexname,birthdate,nationname,maritalstatusname FROM merge
+        <where>
+            <if test="sex != null">
+                AND sexname = #{sex}
+            </if>
+            <if test="nation != null and nation.length > 0">
+                AND nationname IN
+                <foreach item="item" index="index" collection="nation" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+            <if test="maritalStatus != null and maritalStatus.length > 0">
+                AND maritalstatusname IN
+                <foreach item="item" index="index" collection="maritalStatus" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+            <if test="date1 != null and date2 != null">
+                AND birthdate &gt; #{date1} AND birthdate &lt; #{date2}
+            </if>
+        </where>
+    </select>
 </mapper>

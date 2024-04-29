@@ -37,6 +37,9 @@
          SET isProjection = 1
         WHERE tablename = #{tableName}
     </update>
+    <update id="updataTableName">
+        UPDATE data_manager set tablename = #{tableName} WHERE  tablename = #{oldTableName}
+    </update>
 
     <select id="getTableNameByUiD" resultType="com.cqupt.software_9.entity.DataManager">
         SELECT tablename FROM data_manager WHERE uid = #{uid}

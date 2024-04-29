@@ -16,7 +16,7 @@
     </select>
 
     <select id="getTableName" resultType="java.util.Map">
-        SELECT diseasename,modelname FROM modelresult
+        SELECT DISTINCT diseasename,  SPLIT_PART(modelname, '-', 1) AS  modelname FROM modelresult
     </select>
     <select id="getModelResultAndModel" resultType="com.cqupt.software_9.common.modelAndModelResultDTO">
         SELECT * FROM (SELECT modelresult.modelname,modelresult.evaluate,modelresult.pkl,modelresult.uid,modelresult.al,modelresult.tablename,

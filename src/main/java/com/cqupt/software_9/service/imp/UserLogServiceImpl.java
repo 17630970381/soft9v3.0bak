@@ -37,7 +37,10 @@ public class UserLogServiceImpl extends ServiceImpl<UserLogMapper, UserLog>
     @Override
     public void insertLog(String uid, Integer role, String operation) {
         User user = userMapper.selectByUid(uid);
-
+        System.out.println("=========================");
+        System.out.println(uid);
+        System.out.println(user);
+        System.out.println("=========================");
         UserLog logEntity = new UserLog();
         logEntity.setUid(uid);
         logEntity.setUsername(user.getUsername());

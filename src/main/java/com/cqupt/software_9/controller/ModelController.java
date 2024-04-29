@@ -63,6 +63,9 @@ public class ModelController {
     @Resource
     private UserMapper userMapper;
 
+    @Resource
+    private DetailMapper detailMapper;
+
     @GetMapping("/getall")
     public List<Model> getallmodel(){
         return modelMapper.getallmodel();
@@ -262,9 +265,6 @@ public class ModelController {
      */
     @PutMapping("/remove/{modelname}")
     public boolean ModelRemove( @PathVariable("modelname") String modelname){
-        boolean a = modelMapper.removeModel(modelname);
-        boolean b = modelResultMapper.removeModelResult(modelname);
-
         //  操作日志记录
 
         UserLog userLog = new UserLog();
@@ -275,6 +275,12 @@ public class ModelController {
         userLog.setRole(user.getRole());
         // userLog.setId(1);
         userLog.setUid(uid);
+        boolean a = modelMapper.removeModel(modelname);
+        boolean b = modelResultMapper.removeModelResult(modelname);
+        QueryWrapper<Detail> wrapper = new QueryWrapper<Detail>();
+        wrapper.eq("modelname",modelname);
+        detailMapper.delete(wrapper);
+
         if (a && b){
             userLog.setOpType("用户删除模型"+modelname+"成功");
             userLogService.save(userLog);
@@ -383,7 +389,32 @@ public class ModelController {
         return modelMapper.getModelNum();
     }
 
+    /**
+     *
+     *获取merge表中民族的种类
+     * @return
+     */
+    @GetMapping("/getNation")
+    public Result getNation(){
+        return new Result(modelMapper.getNation(),"成功",200);
+    }
+
+    @GetMapping("/getMaritalStatus")
+    public Result getMaritalStatus(){
+        return new Result(modelMapper.getMaritalStatus(),"成功",200);
+    }
 
 
-
+    @PostMapping("/getAllMergeByCondition")
+    public Result getAllMergeByCondition(@RequestBody MergeCondition mergeCondition ){
+        System.out.println("======================================");
+        System.out.println(mergeCondition);
+        String sex = mergeCondition.getSex();
+        String[] nation = mergeCondition.getNation();
+        String[] maritalStatus = mergeCondition.getMaritalStatus();
+        String date1 = mergeCondition.getDate1();
+        String date2 = mergeCondition.getDate2();
+        List<MergeList> list =  mergeDataMapper.getAllMergeByCondition(sex, nation,date1, date2,  maritalStatus);
+        return new Result(list,"成功",200);
+    }
 }

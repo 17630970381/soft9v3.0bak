@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cqupt.software_9.mapper.CategoryMapper;
 import com.cqupt.software_9.entity.*;
 import com.cqupt.software_9.mapper.AdminDataManageMapper;
+import com.cqupt.software_9.mapper.DataManagerMapper;
 import com.cqupt.software_9.mapper.UserMapper;
 import com.cqupt.software_9.service.AdminDataManageService;
 
@@ -17,6 +18,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -42,6 +44,8 @@ public class AdminDataManageServiceImpl extends ServiceImpl<AdminDataManageMappe
     @Autowired
     private UserLogService logService;
 
+    @Resource
+    private DataManagerMapper dataManagerMapper;
     @Transactional(propagation = Propagation.REQUIRED)
     public List<String> storeTableData(MultipartFile file, String tableName) throws IOException {
         ArrayList<String> featureList = null;
@@ -99,6 +103,15 @@ public class AdminDataManageServiceImpl extends ServiceImpl<AdminDataManageMappe
         adminDataManageEntity.setTableStatus(tableStatus);
         adminDataManageEntity.setTableSize(tableSize);
         adminDataManageMapper.insert(adminDataManageEntity);
+        /*在DataManage中插入信息*/
+        System.out.println("============================================================");
+        System.out.println(classPath);
+        DataManager dataManager = new DataManager();
+        dataManager.setTablename(tableName);
+        dataManager.setDiseasename(extractMiddleSegment(classPath));
+        dataManager.setOperators(userName);
+        dataManager.setUid(uid);
+        dataManagerMapper.insert(dataManager);
         logService.insertLog(current_uid, 0, "在table_describe中上传了"+tableName);
 
         userMapper.minusTableSize(uid, tableSize);
@@ -108,6 +121,22 @@ public class AdminDataManageServiceImpl extends ServiceImpl<AdminDataManageMappe
         // 保存数据库
         System.out.println("表描述信息插入成功, 动态建表成功");
         return featureList;
+    }
+
+    public static String extractMiddleSegment(String input) {
+        // 查找最后一个 '/' 的索引
+        int lastIndexOfSlash = input.lastIndexOf('/');
+
+        // 查找倒数第二个 '/' 的索引
+        int secondLastIndexOfSlash = input.lastIndexOf('/', lastIndexOfSlash - 1);
+
+        // 提取最后一个 '/' 到倒数第二个 '/' 之间的内容
+        // 确保倒数第二个 '/' 的索引不会是字符串的开始
+        if (secondLastIndexOfSlash == 0 || lastIndexOfSlash == input.length()) {
+            return "";
+        }
+
+        return input.substring(secondLastIndexOfSlash + 1, lastIndexOfSlash);
     }
 
     @Override
@@ -134,18 +163,28 @@ public class AdminDataManageServiceImpl extends ServiceImpl<AdminDataManageMappe
         adminDataManageMapper.deleteByTableId(tableId);
     }
 
+
+
     @Override
-    public void updateById(String id, String tableName, String tableStatus) {
-        AdminDataManage adminDataManage = adminDataManageMapper.selectById(id);
-        String classPath = adminDataManage.getClassPath();
-        String[] str = classPath.split("/");
-        str[str.length-1] = tableName;
-        classPath = String.join("/", str);
+    public void updateById(String id, String[] pids, String tableName, String tableStatus) {
+        AdminDataManage adminDataManage = adminDataManageMapper.selectById(id);  // 在table_describe表中获取表id对应的那一行数据
+
+//        设置class_path
+        String classPath = "公共数据集";
+        for (String pid : pids){
+            CategoryEntity categoryEntity = categoryMapper.selectById(pid);
+            classPath += "/" + categoryEntity.getLabel();
+        }
+        classPath += "/" + tableName;
+
         adminDataManage.setClassPath(classPath);
         adminDataManage.setTableName(tableName);
         adminDataManage.setTableStatus(tableStatus);
-        adminDataManageMapper.updateById(adminDataManage);
-//        adminDataManageMapper.updateById(id, tableName, tableStatus);
+
+        CategoryEntity categoryEntity = categoryMapper.selectById(adminDataManage.getTableId());
+        categoryEntity.setParentId(pids[pids.length-1]);
+        categoryMapper.updateById(categoryEntity); // 更改category表
+        adminDataManageMapper.updateById(adminDataManage);// 更改table_describe表
     }
 
     @Override
@@ -155,13 +194,14 @@ public class AdminDataManageServiceImpl extends ServiceImpl<AdminDataManageMappe
 
     @Override
     @Transactional
-    public void updateInfo(String id, String tableid, String oldTableName, String tableName, String tableStatus, String current_uid) {
-        updateById(id, tableName, tableStatus);
+    public void updateInfo(String id, String tableid, String oldTableName, String tableName, String tableStatus,String[] pids, String current_uid) {
+        updateById(id,pids, tableName,  tableStatus);
         logService.insertLog(current_uid, 0, "更改了table_describe表中的"+oldTableName + "表为：" + tableName + ",将状态更改为：" + tableStatus + "并更改了classpath");
         categoryMapper.updateTableNameByTableId(tableid, tableName, tableStatus);
         logService.insertLog(current_uid, 0, "更改了category表中的"+oldTableName + "表为：" + tableName + ",将状态更改为：" + tableStatus);
         if (!oldTableName.equals(tableName)){
             updateDataBaseTableName(oldTableName, tableName);
+            dataManagerMapper.updataTableName(oldTableName,tableName);
             logService.insertLog(current_uid, 0, "更改了数据库中的"+oldTableName + "表为：" + tableName );
         }
     }

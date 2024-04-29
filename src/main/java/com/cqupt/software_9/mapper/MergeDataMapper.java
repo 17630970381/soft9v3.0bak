@@ -28,4 +28,6 @@ public interface MergeDataMapper extends BaseMapper<MergeData> {
     Integer getNegNumber(@Param("tablename") String tablename, @Param("type") String type);
 
     List<MergeList> upallmerge();
+
+    List<MergeList> getAllMergeByCondition(String sex, String[] nation, String date1, String date2,  String[] maritalStatus);
 }

@@ -1,9 +1,13 @@
 package com.cqupt.software_9.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.cqupt.software_9.common.Result;
 import com.cqupt.software_9.entity.AdminDataManage;
 import com.cqupt.software_9.entity.CategoryEntity;
+import com.cqupt.software_9.entity.DataManager;
+import com.cqupt.software_9.mapper.CategoryMapper;
+import com.cqupt.software_9.mapper.DataManagerMapper;
 import com.cqupt.software_9.service.AdminDataManageService;
 import com.cqupt.software_9.service.CategoryService;
 import com.cqupt.software_9.service.UserLogService;
@@ -12,10 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.annotation.Resource;
+import java.util.*;
 
 // TODO 因为操作该模块的用户肯定是管理员，因此在插入日志时将role角色固定为0， 管理员状态
 
@@ -30,23 +32,39 @@ public class AdminDataManageController {
     UserService userService;
     @Autowired
     private UserLogService logService;
+
+    @Autowired
+    private CategoryMapper categoryMapper;
+
+    @Resource
+    private DataManagerMapper dataManagerMapper;
+    // 文件上传
     // 文件上传
     @PostMapping("/uploadDataTable")
     public Result uploadDataTable(@RequestParam("file") MultipartFile file,
 //                             @RequestParam("tableId") String tableId,
-                             @RequestParam("pid") String pid,
-                             @RequestParam("tableName") String tableName,
-                             @RequestParam("userName") String userName,
-                             @RequestParam("classPath") String classPath,
-                             @RequestParam("uid") String uid,   // 传表中涉及到的用户的uid
-                             @RequestParam("tableStatus") String tableStatus,
-                             @RequestParam("tableSize") float tableSize,
-                             @RequestParam("current_uid") String current_uid //操作用户的uid
-        ){
+                                  @RequestParam("pid") String pid,
+                                  @RequestParam("tableName") String tableName,
+                                  @RequestParam("userName") String userName,
+                                  @RequestParam("ids") String[] ids,
+                                  @RequestParam("uid") String uid,   // 传表中涉及到的用户的uid
+                                  @RequestParam("tableStatus") String tableStatus,
+                                  @RequestParam("tableSize") float tableSize,
+                                  @RequestParam("current_uid") String current_uid //操作用户的uid
+    ){
         // 保存表数据信息
         try {
 //            String tableId="";
+            // 管理员端-数据管理新更改
+//            传入的是category的id集合，根据id获取labels拼接成classpath
+            String classPath = "公共数据集";
+            for (String id : ids){
+                CategoryEntity categoryEntity = categoryMapper.selectById(id);
+                classPath += "/" + categoryEntity.getLabel();
+            }
+            classPath += "/" + tableName;
             List<String> featureList = adminDataManageService.uploadDataTable(file, pid, tableName, userName, classPath, uid, tableStatus, tableSize, current_uid);
+
             return Result.success("200",featureList); // 返回表头信息
         }catch (Exception e){
             e.printStackTrace();
@@ -54,6 +72,7 @@ public class AdminDataManageController {
             return Result.success(500,"文件上传异常");
         }
     }
+
 
     // 管理员端-数据管理新更改
     @GetMapping("/selectDataDiseases")
@@ -126,25 +145,33 @@ public class AdminDataManageController {
     @GetMapping("/selectDataById")
     public Result<AdminDataManage> selectDataById(
             @RequestParam("id") String id
-//            @RequestParam("current_uid") String current_uid
     ){
-        AdminDataManage adminDataManage = adminDataManageService.selectDataById(id);
-//        System.out.println("数据为："+ JSON.toJSONString(tableDescribeEntity));
+        AdminDataManage adminDataManage = adminDataManageService.selectDataById(id); // 根据id获取table_describe表的那一行
+        Map<String, Object> ret =  new HashMap<>();
+        ret.put("object", adminDataManage);
 
-        return Result.success("200",adminDataManage);
+        CategoryEntity categoryEntity = categoryMapper.selectById(adminDataManage.getTableId());// 根据id获取table_describe表的table_id与category形成映射
+        List<String> pids = new ArrayList<>();
+        while (!categoryEntity.getParentId().equals("1")){ // 筛选除疾病列表结点的下面结点
+            categoryEntity = categoryMapper.selectById(categoryEntity.getParentId());
+            pids.add(categoryEntity.getId()); // 迭代添加父节点id
+        }
+        Collections.reverse(pids); // 反转，使得父节点id在前面
+
+        ret.put("ids", pids); // 包含疾病结点的id，不包含表id
+        return Result.success("200",ret);
     }
-
-    @GetMapping("/updateAdminDataManage")
+    @PostMapping("/updateAdminDataManage")
     public Result<AdminDataManage> updateAdminDataManage(
             @RequestParam("id") String id,
             @RequestParam("tableid") String tableid,
             @RequestParam("oldTableName") String oldTableName,
             @RequestParam("tableName") String tableName,
             @RequestParam("tableStatus") String tableStatus,
+            @RequestParam("pids") String[] pids,  // 父节点id列表
             @RequestParam("current_uid") String current_uid
-            ){
-        adminDataManageService.updateInfo(id, tableid, oldTableName, tableName, tableStatus, current_uid);
-
+    ){
+        adminDataManageService.updateInfo(id, tableid, oldTableName, tableName, tableStatus, pids, current_uid);
         return Result.success("200","已经更改到数据库");
     }
 
@@ -176,6 +203,9 @@ public class AdminDataManageController {
 //        System.out.println();
 
         adminDataManageService.deleteByTableName(tableName);// 【因为数据库中表名是不能重名的】
+        QueryWrapper<DataManager> wrapper = new QueryWrapper<>();
+        wrapper.eq("tablename",tableName);
+        dataManagerMapper.delete(wrapper);// 在data_manager中删除记录
         logService.insertLog(current_uid, 0, "删除了public模式下储存的表:" + tableName);
         adminDataManageService.deleteByTableId(tableId);// 在table_describe中删除记录
         logService.insertLog(current_uid, 0, "删除了table_describe表中的"+tableName+"记录信息");

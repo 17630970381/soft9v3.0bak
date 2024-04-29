@@ -1,4 +1,5 @@
 package com.cqupt.software_9.mapper;
+
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.cqupt.software_9.common.ModelDTO;
 import com.cqupt.software_9.entity.Model;
@@ -52,4 +53,11 @@ public interface ModelMapper extends BaseMapper<Model> {
     String getFeaBymodelName(String modelname);
 
     String getPublisherbumodelname(String modelname);
+
+    List<String> getNation();
+
+    List<String>  getMaritalStatus();
+
+
+
 }

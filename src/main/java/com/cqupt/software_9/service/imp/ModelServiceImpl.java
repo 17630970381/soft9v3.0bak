@@ -140,7 +140,7 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
     public boolean insertModelResultAndModel(ModelRequestData modelRequestData) throws Exception {
         modelResult modelResult = new modelResult();
         Model model = new Model();
-        String modelname = modelRequestData.getModelname().concat(modelRequestData.getAl());
+        String modelname = modelRequestData.getModelname() + "-" + modelRequestData.getAl();
         System.out.println(modelname);
         modelResult.setPkl(modelRequestData.getPkl());
         modelResult.setModelname(modelname);

@@ -19,7 +19,8 @@ import seaborn as sns
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
-
+from sklearn.linear_model import LogisticRegression
+from xgboost import XGBClassifier
 # 加载数据
 def load_data(tableName,output_file):
     try:
@@ -70,6 +71,10 @@ def build_model(algorithmName, algorithmAttributes):
     elif algorithmName == 'SVM':
         # 根据算法参数初始化支持向量机模型
         model = SVC(**algorithmAttributes)
+    elif algorithmName == 'LR':
+        model = LogisticRegression(**algorithmAttributes)
+    elif algorithmName == 'XGBoost':
+        model = XGBClassifier(**algorithmAttributes)
     else:
         raise ValueError("Unsupported algorithm: {}".format(algorithmName))
 
@@ -197,14 +202,15 @@ def publicAl(tableName, target, fea, algorithmName, algorithmAttributes):
     plt.close()
     # 绘制特征重要性
 
-    feature_importances = trained_model.feature_importances_
-    plt.figure(figsize=(10, 8))
-    plt.barh(range(len(feature_importances)), feature_importances, tick_label=fea)
-    plt.xlabel('Feature Importance')
-    plt.ylabel('Feature')
-    plt.title('Feature Importance')
-    plt.savefig("feature_importance.png")
-
+    # 绘制特征重要性
+    if algorithmName == 'RF':
+        feature_importances = trained_model.feature_importances_
+        plt.figure(figsize=(10, 8))
+        plt.barh(range(len(feature_importances)), feature_importances, tick_label=fea)
+        plt.xlabel('Feature Importance')
+        plt.ylabel('Feature')
+        plt.title('Feature Importance')
+        plt.savefig("feature_importance.png")
 
     # 模型评估
     accuracy, precision, recall, f1 = evaluate_model(trained_model, X_test, y_test)
@@ -268,9 +274,14 @@ if __name__ == "__main__":
             algorithmAttributes[key] = None
         elif value.isdigit():
             algorithmAttributes[key] = int(value)
+        elif '.' in value:  # 判断是否包含小数点
+            algorithmAttributes[key] = float(value)  # 转换为浮点型
         else:
             algorithmAttributes[key] = value
-
+    if 'probability' in algorithmAttributes:
+        algorithmAttributes['probability'] = True
+    if 'max_iter' in algorithmAttributes:
+        algorithmAttributes['max_iter'] = int(algorithmAttributes['max_iter'])
     results, output_dir,model_path,y_test,  y_proba = publicAl(tableName, target, fea, algorithmName, algorithmAttributes)
     y_proba_positive = y_proba[:, 1]
     y_proba_negative = y_proba[:, 0]
@@ -298,6 +309,18 @@ if __name__ == "__main__":
         delete_query = """
                        DELETE FROM dt_test_data
                    """
+    elif algorithmName == 'SVM':
+        delete_query = """
+                       DELETE FROM svm_test_data
+                   """
+    elif algorithmName == 'LR':
+        delete_query = """
+                       DELETE FROM lr_test_data
+                   """
+    elif algorithmName == 'XGBoost':
+        delete_query = """
+                       DELETE FROM xgboost_test_data
+                   """
 
     # 构建插入数据的SQL语句
     if algorithmName == 'RF':
@@ -308,6 +331,21 @@ if __name__ == "__main__":
     elif algorithmName == 'DT':
         insert_query = """
                       INSERT INTO dt_test_data (y_test, y_proba_positive, y_proba_negative)
+                      VALUES (%s, %s, %s)
+                  """
+    elif algorithmName == 'SVM':
+        insert_query = """
+                      INSERT INTO svm_test_data (y_test, y_proba_positive, y_proba_negative)
+                      VALUES (%s, %s, %s)
+                  """
+    elif algorithmName == 'LR':
+        insert_query = """
+                      INSERT INTO lr_test_data (y_test, y_proba_positive, y_proba_negative)
+                      VALUES (%s, %s, %s)
+                  """
+    elif algorithmName == 'XGBoost':
+        insert_query = """
+                      INSERT INTO xgboost_test_data (y_test, y_proba_positive, y_proba_negative)
                       VALUES (%s, %s, %s)
                   """
 
