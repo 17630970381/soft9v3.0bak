@@ -8,4 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 public interface TaskManagerMapper extends BaseMapper<TaskManager> {
 
 
+    String getPublisherbumodelname(String modelname);
+
+    void deleteByModelname(String modelname);
 }

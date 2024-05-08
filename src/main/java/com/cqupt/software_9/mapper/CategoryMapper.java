@@ -43,4 +43,5 @@ public interface CategoryMapper extends BaseMapper<CategoryEntity> {
     List<CategoryEntity> getSpDisease();
     List<CategoryEntity> getComDisease();
 
+    String getParentTYpeById(String id);
 }

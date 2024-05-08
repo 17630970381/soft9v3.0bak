@@ -14,4 +14,6 @@ public interface DetailMapper extends BaseMapper<Detail> {
     List<DetailDTO> getDetail(String modelname);
 
     List<DetailDTO> getAll(String modelname);
+
+    void deleteByModelname(String modelname);
 }

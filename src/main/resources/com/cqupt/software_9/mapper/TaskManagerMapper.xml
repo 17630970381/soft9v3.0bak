@@ -6,6 +6,14 @@
 
 <mapper namespace="com.cqupt.software_9.mapper.TaskManagerMapper">
 
+    <delete id="deleteByModelname">
+        DELETE FROM task_manager where modelname = #{modelname}
+    </delete>
 
 
+    <select id="getPublisherbumodelname" resultType="java.lang.String">
+        SELECT publisher
+        FROM task_manager
+        WHERE modelname = #{modelname};
+    </select>
 </mapper>

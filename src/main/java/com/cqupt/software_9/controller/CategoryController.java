@@ -297,6 +297,11 @@ public class CategoryController {
     }
 
 
+    @GetMapping("/getParentTYpeById/{id}")
+    public Result getParentTYpeById(@PathVariable("id") String id){
+        return Result.success(200, "成功", categorymapper.getParentTYpeById(id));
+    }
+
 
 
 

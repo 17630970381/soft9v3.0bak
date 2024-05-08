@@ -9,21 +9,36 @@
 
     <delete id="removeModelResult">
         DELETE FROM modelresult
-        WHERE modelname = #{modelname}
+        <where>
+            <if test="modelname != null and modelname != ''">
+                AND modelname LIKE CONCAT(#{modelname}, '%')
+            </if>
+        </where>
     </delete>
     <select id="getModelDetail" resultType="com.cqupt.software_9.entity.modelResult">
-        select * from modelresult where modelname = #{modelname}
+        SELECT *
+        FROM modelresult
+        <where>
+            <if test="modelname != null and modelname != ''">
+                AND modelname LIKE CONCAT(#{modelname}, '%')
+            </if>
+        </where>
     </select>
 
     <select id="getTableName" resultType="java.util.Map">
         SELECT DISTINCT diseasename,  SPLIT_PART(modelname, '-', 1) AS  modelname FROM modelresult
     </select>
+
+
     <select id="getModelResultAndModel" resultType="com.cqupt.software_9.common.modelAndModelResultDTO">
         SELECT * FROM (SELECT modelresult.modelname,modelresult.evaluate,modelresult.pkl,modelresult.uid,modelresult.al,modelresult.tablename,
                               model.diseasename,model.createtime,model.publisher,model.feature
                        FROM modelresult
                                 JOIN model ON modelresult.modelname = model.modelname)
         WHERE modelname = #{modelname}
+    </select>
+    <select id="getTableNamePre" resultType="java.util.Map">
+        SELECT DISTINCT diseasename, modelname AS  modelname FROM modelresult
     </select>
 
 

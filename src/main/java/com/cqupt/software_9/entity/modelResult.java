@@ -22,4 +22,5 @@ public class modelResult {
     private String tablename;
     private String diseasename;
 
+
 }

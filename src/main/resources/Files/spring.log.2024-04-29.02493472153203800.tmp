@@ -1,0 +1,685 @@
+2024-04-29 11:01:59.419  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：1
+2024-04-29 11:01:59.470 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Traceback (most recent call last):
+2024-04-29 11:01:59.470 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 276, in <module>
+2024-04-29 11:01:59.470 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :     results, output_dir,model_path,y_test,  y_proba = publicAl(tableName, target, fea, algorithmName, algorithmAttributes)
+2024-04-29 11:01:59.470 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 133, in publicAl
+2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :     trained_model = train_model(model, X_train, y_train)
+2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 82, in train_model
+2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :     model.fit(X_train, y_train)
+2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\sklearn\base.py", line 1145, in wrapper
+2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :     estimator._validate_params()
+2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\sklearn\base.py", line 638, in _validate_params
+2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :     validate_parameter_constraints(
+2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\sklearn\utils\_param_validation.py", line 96, in validate_parameter_constraints
+2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :     raise InvalidParameterError(
+2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : sklearn.utils._param_validation.InvalidParameterError: The 'max_iter' parameter of SVC must be an int in the range [-1, inf). Got '-1' instead.
+2024-04-29 11:04:38.941  INFO 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：1
+2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Traceback (most recent call last):
+2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 278, in <module>
+2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :     results, output_dir,model_path,y_test,  y_proba = publicAl(tableName, target, fea, algorithmName, algorithmAttributes)
+2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 133, in publicAl
+2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :     trained_model = train_model(model, X_train, y_train)
+2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 82, in train_model
+2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :     model.fit(X_train, y_train)
+2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\sklearn\base.py", line 1145, in wrapper
+2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :     estimator._validate_params()
+2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\sklearn\base.py", line 638, in _validate_params
+2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :     validate_parameter_constraints(
+2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\sklearn\utils\_param_validation.py", line 96, in validate_parameter_constraints
+2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :     raise InvalidParameterError(
+2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : sklearn.utils._param_validation.InvalidParameterError: The 'tol' parameter of SVC must be a float in the range (0.0, inf). Got '0.001' instead.
+2024-04-29 11:06:42.337  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 11:06:42.337  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429110639_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429110639_SVM.pkl
+���ݲ���ʧ��: name 'delete_query' is not defined
+
+2024-04-29 11:06:58.512  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 11:06:58.512  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 11:07:00.042  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 11:07:00.042  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 11:07:12.983  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 11:07:12.983  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.623697637768122]
+
+2024-04-29 11:07:13.505  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 11:07:13.505  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.623697637768122]
+
+2024-04-29 13:56:10.557  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 13:56:10.557  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429135606_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429135606_SVM.pkl
+
+2024-04-29 13:56:13.873  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 13:56:13.874  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.62963, 'precision': 0.73684, 'recall': 0.73684, 'f1': 0.73684} E:\soft\Software9-v2.0-1220\src\assets\20240429135611_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429135611_RF.pkl
+
+2024-04-29 13:56:59.332  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 13:56:59.332  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429135658_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429135658_SVM.pkl
+
+2024-04-29 13:57:02.341  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 13:57:02.341  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.62963, 'precision': 0.73684, 'recall': 0.73684, 'f1': 0.73684} E:\soft\Software9-v2.0-1220\src\assets\20240429135700_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429135700_RF.pkl
+
+2024-04-29 13:58:27.754  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：1
+2024-04-29 13:58:27.754 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Traceback (most recent call last):
+2024-04-29 13:58:27.754 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 280, in <module>
+2024-04-29 13:58:27.754 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     results, output_dir,model_path,y_test,  y_proba = publicAl(tableName, target, fea, algorithmName, algorithmAttributes)
+2024-04-29 13:58:27.754 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 122, in publicAl
+2024-04-29 13:58:27.754 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     X = data[fea]
+2024-04-29 13:58:27.754 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\frame.py", line 3767, in __getitem__
+2024-04-29 13:58:27.755 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     indexer = self.columns._get_indexer_strict(key, "columns")[1]
+2024-04-29 13:58:27.755 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\indexes\base.py", line 5877, in _get_indexer_strict
+2024-04-29 13:58:27.755 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     self._raise_if_missing(keyarr, indexer, axis_name)
+2024-04-29 13:58:27.755 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\indexes\base.py", line 5938, in _raise_if_missing
+2024-04-29 13:58:27.755 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+2024-04-29 13:58:27.755 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : KeyError: "None of [Index([''], dtype='object')] are in the [columns]"
+2024-04-29 13:58:29.133  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：1
+2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Traceback (most recent call last):
+2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 280, in <module>
+2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     results, output_dir,model_path,y_test,  y_proba = publicAl(tableName, target, fea, algorithmName, algorithmAttributes)
+2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 122, in publicAl
+2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     X = data[fea]
+2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\frame.py", line 3767, in __getitem__
+2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     indexer = self.columns._get_indexer_strict(key, "columns")[1]
+2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\indexes\base.py", line 5877, in _get_indexer_strict
+2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     self._raise_if_missing(keyarr, indexer, axis_name)
+2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\indexes\base.py", line 5938, in _raise_if_missing
+2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : KeyError: "None of [Index([''], dtype='object')] are in the [columns]"
+2024-04-29 13:58:30.491  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：1
+2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Traceback (most recent call last):
+2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 280, in <module>
+2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     results, output_dir,model_path,y_test,  y_proba = publicAl(tableName, target, fea, algorithmName, algorithmAttributes)
+2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 122, in publicAl
+2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     X = data[fea]
+2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\frame.py", line 3767, in __getitem__
+2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     indexer = self.columns._get_indexer_strict(key, "columns")[1]
+2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\indexes\base.py", line 5877, in _get_indexer_strict
+2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     self._raise_if_missing(keyarr, indexer, axis_name)
+2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\indexes\base.py", line 5938, in _raise_if_missing
+2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : KeyError: "None of [Index([''], dtype='object')] are in the [columns]"
+2024-04-29 14:00:20.390  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:00:20.391  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429140018_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429140018_SVM.pkl
+
+2024-04-29 14:00:24.321  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:00:24.321  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429140022_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429140022_DT.pkl
+
+2024-04-29 14:00:28.032  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:00:28.032  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.62963, 'precision': 0.75, 'recall': 0.71053, 'f1': 0.72973} E:\soft\Software9-v2.0-1220\src\assets\20240429140026_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429140026_RF.pkl
+
+2024-04-29 14:01:59.731  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:01:59.731  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 14:02:01.217  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:02:01.217  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 14:02:02.743  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:02:02.743  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 14:02:04.244  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:02:04.244  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 14:02:05.803  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:02:05.803  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 14:02:07.313  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:02:07.313  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 14:23:46.883  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:23:46.884  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429142345_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429142345_LR.pkl
+���ݲ���ʧ��: name 'delete_query' is not defined
+
+2024-04-29 14:23:54.344  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:23:54.344  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 14:23:55.874  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:23:55.874  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 14:55:49.787  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:55:49.788  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429145548_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429145548_XGBoost.pkl
+
+2024-04-29 14:56:53.568  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:56:53.569  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 14:56:55.114  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:56:55.114  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 14:57:06.935  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:57:06.935  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.06327174]
+
+2024-04-29 14:57:07.660  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:57:07.660  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.06327174]
+
+2024-04-29 14:57:35.033  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:57:35.033  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429145732_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429145732_XGBoost.pkl
+
+2024-04-29 14:57:39.016  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:57:39.017  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 14:57:40.532  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:57:40.532  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 14:57:50.885  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:57:50.886  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.06327174]
+
+2024-04-29 14:57:51.650  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 14:57:51.650  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.06327174]
+
+2024-04-29 15:13:18.906  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:13:18.906  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429151316_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151316_LR.pkl
+
+2024-04-29 15:13:21.160  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:13:21.160  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429151320_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151320_DT.pkl
+
+2024-04-29 15:13:24.022  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:13:24.022  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429151322_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151322_SVM.pkl
+
+2024-04-29 15:13:27.859  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:13:27.859  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.61111, 'precision': 0.72973, 'recall': 0.71053, 'f1': 0.72} E:\soft\Software9-v2.0-1220\src\assets\20240429151326_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151325_RF.pkl
+
+2024-04-29 15:13:31.044  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:13:31.045  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429151329_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151329_XGBoost.pkl
+
+2024-04-29 15:17:22.583  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:17:22.583  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429151721_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151721_LR.pkl
+
+2024-04-29 15:17:24.788  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:17:24.788  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429151723_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151723_DT.pkl
+
+2024-04-29 15:17:27.041  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:17:27.042  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429151725_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151725_SVM.pkl
+
+2024-04-29 15:17:29.539  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:17:29.539  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429151728_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151728_XGBoost.pkl
+
+2024-04-29 15:17:32.971  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:17:32.971  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.62963, 'precision': 0.75, 'recall': 0.71053, 'f1': 0.72973} E:\soft\Software9-v2.0-1220\src\assets\20240429151731_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151731_RF.pkl
+
+2024-04-29 15:17:51.202  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:17:51.202  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:17:52.699  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:17:52.700  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:17:54.210  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:17:54.211  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:17:55.708  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:17:55.708  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:17:57.220  INFO 31948 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:17:57.220  INFO 31948 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:17:58.750  INFO 31948 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:17:58.750  INFO 31948 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:18:00.341  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:18:00.341  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:18:01.977  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:18:01.977  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:18:03.684  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:18:03.684  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:18:05.156  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:18:05.157  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:19:12.354  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:19:12.355  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429151911_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151911_LR.pkl
+
+2024-04-29 15:20:13.421  INFO 31948 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:20:13.421  INFO 31948 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429152012_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429152012_LR.pkl
+
+2024-04-29 15:20:17.823  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:20:17.824  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:20:19.352  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:20:19.352  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:28:50.757  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:28:50.757  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429152849_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429152849_LR.pkl
+
+2024-04-29 15:28:52.856  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:28:52.856  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429152851_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429152851_DT.pkl
+
+2024-04-29 15:28:55.024  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:28:55.024  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429152854_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429152854_SVM.pkl
+
+2024-04-29 15:28:57.534  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:28:57.534  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.59259, 'precision': 0.72222, 'recall': 0.68421, 'f1': 0.7027} E:\soft\Software9-v2.0-1220\src\assets\20240429152856_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429152856_RF.pkl
+
+2024-04-29 15:28:59.815  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:28:59.815  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429152858_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429152858_XGBoost.pkl
+
+2024-04-29 15:30:47.883  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:30:47.884  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429153046_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429153046_LR.pkl
+
+2024-04-29 15:30:49.991  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:30:49.991  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429153049_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429153049_DT.pkl
+
+2024-04-29 15:30:52.113  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:30:52.113  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429153051_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429153051_SVM.pkl
+
+2024-04-29 15:30:54.626  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:30:54.626  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.66667, 'precision': 0.76316, 'recall': 0.76316, 'f1': 0.76316} E:\soft\Software9-v2.0-1220\src\assets\20240429153053_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429153053_RF.pkl
+
+2024-04-29 15:30:56.853  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:30:56.853  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429153055_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429153055_XGBoost.pkl
+
+2024-04-29 15:31:06.256  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:31:06.256  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:31:07.771  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:31:07.772  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:31:09.350  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:31:09.351  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:31:10.871  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:31:10.871  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:31:12.365  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:31:12.365  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:31:13.856  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:31:13.856  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:31:15.376  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:31:15.376  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:31:16.852  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:31:16.852  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:31:18.370  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:31:18.371  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:31:19.851  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 15:31:19.851  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 15:35:50.966  INFO 31948 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-04-29 15:35:50.969  INFO 31948 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-29 15:35:50.973  INFO 31948 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-29 15:36:01.017  INFO 33868 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 33868 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-04-29 15:36:01.018  INFO 33868 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-04-29 15:36:02.443  INFO 33868 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-29 15:36:02.443  INFO 33868 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-29 15:36:03.337  INFO 33868 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-04-29 15:36:03.368  INFO 33868 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 JDBC repository interfaces.
+2024-04-29 15:36:03.798  INFO 33868 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-04-29 15:36:03.803  INFO 33868 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-29 15:36:03.803  INFO 33868 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-04-29 15:36:03.869  INFO 33868 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-29 15:36:03.869  INFO 33868 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1426 ms
+2024-04-29 15:36:04.812  WARN 33868 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 15:36:04.980  WARN 33868 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 15:36:05.041  WARN 33868 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 15:36:05.049  WARN 33868 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 15:36:05.271  WARN 33868 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 15:36:05.391  WARN 33868 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 15:36:05.630  INFO 33868 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-04-29 15:36:05.807  INFO 33868 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-29 15:36:05.906  INFO 33868 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-29 15:36:06.076  INFO 33868 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b837663, org.springframework.security.web.context.SecurityContextPersistenceFilter@4d152171, org.springframework.security.web.header.HeaderWriterFilter@c75751a, org.springframework.security.web.authentication.logout.LogoutFilter@303556dd, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@445133c0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7cd55e94, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a59c1f5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c6534c3, org.springframework.security.web.session.SessionManagementFilter@198987d7, org.springframework.security.web.access.ExceptionTranslationFilter@423e52a5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@35353a6]
+2024-04-29 15:36:06.105  INFO 33868 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-29 15:36:06.144  INFO 33868 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-04-29 15:36:06.149  INFO 33868 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 5.501 seconds (JVM running for 6.212)
+2024-04-29 15:36:17.335  INFO 33868 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-29 15:36:17.335  INFO 33868 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-29 15:36:17.349  INFO 33868 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2024-04-29 16:08:16.559  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:08:16.559  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429160814_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160814_LR.pkl
+
+2024-04-29 16:08:19.125  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:08:19.126  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429160817_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160817_DT.pkl
+
+2024-04-29 16:08:22.574  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:08:22.574  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429160821_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160821_SVM.pkl
+
+2024-04-29 16:08:26.144  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:08:26.144  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.59259, 'precision': 0.71053, 'recall': 0.71053, 'f1': 0.71053} E:\soft\Software9-v2.0-1220\src\assets\20240429160824_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160824_RF.pkl
+
+2024-04-29 16:08:28.519  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:08:28.520  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429160827_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160827_XGBoost.pkl
+
+2024-04-29 16:09:47.601  INFO 33868 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:09:47.601  INFO 33868 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429160946_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160946_LR.pkl
+
+2024-04-29 16:09:49.778  INFO 33868 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:09:49.779  INFO 33868 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429160948_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160948_DT.pkl
+
+2024-04-29 16:09:51.951  INFO 33868 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:09:51.952  INFO 33868 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429160951_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160951_SVM.pkl
+
+2024-04-29 16:10:41.771  INFO 33868 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:10:41.771  INFO 33868 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429161040_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429161040_LR.pkl
+
+2024-04-29 16:10:44.103  INFO 33868 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:10:44.103  INFO 33868 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429161043_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429161043_DT.pkl
+
+2024-04-29 16:10:46.349  INFO 33868 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:10:46.349  INFO 33868 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429161045_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429161045_SVM.pkl
+
+2024-04-29 16:10:51.193  INFO 33868 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:10:51.194  INFO 33868 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:10:52.678  INFO 33868 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:10:52.678  INFO 33868 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:10:54.255  INFO 33868 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:10:54.255  INFO 33868 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:10:55.803  INFO 33868 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:10:55.803  INFO 33868 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:10:57.349  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:10:57.349  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:10:58.888  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:10:58.888  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:36:41.053  INFO 33868 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-04-29 16:36:41.055  INFO 33868 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-29 16:36:41.056  INFO 33868 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-29 16:36:45.133  INFO 24956 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 24956 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-04-29 16:36:45.135  INFO 24956 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-04-29 16:36:46.419  INFO 24956 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-29 16:36:46.419  INFO 24956 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-29 16:36:46.767  INFO 24956 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-04-29 16:36:46.792  INFO 24956 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 JDBC repository interfaces.
+2024-04-29 16:36:47.173  INFO 24956 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-04-29 16:36:47.181  INFO 24956 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-29 16:36:47.181  INFO 24956 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-04-29 16:36:47.239  INFO 24956 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-29 16:36:47.239  INFO 24956 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 820 ms
+2024-04-29 16:36:47.814  WARN 24956 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 16:36:47.932  WARN 24956 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 16:36:47.998  WARN 24956 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 16:36:48.006  WARN 24956 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 16:36:48.135  WARN 24956 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 16:36:48.224  WARN 24956 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 16:36:48.327  INFO 24956 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-04-29 16:36:48.456  INFO 24956 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-29 16:36:48.545  INFO 24956 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-29 16:36:48.641  INFO 24956 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@70cdc6f5, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f08bccb, org.springframework.security.web.header.HeaderWriterFilter@68df20b7, org.springframework.security.web.authentication.logout.LogoutFilter@d94147b, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@28609bae, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a16db28, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4473923d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@445ab39d, org.springframework.security.web.session.SessionManagementFilter@31f1a899, org.springframework.security.web.access.ExceptionTranslationFilter@1b9fa5a9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@20564da0]
+2024-04-29 16:36:48.664  INFO 24956 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-29 16:36:48.702  INFO 24956 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-04-29 16:36:48.708  INFO 24956 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 3.812 seconds (JVM running for 4.31)
+2024-04-29 16:41:08.402  INFO 24956 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-04-29 16:41:08.404  INFO 24956 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-29 16:41:08.406  INFO 24956 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-29 16:41:10.965  INFO 32584 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 32584 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-04-29 16:41:10.966  INFO 32584 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-04-29 16:41:11.040  INFO 32584 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-29 16:41:11.040  INFO 32584 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-29 16:41:11.332  INFO 32584 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-04-29 16:41:11.353  INFO 32584 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 JDBC repository interfaces.
+2024-04-29 16:41:11.659  INFO 32584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-04-29 16:41:11.663  INFO 32584 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-29 16:41:11.663  INFO 32584 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-04-29 16:41:11.705  INFO 32584 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-29 16:41:11.705  INFO 32584 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 665 ms
+2024-04-29 16:41:12.226  WARN 32584 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 16:41:12.320  WARN 32584 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 16:41:12.362  WARN 32584 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 16:41:12.369  WARN 32584 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 16:41:12.466  WARN 32584 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 16:41:12.535  WARN 32584 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 16:41:12.630  INFO 32584 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-04-29 16:41:12.758  INFO 32584 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-29 16:41:12.846  INFO 32584 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-29 16:41:12.952  INFO 32584 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a5098f1, org.springframework.security.web.context.SecurityContextPersistenceFilter@46a846d9, org.springframework.security.web.header.HeaderWriterFilter@785a4cc9, org.springframework.security.web.authentication.logout.LogoutFilter@75000b30, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@abb3607, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2dce45bf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36a8f129, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20c8f91c, org.springframework.security.web.session.SessionManagementFilter@7813b265, org.springframework.security.web.access.ExceptionTranslationFilter@53dfdf13, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@40895eff]
+2024-04-29 16:41:12.974  INFO 32584 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-29 16:41:13.004  INFO 32584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-04-29 16:41:13.009  INFO 32584 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 2.231 seconds (JVM running for 2.636)
+2024-04-29 16:41:18.357  INFO 32584 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-29 16:41:18.357  INFO 32584 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-29 16:41:18.360  INFO 32584 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-04-29 16:49:06.123  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:49:06.123  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429164904_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429164904_LR.pkl
+
+2024-04-29 16:49:09.229  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:49:09.229  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429164907_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429164907_DT.pkl
+
+2024-04-29 16:49:12.445  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:49:12.445  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429164910_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429164910_SVM.pkl
+
+2024-04-29 16:49:16.159  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:49:16.159  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.62963, 'precision': 0.73684, 'recall': 0.73684, 'f1': 0.73684} E:\soft\Software9-v2.0-1220\src\assets\20240429164914_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429164914_RF.pkl
+
+2024-04-29 16:49:19.871  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:49:19.872  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429164917_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429164917_XGBoost.pkl
+
+2024-04-29 16:49:36.272  INFO 32584 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:49:36.273  INFO 32584 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:49:37.892  INFO 32584 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:49:37.892  INFO 32584 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:49:39.483  INFO 32584 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:49:39.484  INFO 32584 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:49:41.040  INFO 32584 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:49:41.040  INFO 32584 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:49:42.621  INFO 32584 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:49:42.621  INFO 32584 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:49:44.201  INFO 32584 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:49:44.202  INFO 32584 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:49:45.780  INFO 32584 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:49:45.780  INFO 32584 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:49:47.256  INFO 32584 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:49:47.256  INFO 32584 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:49:49.205  INFO 32584 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:49:49.205  INFO 32584 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:49:50.815  INFO 32584 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-04-29 16:49:50.816  INFO 32584 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-04-29 16:51:57.581  WARN 32584 --- [http-nio-8082-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'disease' is not present]
+2024-04-29 16:52:03.683  WARN 32584 --- [http-nio-8082-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'disease' is not present]
+2024-04-29 16:54:18.110  WARN 32584 --- [http-nio-8082-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required Integer parameter 'pageNum' is not present]
+2024-04-29 19:03:02.859  INFO 32584 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-04-29 19:03:02.861  INFO 32584 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-29 19:03:02.863  INFO 32584 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-29 19:03:10.388  INFO 20156 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 20156 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-04-29 19:03:10.390  INFO 20156 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-04-29 19:03:11.941  INFO 20156 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-29 19:03:11.941  INFO 20156 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-29 19:03:12.794  INFO 20156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-04-29 19:03:12.814  INFO 20156 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15ms. Found 0 JDBC repository interfaces.
+2024-04-29 19:03:13.233  INFO 20156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-04-29 19:03:13.238  INFO 20156 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-29 19:03:13.238  INFO 20156 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-04-29 19:03:13.290  INFO 20156 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-29 19:03:13.290  INFO 20156 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1349 ms
+2024-04-29 19:03:13.892  WARN 20156 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:03:14.037  WARN 20156 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:03:14.102  WARN 20156 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:03:14.110  WARN 20156 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:03:14.301  WARN 20156 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:03:14.414  WARN 20156 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:03:14.570  INFO 20156 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-04-29 19:03:14.699  INFO 20156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-29 19:03:14.796  INFO 20156 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-29 19:03:14.955  INFO 20156 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@20c8f91c, org.springframework.security.web.context.SecurityContextPersistenceFilter@48ab5655, org.springframework.security.web.header.HeaderWriterFilter@3df3f29, org.springframework.security.web.authentication.logout.LogoutFilter@5467cc2e, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@e59c2bb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33947e85, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a50af9d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@156f0294, org.springframework.security.web.session.SessionManagementFilter@75322e9, org.springframework.security.web.access.ExceptionTranslationFilter@1db95487, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7d34ad22]
+2024-04-29 19:03:14.983  INFO 20156 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-29 19:03:15.011  INFO 20156 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-04-29 19:03:15.018  INFO 20156 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 4.931 seconds (JVM running for 5.577)
+2024-04-29 19:08:33.516  INFO 20156 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-29 19:08:33.517  INFO 20156 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-29 19:08:33.526  INFO 20156 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2024-04-29 19:08:33.622  WARN 20156 --- [http-nio-8082-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'taskname' is not present]
+2024-04-29 19:08:57.041  WARN 20156 --- [http-nio-8082-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'taskname' is not present]
+2024-04-29 19:09:05.802  WARN 20156 --- [http-nio-8082-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'taskname' is not present]
+2024-04-29 19:09:32.403  WARN 20156 --- [http-nio-8082-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'taskname' is not present]
+2024-04-29 19:10:12.097  WARN 20156 --- [http-nio-8082-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'taskname' is not present]
+2024-04-29 19:10:18.690  WARN 20156 --- [http-nio-8082-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'taskname' is not present]
+2024-04-29 19:11:23.440  WARN 20156 --- [http-nio-8082-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'taskname' is not present]
+2024-04-29 19:11:52.698  WARN 20156 --- [http-nio-8082-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'taskname' is not present]
+2024-04-29 19:11:59.008  WARN 20156 --- [http-nio-8082-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'taskname' is not present]
+2024-04-29 19:12:36.394  WARN 20156 --- [http-nio-8082-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'taskname' is not present]
+2024-04-29 19:13:53.239  INFO 20156 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-04-29 19:13:53.241  INFO 20156 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-29 19:13:53.243  INFO 20156 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-29 19:13:58.985  INFO 3344 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 3344 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-04-29 19:13:58.987  INFO 3344 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-04-29 19:14:00.180  INFO 3344 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-29 19:14:00.180  INFO 3344 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-29 19:14:00.529  INFO 3344 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-04-29 19:14:00.546  INFO 3344 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 JDBC repository interfaces.
+2024-04-29 19:14:00.871  INFO 3344 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-04-29 19:14:00.877  INFO 3344 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-29 19:14:00.877  INFO 3344 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-04-29 19:14:00.932  INFO 3344 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-29 19:14:00.932  INFO 3344 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 752 ms
+2024-04-29 19:14:01.544  WARN 3344 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:14:01.654  WARN 3344 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:14:01.717  WARN 3344 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:14:01.725  WARN 3344 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:14:01.860  WARN 3344 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:14:01.938  WARN 3344 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:14:02.042  INFO 3344 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-04-29 19:14:02.157  INFO 3344 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-29 19:14:02.234  INFO 3344 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-29 19:14:02.313  INFO 3344 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@632e5089, org.springframework.security.web.context.SecurityContextPersistenceFilter@71623f7b, org.springframework.security.web.header.HeaderWriterFilter@478caa46, org.springframework.security.web.authentication.logout.LogoutFilter@1f459c42, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@21ba9674, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ac05fc7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19c52b83, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@38ed185c, org.springframework.security.web.session.SessionManagementFilter@3e90379d, org.springframework.security.web.access.ExceptionTranslationFilter@6e85a577, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@44fefed]
+2024-04-29 19:14:02.339  INFO 3344 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-29 19:14:02.370  INFO 3344 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-04-29 19:14:02.375  INFO 3344 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 3.684 seconds (JVM running for 4.17)
+2024-04-29 19:14:23.335  INFO 3344 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-04-29 19:14:23.337  INFO 3344 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-29 19:14:23.339  INFO 3344 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-29 19:14:26.975  INFO 36904 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 36904 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-04-29 19:14:26.977  INFO 36904 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-04-29 19:14:27.048  INFO 36904 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-29 19:14:27.048  INFO 36904 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-29 19:14:27.328  INFO 36904 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-04-29 19:14:27.346  INFO 36904 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 0 JDBC repository interfaces.
+2024-04-29 19:14:27.660  INFO 36904 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-04-29 19:14:27.665  INFO 36904 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-29 19:14:27.665  INFO 36904 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-04-29 19:14:27.711  INFO 36904 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-29 19:14:27.711  INFO 36904 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 662 ms
+2024-04-29 19:14:28.275  WARN 36904 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:14:28.374  WARN 36904 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:14:28.425  WARN 36904 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:14:28.433  WARN 36904 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:14:28.538  WARN 36904 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:14:28.605  WARN 36904 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:14:28.709  INFO 36904 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-04-29 19:14:28.823  INFO 36904 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-29 19:14:28.905  INFO 36904 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-29 19:14:29.013  INFO 36904 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@432b859c, org.springframework.security.web.context.SecurityContextPersistenceFilter@33947e85, org.springframework.security.web.header.HeaderWriterFilter@799f2b37, org.springframework.security.web.authentication.logout.LogoutFilter@2f4d7dfc, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@2d8b533d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@250589ea, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23ef64e9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2dd21a18, org.springframework.security.web.session.SessionManagementFilter@48ab5655, org.springframework.security.web.access.ExceptionTranslationFilter@3df3f29, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@31b721f9]
+2024-04-29 19:14:29.044  INFO 36904 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-29 19:14:29.085  INFO 36904 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-04-29 19:14:29.093  INFO 36904 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 2.307 seconds (JVM running for 2.759)
+2024-04-29 19:17:56.391  INFO 36904 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-04-29 19:17:56.392  INFO 36904 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-29 19:17:56.393  INFO 36904 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-29 19:17:58.808  INFO 33256 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 33256 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-04-29 19:17:58.810  INFO 33256 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-04-29 19:17:58.917  INFO 33256 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-29 19:17:58.917  INFO 33256 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-29 19:17:59.295  INFO 33256 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-04-29 19:17:59.314  INFO 33256 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 0 JDBC repository interfaces.
+2024-04-29 19:17:59.774  INFO 33256 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-04-29 19:17:59.783  INFO 33256 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-29 19:17:59.783  INFO 33256 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-04-29 19:17:59.838  INFO 33256 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-29 19:17:59.838  INFO 33256 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 920 ms
+2024-04-29 19:18:00.470  WARN 33256 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:18:00.567  WARN 33256 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:18:00.610  WARN 33256 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:18:00.618  WARN 33256 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:18:00.713  WARN 33256 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:18:00.783  WARN 33256 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:18:00.885  INFO 33256 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-04-29 19:18:01.003  INFO 33256 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-29 19:18:01.083  INFO 33256 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-29 19:18:01.175  INFO 33256 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4f137f26, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a16db28, org.springframework.security.web.header.HeaderWriterFilter@58fcaa57, org.springframework.security.web.authentication.logout.LogoutFilter@6bcf12f2, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@76cd97d4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45508cb7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@303556dd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ea3b2c9, org.springframework.security.web.session.SessionManagementFilter@1f08bccb, org.springframework.security.web.access.ExceptionTranslationFilter@68df20b7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@52e57974]
+2024-04-29 19:18:01.199  INFO 33256 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-29 19:18:01.225  INFO 33256 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-04-29 19:18:01.233  INFO 33256 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 2.845 seconds (JVM running for 3.325)
+2024-04-29 19:18:05.823  INFO 33256 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-29 19:18:05.824  INFO 33256 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-29 19:18:05.827  INFO 33256 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-04-29 19:22:30.603  INFO 33256 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-04-29 19:22:30.605  INFO 33256 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-04-29 19:22:30.606  INFO 33256 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-04-29 19:22:32.733  INFO 24764 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 24764 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-04-29 19:22:32.734  INFO 24764 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-04-29 19:22:32.807  INFO 24764 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-04-29 19:22:32.807  INFO 24764 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-04-29 19:22:33.087  INFO 24764 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-04-29 19:22:33.105  INFO 24764 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 0 JDBC repository interfaces.
+2024-04-29 19:22:33.417  INFO 24764 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-04-29 19:22:33.421  INFO 24764 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-29 19:22:33.421  INFO 24764 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-04-29 19:22:33.461  INFO 24764 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-29 19:22:33.461  INFO 24764 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 653 ms
+2024-04-29 19:22:33.995  WARN 24764 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:22:34.090  WARN 24764 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:22:34.132  WARN 24764 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:22:34.140  WARN 24764 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:22:34.244  WARN 24764 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:22:34.315  WARN 24764 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-04-29 19:22:34.423  INFO 24764 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-04-29 19:22:34.534  INFO 24764 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-04-29 19:22:34.611  INFO 24764 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-04-29 19:22:34.700  INFO 24764 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@432b859c, org.springframework.security.web.context.SecurityContextPersistenceFilter@33947e85, org.springframework.security.web.header.HeaderWriterFilter@799f2b37, org.springframework.security.web.authentication.logout.LogoutFilter@2f4d7dfc, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@2d8b533d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@250589ea, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23ef64e9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2dd21a18, org.springframework.security.web.session.SessionManagementFilter@48ab5655, org.springframework.security.web.access.ExceptionTranslationFilter@3df3f29, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@31b721f9]
+2024-04-29 19:22:34.727  INFO 24764 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-04-29 19:22:34.761  INFO 24764 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-04-29 19:22:34.767  INFO 24764 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 2.221 seconds (JVM running for 2.635)
+2024-04-29 19:22:38.011  INFO 24764 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-29 19:22:38.012  INFO 24764 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-04-29 19:22:38.014  INFO 24764 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

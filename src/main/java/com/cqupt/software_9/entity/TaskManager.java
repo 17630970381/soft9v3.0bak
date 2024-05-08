@@ -14,10 +14,10 @@ import lombok.NoArgsConstructor;
 public class TaskManager {
     @TableId(type = IdType.AUTO)
     private String id;
-    private String taskname;
-    private String al;
+    private String modelname;
+    private String alname;
     private String mostacc;
     private String diseasename;
-    private String creator;
+    private String publisher;
     private String tablename;
 }

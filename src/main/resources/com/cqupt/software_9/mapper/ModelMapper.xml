@@ -7,7 +7,11 @@
 <mapper namespace="com.cqupt.software_9.mapper.ModelMapper">
     <delete id="removeModel">
         DELETE FROM model
-        WHERE modelname = #{modelname}
+        <where>
+            <if test="modelname != null and modelname != ''">
+                AND modelname LIKE CONCAT(#{modelname}, '%')
+            </if>
+        </where>
     </delete>
 
 
@@ -57,7 +61,13 @@
         SELECT DISTINCT diagname FROM merge;
     </select>
     <select id="getFea" resultType="java.lang.String">
-        select  feature from model where modelname = #{modelname}
+        select  feature from model
+        <where>
+            <if test="modelname != null and modelname != ''">
+                AND modelname LIKE CONCAT(#{modelname}, '%')
+            </if>
+        </where>
+        LIMIT 1
     </select>
     <select id="getFeaBymodelName" resultType="java.lang.String">
         SELECT feature
@@ -76,7 +86,9 @@
     <select id="getMaritalStatus" resultType="java.lang.String">
         SELECT DISTINCT maritalstatusname FROM merge;
     </select>
-
+    <select id="getModelNumPre" resultType="java.lang.Integer">
+        SELECT COUNT(modelname)  FROM model;
+    </select>
 
 
 </mapper>

@@ -65,6 +65,8 @@ public class ModelController {
 
     @Resource
     private DetailMapper detailMapper;
+    @Resource
+    private TaskManagerMapper taskManagerMapper;
 
     @GetMapping("/getall")
     public List<Model> getallmodel(){
@@ -264,11 +266,12 @@ public class ModelController {
      * @return
      */
     @PutMapping("/remove/{modelname}")
-    public boolean ModelRemove( @PathVariable("modelname") String modelname){
+    public boolean ModelRemove(@PathVariable("modelname") String modelname){
         //  操作日志记录
-
+        System.out.println("==============================================");
+        System.out.println(modelname);
         UserLog userLog = new UserLog();
-        String username = modelMapper.getPublisherbumodelname(modelname);
+        String username = taskManagerMapper.getPublisherbumodelname(modelname);
         userLog.setUsername(username);
         String uid = userMapper.getUidByUsername(username);
         User user = userMapper.selectByUid(uid);
@@ -277,9 +280,12 @@ public class ModelController {
         userLog.setUid(uid);
         boolean a = modelMapper.removeModel(modelname);
         boolean b = modelResultMapper.removeModelResult(modelname);
-        QueryWrapper<Detail> wrapper = new QueryWrapper<Detail>();
-        wrapper.eq("modelname",modelname);
+        QueryWrapper<Detail> wrapper = new QueryWrapper<>();
+        wrapper.like("modelname",modelname);
         detailMapper.delete(wrapper);
+        QueryWrapper<TaskManager> wrapper1 = new QueryWrapper<>();
+        wrapper1.eq("modelname",modelname);
+        taskManagerMapper.delete(wrapper1);
 
         if (a && b){
             userLog.setOpType("用户删除模型"+modelname+"成功");
@@ -387,6 +393,10 @@ public class ModelController {
     @GetMapping("/getModelNum")
     public Integer getModelNum(){
         return modelMapper.getModelNum();
+    }
+    @GetMapping("/getModelNumPre")
+    public Integer getModelNumPre(){
+        return modelMapper.getModelNumPre();
     }
 
     /**

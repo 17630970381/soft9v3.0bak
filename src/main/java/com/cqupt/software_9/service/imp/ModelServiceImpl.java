@@ -3,10 +3,7 @@ package com.cqupt.software_9.service.imp;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cqupt.software_9.entity.*;
-import com.cqupt.software_9.mapper.ModelMapper;
-import com.cqupt.software_9.mapper.UserLogMapper;
-import com.cqupt.software_9.mapper.UserMapper;
-import com.cqupt.software_9.mapper.modelResultMapper;
+import com.cqupt.software_9.mapper.*;
 import com.cqupt.software_9.service.ModelService;
 import com.cqupt.software_9.service.Request.RuntimeTaskRequest;
 import com.cqupt.software_9.service.Response.OnlineServiceResponse;
@@ -43,6 +40,9 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
     private UserLogMapper userLogMapper;
     @Resource
     private UserMapper userMapper;
+
+    @Resource
+    private TaskManagerMapper taskManagerMapper;
 
     @Override
     public Map<String, List<modelResult>> trainModel(trainAl trainAl) {
@@ -158,6 +158,17 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
         model.setUid(modelRequestData.getUid());
         model.setModeurl(modelRequestData.getPkl());
         model.setFeature(modelRequestData.getFeature());
+
+        if(isReapt(modelRequestData)){
+            TaskManager taskManager = new TaskManager();
+            taskManager.setMostacc(modelRequestData.getMostacc());
+            taskManager.setModelname(modelRequestData.getModelname());
+            taskManager.setAlname(modelRequestData.getAlname());
+            taskManager.setDiseasename(modelRequestData.getDiseasename());
+            taskManager.setPublisher(modelRequestData.getPublisher());
+            taskManager.setTablename(modelRequestData.getTablename());
+            taskManagerMapper.insert(taskManager);
+        }
         int a = modelMapper.insert(model);
         int b = modelResultMapper.insert(modelResult);
         saveModelResult(modelRequestData);
@@ -182,6 +193,18 @@ public class ModelServiceImpl extends ServiceImpl<ModelMapper, Model> implements
             userLog2.setUsername(modelRequestData.getPublisher());
             userLogMapper.insert(userLog2);
             return false;
+        }
+    }
+
+    protected  boolean isReapt(ModelRequestData modelRequestData){
+        String modelname = modelRequestData.getModelname();
+        QueryWrapper<TaskManager> wrapper = new QueryWrapper<>();
+        wrapper.eq("modelname",modelname);
+        TaskManager taskManager = taskManagerMapper.selectOne(wrapper);
+        if(taskManager != null){
+            return false;
+        }else {
+            return true;
         }
     }
 

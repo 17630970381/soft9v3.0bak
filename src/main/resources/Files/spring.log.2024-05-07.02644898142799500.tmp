@@ -1,0 +1,470 @@
+2024-05-07 09:09:56.160  INFO 28820 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-05-07 09:09:56.178  INFO 28820 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-07 09:09:56.189  INFO 28820 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-07 09:10:18.176  INFO 24844 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 24844 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-05-07 09:10:18.178  INFO 24844 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-05-07 09:10:18.336  INFO 24844 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-07 09:10:18.337  INFO 24844 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-07 09:10:18.955  INFO 24844 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-07 09:10:18.979  INFO 24844 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 JDBC repository interfaces.
+2024-05-07 09:10:19.453  INFO 24844 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-05-07 09:10:19.460  INFO 24844 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07 09:10:19.460  INFO 24844 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-05-07 09:10:19.516  INFO 24844 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07 09:10:19.516  INFO 24844 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1179 ms
+2024-05-07 09:10:20.319  WARN 24844 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 09:10:20.446  WARN 24844 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 09:10:20.498  WARN 24844 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 09:10:20.505  WARN 24844 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 09:10:20.660  WARN 24844 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 09:10:20.768  WARN 24844 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 09:10:20.946  INFO 24844 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-05-07 09:10:21.131  INFO 24844 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-07 09:10:21.247  INFO 24844 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-07 09:10:21.415  INFO 24844 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@518f41ea, org.springframework.security.web.context.SecurityContextPersistenceFilter@772ea2ab, org.springframework.security.web.header.HeaderWriterFilter@4670e6d8, org.springframework.security.web.authentication.logout.LogoutFilter@524b5f4f, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@63fdd875, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60be3407, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6192e308, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@372264f8, org.springframework.security.web.session.SessionManagementFilter@59b76d2a, org.springframework.security.web.access.ExceptionTranslationFilter@1efeffe1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5307a692]
+2024-05-07 09:10:21.446  INFO 24844 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-07 09:10:21.477  INFO 24844 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-05-07 09:10:21.484  INFO 24844 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 3.639 seconds (JVM running for 4.235)
+2024-05-07 09:10:53.387  INFO 24844 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07 09:10:53.388  INFO 24844 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07 09:10:53.396  INFO 24844 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2024-05-07 10:52:23.951  INFO 24844 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 10:52:23.953  INFO 24844 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[[0.07233326137065887, 0.993457019329071], [0.9877550005912781, 1.0], [0.9999089241027832, 0.9999572038650513], [0.999982476234436, 1.0], [0.9999537467956543, 1.0], [0.8998435735702515, 1.0], [0.9311345815658569, 1.0], [1.0, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9996658563613892, 1.0], [0.9996658563613892, 1.0], [0.9996658563613892, 1.0], [0.9991520643234253, 0.9995249509811401], [0.999990701675415, 1.0], [0.0027776937931776047, 0.924957811832428], [0.9999998807907104, 0.9999985694885254], [0.99998939037323, 1.0], [0.9999998807907104, 1.0], [0.1403268426656723, 0.9980023503303528], [0.03883954882621765, 0.9177864789962769], [0.9999380111694336, 0.9999998807907104], [0.9860214591026306, 0.9999929666519165], [1.0, 1.0], [0.9999936819076538, 0.9999418258666992], [1.0, 1.0], [1.0, 1.0], [0.9989556074142456, 0.999976634979248], [1.0, 1.0], [1.0, 1.0], [0.9986352324485779, 0.9991711378097534], [0.8427770137786865, 0.8642948269844055], [0.9996525049209595, 0.9974315762519836], [0.9717417359352112, 0.9997476935386658], [1.0, 1.0], [1.0, 1.0], [0.08392661809921265, 0.9613068699836731], [0.08392661809921265, 0.9613068699836731], [0.08392661809921265, 0.9613068699836731], [0.9507011771202087, 0.8161828517913818], [0.8550289869308472, 0.7696330547332764], [1.0, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9999936819076538, 0.9999997615814209], [0.9999936819076538, 0.9999997615814209], [0.9999936819076538, 0.9999997615814209], [0.8602871298789978, 1.0], [0.9999091625213623, 0.9998592138290405], [0.9857131242752075, 0.9996768236160278], [0.10286837071180344, 0.2834579348564148], [0.9999531507492065, 0.9999911785125732], [0.9999979734420776, 1.0], [0.9999353885650635, 1.0], [0.9638014435768127, 1.0], [0.9978612065315247, 0.9999980926513672], [0.565186083316803, 1.0], [0.9997900128364563, 0.9992803931236267], [0.9999927282333374, 0.9999992847442627], [0.9999927282333374, 0.9999992847442627], [0.9999927282333374, 0.9999992847442627], [1.0, 1.0], [0.9967564940452576, 0.9999829530715942], [0.9998036026954651, 0.9999517202377319], [1.0, 1.0], [0.9991439580917358, 0.9986758828163147], [0.30759552121162415, 0.9990838766098022], [0.9248137474060059, 0.9998383522033691], [0.999991774559021, 1.0], [0.9999985694885254, 1.0], [0.03140825033187866, 0.8864614963531494], [1.0, 1.0], [0.9495766758918762, 0.991675615310669], [0.9999983310699463, 1.0], [1.0, 1.0], [0.9990334510803223, 1.0], [0.9999797344207764, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9999901056289673, 0.9999691247940063], [0.8435006737709045, 0.995827853679657], [1.0, 1.0], [0.9999998807907104, 0.9999409914016724], [0.9992390871047974, 0.9999306201934814], [0.0870731920003891, 0.9993994235992432], [0.8765121698379517, 0.9998400211334229], [0.8765121698379517, 0.9998400211334229], [0.8765121698379517, 0.9998400211334229], [1.0, 1.0], [1.0, 1.0], [0.9999526739120483, 0.9999990463256836], [0.792820155620575, 0.9999022483825684], [1.0, 1.0], [1.0, 1.0], [0.9999586343765259, 0.9999574422836304], [1.0, 1.0], [0.9622142910957336, 0.9999892711639404], [0.9999996423721313, 0.9999982118606567], [0.9999998807907104, 0.9999997615814209], [1.0, 1.0], [1.0, 1.0], [0.47673168778419495, 1.0], [0.9986408352851868, 0.999496340751648], [0.9999388456344604, 0.9999996423721313], [1.0, 1.0], [0.4411108195781708, 0.9963794350624084], [1.0, 1.0], [0.9999966621398926, 1.0], [0.9996721744537354, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9887356162071228, 0.9999707937240601], [0.9997130036354065, 0.9999998807907104], [0.9999744892120361, 0.9997497200965881], [0.9950189590454102, 1.0], [0.9999986886978149, 1.0], [0.7965047359466553, 0.9981756210327148], [1.0, 1.0], [1.0, 1.0], [0.9980092644691467, 0.906103253364563], [0.9999426603317261, 0.9999997615814209], [1.0, 1.0], [0.9999659061431885, 0.9999998807907104], [0.9999376535415649, 0.9995900988578796], [1.0, 1.0], [0.9999880790710449, 0.9999998807907104], [0.999987006187439, 1.0], [0.99998939037323, 0.9999997615814209], [1.0, 1.0], [0.9999960660934448, 0.9994662404060364], [0.9999986886978149, 0.9999997615814209], [0.04490170627832413, 1.0], [0.9992771744728088, 0.9999942779541016], [0.9999997615814209, 0.09781809151172638], [0.9999998807907104, 0.9999998807907104], [0.9995957016944885, 1.0], [0.9670029878616333, 0.2957017421722412], [0.999995231628418, 1.0], [0.9980389475822449, 0.9997420907020569], [0.999454915523529, 0.9793785214424133], [0.9995285272598267, 0.9994555115699768], [0.9999986886978149, 0.9999443292617798], [0.9999943971633911, 1.0], [0.9350287914276123, 0.9997848868370056], [0.999442994594574, 0.9999964237213135], [1.0, 1.0], [0.999996542930603, 0.9999769926071167], [1.0, 1.0], [0.9999997615814209, 1.0], [0.9997130036354065, 0.9999998807907104], [0.9999744892120361, 0.9997497200965881], [0.9950189590454102, 1.0], [0.9999986886978149, 1.0], [0.7965047359466553, 0.9981756210327148], [1.0, 1.0], [1.0, 1.0], [0.9995285272598267, 0.9994555115699768], [0.9980092644691467, 0.906103253364563], [0.9999426603317261, 0.9999997615814209], [1.0, 1.0], [0.9999659061431885, 0.9999998807907104], [0.9999376535415649, 0.9995900988578796], [1.0, 1.0], [0.999987006187439, 1.0], [0.9999880790710449, 0.9999998807907104], [0.99998939037323, 0.9999997615814209], [1.0, 1.0], [0.9999960660934448, 0.9994662404060364], [0.9999986886978149, 0.9999997615814209], [0.04490170627832413, 1.0], [0.9992771744728088, 0.9999942779541016], [0.9999997615814209, 0.09781809151172638], [0.9999998807907104, 0.9999998807907104], [0.9995957016944885, 1.0], [0.9670029878616333, 0.2957017421722412], [0.999995231628418, 1.0], [0.9980389475822449, 0.9997420907020569], [0.9999986886978149, 0.9999443292617798], [0.999454915523529, 0.9793785214424133], [0.9999943971633911, 1.0], [0.9350287914276123, 0.9997848868370056], [0.999442994594574, 0.9999964237213135], [1.0, 1.0], [0.999996542930603, 0.9999769926071167], [1.0, 1.0], [0.9999997615814209, 1.0], [0.3971445560455322, 0.04133353382349014], [7.24156852811575e-05, 0.001486696768552065], [0.0007018800242803991, 0.004985826555639505], [1.0, 1.0], [1.0, 1.0], [0.02471069060266018, 0.027543289586901665]]
+
+2024-05-07 10:52:25.607  INFO 24844 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 10:52:25.607  INFO 24844 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[[0.07233326137065887, 0.993457019329071], [0.9877550005912781, 1.0], [0.9999089241027832, 0.9999572038650513], [0.999982476234436, 1.0], [0.9999537467956543, 1.0], [0.8998435735702515, 1.0], [0.9311345815658569, 1.0], [1.0, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9996658563613892, 1.0], [0.9996658563613892, 1.0], [0.9996658563613892, 1.0], [0.9991520643234253, 0.9995249509811401], [0.999990701675415, 1.0], [0.0027776937931776047, 0.924957811832428], [0.9999998807907104, 0.9999985694885254], [0.99998939037323, 1.0], [0.9999998807907104, 1.0], [0.1403268426656723, 0.9980023503303528], [0.03883954882621765, 0.9177864789962769], [0.9999380111694336, 0.9999998807907104], [0.9860214591026306, 0.9999929666519165], [1.0, 1.0], [0.9999936819076538, 0.9999418258666992], [1.0, 1.0], [1.0, 1.0], [0.9989556074142456, 0.999976634979248], [1.0, 1.0], [1.0, 1.0], [0.9986352324485779, 0.9991711378097534], [0.8427770137786865, 0.8642948269844055], [0.9996525049209595, 0.9974315762519836], [0.9717417359352112, 0.9997476935386658], [1.0, 1.0], [1.0, 1.0], [0.08392661809921265, 0.9613068699836731], [0.08392661809921265, 0.9613068699836731], [0.08392661809921265, 0.9613068699836731], [0.9507011771202087, 0.8161828517913818], [0.8550289869308472, 0.7696330547332764], [1.0, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9999936819076538, 0.9999997615814209], [0.9999936819076538, 0.9999997615814209], [0.9999936819076538, 0.9999997615814209], [0.8602871298789978, 1.0], [0.9999091625213623, 0.9998592138290405], [0.9857131242752075, 0.9996768236160278], [0.10286837071180344, 0.2834579348564148], [0.9999531507492065, 0.9999911785125732], [0.9999979734420776, 1.0], [0.9999353885650635, 1.0], [0.9638014435768127, 1.0], [0.9978612065315247, 0.9999980926513672], [0.565186083316803, 1.0], [0.9997900128364563, 0.9992803931236267], [0.9999927282333374, 0.9999992847442627], [0.9999927282333374, 0.9999992847442627], [0.9999927282333374, 0.9999992847442627], [1.0, 1.0], [0.9967564940452576, 0.9999829530715942], [0.9998036026954651, 0.9999517202377319], [1.0, 1.0], [0.9991439580917358, 0.9986758828163147], [0.30759552121162415, 0.9990838766098022], [0.9248137474060059, 0.9998383522033691], [0.999991774559021, 1.0], [0.9999985694885254, 1.0], [0.03140825033187866, 0.8864614963531494], [1.0, 1.0], [0.9495766758918762, 0.991675615310669], [0.9999983310699463, 1.0], [1.0, 1.0], [0.9990334510803223, 1.0], [0.9999797344207764, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9999901056289673, 0.9999691247940063], [0.8435006737709045, 0.995827853679657], [1.0, 1.0], [0.9999998807907104, 0.9999409914016724], [0.9992390871047974, 0.9999306201934814], [0.0870731920003891, 0.9993994235992432], [0.8765121698379517, 0.9998400211334229], [0.8765121698379517, 0.9998400211334229], [0.8765121698379517, 0.9998400211334229], [1.0, 1.0], [1.0, 1.0], [0.9999526739120483, 0.9999990463256836], [0.792820155620575, 0.9999022483825684], [1.0, 1.0], [1.0, 1.0], [0.9999586343765259, 0.9999574422836304], [1.0, 1.0], [0.9622142910957336, 0.9999892711639404], [0.9999996423721313, 0.9999982118606567], [0.9999998807907104, 0.9999997615814209], [1.0, 1.0], [1.0, 1.0], [0.47673168778419495, 1.0], [0.9986408352851868, 0.999496340751648], [0.9999388456344604, 0.9999996423721313], [1.0, 1.0], [0.4411108195781708, 0.9963794350624084], [1.0, 1.0], [0.9999966621398926, 1.0], [0.9996721744537354, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9887356162071228, 0.9999707937240601], [0.9997130036354065, 0.9999998807907104], [0.9999744892120361, 0.9997497200965881], [0.9950189590454102, 1.0], [0.9999986886978149, 1.0], [0.7965047359466553, 0.9981756210327148], [1.0, 1.0], [1.0, 1.0], [0.9980092644691467, 0.906103253364563], [0.9999426603317261, 0.9999997615814209], [1.0, 1.0], [0.9999659061431885, 0.9999998807907104], [0.9999376535415649, 0.9995900988578796], [1.0, 1.0], [0.9999880790710449, 0.9999998807907104], [0.999987006187439, 1.0], [0.99998939037323, 0.9999997615814209], [1.0, 1.0], [0.9999960660934448, 0.9994662404060364], [0.9999986886978149, 0.9999997615814209], [0.04490170627832413, 1.0], [0.9992771744728088, 0.9999942779541016], [0.9999997615814209, 0.09781809151172638], [0.9999998807907104, 0.9999998807907104], [0.9995957016944885, 1.0], [0.9670029878616333, 0.2957017421722412], [0.999995231628418, 1.0], [0.9980389475822449, 0.9997420907020569], [0.999454915523529, 0.9793785214424133], [0.9995285272598267, 0.9994555115699768], [0.9999986886978149, 0.9999443292617798], [0.9999943971633911, 1.0], [0.9350287914276123, 0.9997848868370056], [0.999442994594574, 0.9999964237213135], [1.0, 1.0], [0.999996542930603, 0.9999769926071167], [1.0, 1.0], [0.9999997615814209, 1.0], [0.9997130036354065, 0.9999998807907104], [0.9999744892120361, 0.9997497200965881], [0.9950189590454102, 1.0], [0.9999986886978149, 1.0], [0.7965047359466553, 0.9981756210327148], [1.0, 1.0], [1.0, 1.0], [0.9995285272598267, 0.9994555115699768], [0.9980092644691467, 0.906103253364563], [0.9999426603317261, 0.9999997615814209], [1.0, 1.0], [0.9999659061431885, 0.9999998807907104], [0.9999376535415649, 0.9995900988578796], [1.0, 1.0], [0.999987006187439, 1.0], [0.9999880790710449, 0.9999998807907104], [0.99998939037323, 0.9999997615814209], [1.0, 1.0], [0.9999960660934448, 0.9994662404060364], [0.9999986886978149, 0.9999997615814209], [0.04490170627832413, 1.0], [0.9992771744728088, 0.9999942779541016], [0.9999997615814209, 0.09781809151172638], [0.9999998807907104, 0.9999998807907104], [0.9995957016944885, 1.0], [0.9670029878616333, 0.2957017421722412], [0.999995231628418, 1.0], [0.9980389475822449, 0.9997420907020569], [0.9999986886978149, 0.9999443292617798], [0.999454915523529, 0.9793785214424133], [0.9999943971633911, 1.0], [0.9350287914276123, 0.9997848868370056], [0.999442994594574, 0.9999964237213135], [1.0, 1.0], [0.999996542930603, 0.9999769926071167], [1.0, 1.0], [0.9999997615814209, 1.0], [0.3971445560455322, 0.04133353382349014], [7.24156852811575e-05, 0.001486696768552065], [0.0007018800242803991, 0.004985826555639505], [1.0, 1.0], [1.0, 1.0], [0.02471069060266018, 0.027543289586901665]]
+
+2024-05-07 10:53:57.990  INFO 24844 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 10:53:57.990  INFO 24844 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.6450038588000102]
+
+2024-05-07 10:53:58.480  INFO 24844 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 10:53:58.480  INFO 24844 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.6450038588000102]
+
+2024-05-07 14:48:21.003 ERROR 24844 --- [http-nio-8082-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.web.multipart.MultipartException: Current request is not a multipart request] with root cause
+
+org.springframework.web.multipart.MultipartException: Current request is not a multipart request
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValue(RequestParamMethodArgumentResolver.java:196) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:114) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.46.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.46.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at com.cqupt.software_9.common.security.JwtAuthencationTokenFilter.doFilterInternal(JwtAuthencationTokenFilter.java:54) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_371]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_371]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_371]
+
+2024-05-07 14:59:32.911  INFO 24844 --- [Thread-12] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-05-07 14:59:32.914  INFO 24844 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-07 14:59:32.915  INFO 24844 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-07 14:59:33.233  INFO 24844 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 24844 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-05-07 14:59:33.233  INFO 24844 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-05-07 14:59:37.786  INFO 24844 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-07 14:59:37.851  INFO 24844 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64ms. Found 0 JDBC repository interfaces.
+2024-05-07 14:59:37.961  INFO 24844 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-05-07 14:59:37.961  INFO 24844 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07 14:59:37.961  INFO 24844 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-05-07 14:59:37.999  INFO 24844 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07 14:59:37.999  INFO 24844 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 634 ms
+2024-05-07 14:59:39.082  INFO 24844 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-05-07 14:59:39.128  INFO 24844 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-05-07 14:59:39.174  INFO 24844 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-05-07 14:59:39.191  INFO 24844 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@11547fc6, org.springframework.security.web.context.SecurityContextPersistenceFilter@12f84cde, org.springframework.security.web.header.HeaderWriterFilter@73c2cb3b, org.springframework.security.web.authentication.logout.LogoutFilter@72d58b44, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@1ab84400, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ba195f8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2edf14a4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76377f6a, org.springframework.security.web.session.SessionManagementFilter@54eb046e, org.springframework.security.web.access.ExceptionTranslationFilter@1759db32, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@42eed87e]
+2024-05-07 14:59:39.213  INFO 24844 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-07 14:59:39.228  INFO 24844 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-05-07 14:59:39.231  INFO 24844 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 6.068 seconds (JVM running for 20961.982)
+2024-05-07 14:59:39.232  INFO 24844 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-07 14:59:40.690  INFO 31296 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 31296 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-05-07 14:59:40.692  INFO 31296 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-05-07 14:59:40.836  INFO 31296 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-07 14:59:40.836  INFO 31296 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-07 14:59:41.469  INFO 31296 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-07 14:59:41.500  INFO 31296 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17ms. Found 0 JDBC repository interfaces.
+2024-05-07 14:59:42.016  INFO 31296 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-05-07 14:59:42.022  INFO 31296 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07 14:59:42.022  INFO 31296 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-05-07 14:59:42.106  INFO 31296 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07 14:59:42.106  INFO 31296 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1269 ms
+2024-05-07 14:59:42.767  WARN 31296 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 14:59:42.853  WARN 31296 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 14:59:42.883  WARN 31296 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 14:59:42.892  WARN 31296 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 14:59:43.007  WARN 31296 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 14:59:43.092  WARN 31296 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 14:59:43.250  INFO 31296 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-05-07 14:59:43.403  INFO 31296 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-07 14:59:43.493  INFO 31296 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-07 14:59:43.625  INFO 31296 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e60079, org.springframework.security.web.context.SecurityContextPersistenceFilter@2debb3ff, org.springframework.security.web.header.HeaderWriterFilter@4bd7dc56, org.springframework.security.web.authentication.logout.LogoutFilter@3419b5ef, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@5fd390f2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@138af2f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@43da6e3a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@616cbc06, org.springframework.security.web.session.SessionManagementFilter@2e242e4d, org.springframework.security.web.access.ExceptionTranslationFilter@6c484ab6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@49b03ce2]
+2024-05-07 14:59:43.657  WARN 31296 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2024-05-07 14:59:43.678  WARN 31296 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8082 is already in use
+2024-05-07 14:59:43.680  INFO 31296 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-05-07 14:59:43.682  INFO 31296 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-07 14:59:43.710  INFO 31296 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-07 14:59:43.712  INFO 31296 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-05-07 14:59:43.717  INFO 31296 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-05-07 14:59:43.744 ERROR 31296 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8082 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8082 or configure this application to listen on another port.
+
+2024-05-07 14:59:56.683  INFO 24844 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07 14:59:56.684  INFO 24844 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07 14:59:56.686  INFO 24844 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-05-07 15:00:14.796  INFO 24844 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-05-07 15:00:14.797  INFO 24844 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-05-07 15:00:14.798  INFO 24844 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-05-07 15:00:18.134  INFO 33004 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 33004 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-05-07 15:00:18.136  INFO 33004 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-05-07 15:00:18.208  INFO 33004 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-07 15:00:18.208  INFO 33004 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-07 15:00:18.496  INFO 33004 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-07 15:00:18.512  INFO 33004 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15ms. Found 0 JDBC repository interfaces.
+2024-05-07 15:00:18.812  INFO 33004 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-05-07 15:00:18.817  INFO 33004 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07 15:00:18.817  INFO 33004 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-05-07 15:00:18.856  INFO 33004 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07 15:00:18.856  INFO 33004 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 648 ms
+2024-05-07 15:00:19.429  WARN 33004 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:00:19.545  WARN 33004 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:00:19.590  WARN 33004 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:00:19.597  WARN 33004 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:00:19.704  WARN 33004 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:00:19.773  WARN 33004 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:00:19.868  INFO 33004 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-05-07 15:00:19.989  INFO 33004 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-07 15:00:20.065  INFO 33004 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-07 15:00:20.153  INFO 33004 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ea3b2c9, org.springframework.security.web.context.SecurityContextPersistenceFilter@1fe48564, org.springframework.security.web.header.HeaderWriterFilter@fc6dd4b, org.springframework.security.web.authentication.logout.LogoutFilter@64c766d4, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@50d7e94f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1bc15195, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69e0f94, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20473186, org.springframework.security.web.session.SessionManagementFilter@261f0a12, org.springframework.security.web.access.ExceptionTranslationFilter@3ea8f2c6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6445ef1b]
+2024-05-07 15:00:20.181  INFO 33004 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-07 15:00:20.244  INFO 33004 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-05-07 15:00:20.251  INFO 33004 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 2.313 seconds (JVM running for 2.688)
+2024-05-07 15:00:27.244  INFO 33004 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07 15:00:27.244  INFO 33004 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07 15:00:27.259  INFO 33004 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2024-05-07 15:00:31.346 ERROR 33004 --- [http-nio-8082-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class org.springframework.web.multipart.MultipartFile]; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `org.springframework.web.multipart.MultipartFile` (no Creators, like default constructor, exist): abstract types either need to be mapped to concrete types, have custom deserializer, or contain additional type information
+ at [Source: (PushbackInputStream); line: 1, column: 9] (through reference chain: com.cqupt.software_9.common.payload["file"])] with root cause
+
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `org.springframework.web.multipart.MultipartFile` (no Creators, like default constructor, exist): abstract types either need to be mapped to concrete types, have custom deserializer, or contain additional type information
+ at [Source: (PushbackInputStream); line: 1, column: 9] (through reference chain: com.cqupt.software_9.common.payload["file"])
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1615) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1077) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.deser.AbstractDeserializer.deserialize(AbstractDeserializer.java:265) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:371) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:164) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4526) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3521) ~[jackson-databind-2.11.4.jar:2.11.4]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:274) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:243) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:205) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:158) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:131) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:167) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.46.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.46.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at com.cqupt.software_9.common.security.JwtAuthencationTokenFilter.doFilterInternal(JwtAuthencationTokenFilter.java:54) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.9.RELEASE.jar:5.3.9.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.15.RELEASE.jar:5.2.15.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_371]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_371]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_371]
+
+2024-05-07 15:07:02.405  INFO 33004 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-05-07 15:07:02.431  INFO 33004 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-07 15:07:02.433  INFO 33004 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-07 15:07:07.515  INFO 25752 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 25752 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-05-07 15:07:07.516  INFO 25752 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-05-07 15:07:08.396  INFO 25752 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-07 15:07:08.396  INFO 25752 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-07 15:07:08.727  INFO 25752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-07 15:07:08.744  INFO 25752 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15ms. Found 0 JDBC repository interfaces.
+2024-05-07 15:07:09.057  INFO 25752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-05-07 15:07:09.062  INFO 25752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07 15:07:09.063  INFO 25752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-05-07 15:07:09.123  INFO 25752 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07 15:07:09.123  INFO 25752 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 726 ms
+2024-05-07 15:07:09.752  WARN 25752 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:07:09.876  WARN 25752 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:07:09.911  WARN 25752 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:07:09.918  WARN 25752 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:07:10.058  WARN 25752 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:07:10.130  WARN 25752 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:07:10.229  INFO 25752 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-05-07 15:07:10.356  INFO 25752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-07 15:07:10.435  INFO 25752 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-07 15:07:10.520  INFO 25752 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b12f090, org.springframework.security.web.context.SecurityContextPersistenceFilter@36a8f129, org.springframework.security.web.header.HeaderWriterFilter@75322e9, org.springframework.security.web.authentication.logout.LogoutFilter@78c35fd9, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@54944b12, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23c94813, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@270a808f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d489c7a, org.springframework.security.web.session.SessionManagementFilter@2785c2b6, org.springframework.security.web.access.ExceptionTranslationFilter@35a7754c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@20c8f91c]
+2024-05-07 15:07:10.545  INFO 25752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-07 15:07:10.576  INFO 25752 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-05-07 15:07:10.582  INFO 25752 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 3.272 seconds (JVM running for 3.751)
+2024-05-07 15:07:16.450  INFO 25752 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07 15:07:16.450  INFO 25752 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07 15:07:16.454  INFO 25752 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-05-07 15:07:25.973  WARN 25752 --- [http-nio-8082-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Missing type id when trying to resolve subtype of [simple type, class com.cqupt.software_9.common.payload]: missing type id property '@class'; nested exception is com.fasterxml.jackson.databind.exc.InvalidTypeIdException: Missing type id when trying to resolve subtype of [simple type, class com.cqupt.software_9.common.payload]: missing type id property '@class'
+ at [Source: (PushbackInputStream); line: 1, column: 192]]
+2024-05-07 15:26:25.174  INFO 25752 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:26:25.175  INFO 25752 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.7701667090486038]
+
+2024-05-07 15:26:25.751  INFO 25752 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:26:25.751  INFO 25752 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.7701667090486038]
+
+2024-05-07 15:31:10.674  INFO 25752 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:31:10.674  INFO 25752 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.7701667090486038]
+
+2024-05-07 15:31:11.162  INFO 25752 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:31:11.162  INFO 25752 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.7701667090486038]
+
+2024-05-07 15:33:03.014  INFO 25752 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:33:03.015  INFO 25752 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.7701667090486038]
+
+2024-05-07 15:33:03.523  INFO 25752 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:33:03.523  INFO 25752 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.7701667090486038]
+
+2024-05-07 15:37:09.303  INFO 25752 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:37:09.303  INFO 25752 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.7701667090486038]
+
+2024-05-07 15:37:09.833  INFO 25752 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:37:09.833  INFO 25752 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.7701667090486038]
+
+2024-05-07 15:37:48.445  INFO 25752 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:37:48.445  INFO 25752 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.13359065447591914]
+
+2024-05-07 15:37:48.947  INFO 25752 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:37:48.947  INFO 25752 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.13359065447591914]
+
+2024-05-07 15:39:11.590  INFO 25752 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:39:11.590  INFO 25752 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.13359065447591914]
+
+2024-05-07 15:39:12.101  INFO 25752 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:39:12.101  INFO 25752 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.13359065447591914]
+
+2024-05-07 15:40:07.810  INFO 25752 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:40:07.811  INFO 25752 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.02767173259320446]
+
+2024-05-07 15:40:08.317  INFO 25752 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:40:08.317  INFO 25752 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.02767173259320446]
+
+2024-05-07 15:40:22.268  INFO 25752 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:40:22.268  INFO 25752 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.51]
+
+2024-05-07 15:40:22.824  INFO 25752 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:40:22.824  INFO 25752 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.51]
+
+2024-05-07 15:45:48.890  INFO 25752 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-05-07 15:45:48.892  INFO 25752 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-07 15:45:48.894  INFO 25752 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-07 15:45:53.588  INFO 30488 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 30488 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-05-07 15:45:53.589  INFO 30488 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-05-07 15:45:54.448  INFO 30488 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-07 15:45:54.448  INFO 30488 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-07 15:45:54.787  INFO 30488 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-07 15:45:54.804  INFO 30488 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 JDBC repository interfaces.
+2024-05-07 15:45:55.114  INFO 30488 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-05-07 15:45:55.127  INFO 30488 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-07 15:45:55.127  INFO 30488 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-05-07 15:45:55.172  INFO 30488 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-07 15:45:55.172  INFO 30488 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 723 ms
+2024-05-07 15:45:55.701  WARN 30488 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:45:55.805  WARN 30488 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:45:55.838  WARN 30488 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:45:55.845  WARN 30488 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:45:55.979  WARN 30488 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:45:56.066  WARN 30488 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-07 15:45:56.175  INFO 30488 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-05-07 15:45:56.295  INFO 30488 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-07 15:45:56.377  INFO 30488 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-07 15:45:56.482  INFO 30488 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b57385e, org.springframework.security.web.context.SecurityContextPersistenceFilter@50efa892, org.springframework.security.web.header.HeaderWriterFilter@29fe97ac, org.springframework.security.web.authentication.logout.LogoutFilter@79b1c19b, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@4719bfc8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5ea61e45, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@b928f85, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a9ddfd3, org.springframework.security.web.session.SessionManagementFilter@3adad532, org.springframework.security.web.access.ExceptionTranslationFilter@e61bee8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@46276bb2]
+2024-05-07 15:45:56.508  INFO 30488 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-07 15:45:56.538  INFO 30488 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-05-07 15:45:56.544  INFO 30488 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 3.177 seconds (JVM running for 3.66)
+2024-05-07 15:46:00.197  INFO 30488 --- [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-07 15:46:00.197  INFO 30488 --- [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-07 15:46:00.200  INFO 30488 --- [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-05-07 15:46:07.200  INFO 30488 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:46:07.200  INFO 30488 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.7701667090486038]
+
+2024-05-07 15:46:07.726  INFO 30488 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:46:07.726  INFO 30488 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.7701667090486038]
+
+2024-05-07 15:46:22.347  INFO 30488 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:46:22.347  INFO 30488 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.6709923739843885]
+
+2024-05-07 15:46:22.860  INFO 30488 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:46:22.860  INFO 30488 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.6709923739843885]
+
+2024-05-07 15:47:38.154  INFO 30488 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:47:38.154  INFO 30488 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.3388543352416081]
+
+2024-05-07 15:47:38.708  INFO 30488 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-07 15:47:38.709  INFO 30488 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.3388543352416081]
+

@@ -1,534 +1,231 @@
-2024-04-29 11:01:59.419  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：1
-2024-04-29 11:01:59.470 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Traceback (most recent call last):
-2024-04-29 11:01:59.470 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 276, in <module>
-2024-04-29 11:01:59.470 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :     results, output_dir,model_path,y_test,  y_proba = publicAl(tableName, target, fea, algorithmName, algorithmAttributes)
-2024-04-29 11:01:59.470 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 133, in publicAl
-2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :     trained_model = train_model(model, X_train, y_train)
-2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 82, in train_model
-2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :     model.fit(X_train, y_train)
-2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\sklearn\base.py", line 1145, in wrapper
-2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :     estimator._validate_params()
-2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\sklearn\base.py", line 638, in _validate_params
-2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :     validate_parameter_constraints(
-2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\sklearn\utils\_param_validation.py", line 96, in validate_parameter_constraints
-2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      :     raise InvalidParameterError(
-2024-04-29 11:01:59.471 ERROR 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : sklearn.utils._param_validation.InvalidParameterError: The 'max_iter' parameter of SVC must be an int in the range [-1, inf). Got '-1' instead.
-2024-04-29 11:04:38.941  INFO 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：1
-2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Traceback (most recent call last):
-2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 278, in <module>
-2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :     results, output_dir,model_path,y_test,  y_proba = publicAl(tableName, target, fea, algorithmName, algorithmAttributes)
-2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 133, in publicAl
-2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :     trained_model = train_model(model, X_train, y_train)
-2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 82, in train_model
-2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :     model.fit(X_train, y_train)
-2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\sklearn\base.py", line 1145, in wrapper
-2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :     estimator._validate_params()
-2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\sklearn\base.py", line 638, in _validate_params
-2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :     validate_parameter_constraints(
-2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\sklearn\utils\_param_validation.py", line 96, in validate_parameter_constraints
-2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      :     raise InvalidParameterError(
-2024-04-29 11:04:38.942 ERROR 31948 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : sklearn.utils._param_validation.InvalidParameterError: The 'tol' parameter of SVC must be a float in the range (0.0, inf). Got '0.001' instead.
-2024-04-29 11:06:42.337  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 11:06:42.337  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429110639_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429110639_SVM.pkl
-���ݲ���ʧ��: name 'delete_query' is not defined
-
-2024-04-29 11:06:58.512  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 11:06:58.512  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 11:07:00.042  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 11:07:00.042  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 11:07:12.983  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 11:07:12.983  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.623697637768122]
-
-2024-04-29 11:07:13.505  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 11:07:13.505  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.623697637768122]
-
-2024-04-29 13:56:10.557  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 13:56:10.557  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429135606_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429135606_SVM.pkl
-
-2024-04-29 13:56:13.873  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 13:56:13.874  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.62963, 'precision': 0.73684, 'recall': 0.73684, 'f1': 0.73684} E:\soft\Software9-v2.0-1220\src\assets\20240429135611_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429135611_RF.pkl
-
-2024-04-29 13:56:59.332  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 13:56:59.332  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429135658_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429135658_SVM.pkl
-
-2024-04-29 13:57:02.341  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 13:57:02.341  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.62963, 'precision': 0.73684, 'recall': 0.73684, 'f1': 0.73684} E:\soft\Software9-v2.0-1220\src\assets\20240429135700_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429135700_RF.pkl
-
-2024-04-29 13:58:27.754  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：1
-2024-04-29 13:58:27.754 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Traceback (most recent call last):
-2024-04-29 13:58:27.754 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 280, in <module>
-2024-04-29 13:58:27.754 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     results, output_dir,model_path,y_test,  y_proba = publicAl(tableName, target, fea, algorithmName, algorithmAttributes)
-2024-04-29 13:58:27.754 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 122, in publicAl
-2024-04-29 13:58:27.754 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     X = data[fea]
-2024-04-29 13:58:27.754 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\frame.py", line 3767, in __getitem__
-2024-04-29 13:58:27.755 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     indexer = self.columns._get_indexer_strict(key, "columns")[1]
-2024-04-29 13:58:27.755 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\indexes\base.py", line 5877, in _get_indexer_strict
-2024-04-29 13:58:27.755 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     self._raise_if_missing(keyarr, indexer, axis_name)
-2024-04-29 13:58:27.755 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\indexes\base.py", line 5938, in _raise_if_missing
-2024-04-29 13:58:27.755 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     raise KeyError(f"None of [{key}] are in the [{axis_name}]")
-2024-04-29 13:58:27.755 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : KeyError: "None of [Index([''], dtype='object')] are in the [columns]"
-2024-04-29 13:58:29.133  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：1
-2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Traceback (most recent call last):
-2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 280, in <module>
-2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     results, output_dir,model_path,y_test,  y_proba = publicAl(tableName, target, fea, algorithmName, algorithmAttributes)
-2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 122, in publicAl
-2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     X = data[fea]
-2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\frame.py", line 3767, in __getitem__
-2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     indexer = self.columns._get_indexer_strict(key, "columns")[1]
-2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\indexes\base.py", line 5877, in _get_indexer_strict
-2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     self._raise_if_missing(keyarr, indexer, axis_name)
-2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\indexes\base.py", line 5938, in _raise_if_missing
-2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     raise KeyError(f"None of [{key}] are in the [{axis_name}]")
-2024-04-29 13:58:29.134 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : KeyError: "None of [Index([''], dtype='object')] are in the [columns]"
-2024-04-29 13:58:30.491  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：1
-2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Traceback (most recent call last):
-2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 280, in <module>
-2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     results, output_dir,model_path,y_test,  y_proba = publicAl(tableName, target, fea, algorithmName, algorithmAttributes)
-2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "E:\soft\software9-3\software9\src\main\resources\Algorithm\python\publicAl.py", line 122, in publicAl
-2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     X = data[fea]
-2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\frame.py", line 3767, in __getitem__
-2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     indexer = self.columns._get_indexer_strict(key, "columns")[1]
-2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\indexes\base.py", line 5877, in _get_indexer_strict
-2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     self._raise_if_missing(keyarr, indexer, axis_name)
-2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :   File "D:\Anaconda\envs\test\lib\site-packages\pandas\core\indexes\base.py", line 5938, in _raise_if_missing
-2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      :     raise KeyError(f"None of [{key}] are in the [{axis_name}]")
-2024-04-29 13:58:30.491 ERROR 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : KeyError: "None of [Index([''], dtype='object')] are in the [columns]"
-2024-04-29 14:00:20.390  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:00:20.391  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429140018_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429140018_SVM.pkl
-
-2024-04-29 14:00:24.321  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:00:24.321  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429140022_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429140022_DT.pkl
-
-2024-04-29 14:00:28.032  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:00:28.032  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.62963, 'precision': 0.75, 'recall': 0.71053, 'f1': 0.72973} E:\soft\Software9-v2.0-1220\src\assets\20240429140026_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429140026_RF.pkl
-
-2024-04-29 14:01:59.731  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:01:59.731  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 14:02:01.217  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:02:01.217  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 14:02:02.743  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:02:02.743  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 14:02:04.244  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:02:04.244  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 14:02:05.803  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:02:05.803  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 14:02:07.313  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:02:07.313  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 14:23:46.883  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:23:46.884  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429142345_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429142345_LR.pkl
-���ݲ���ʧ��: name 'delete_query' is not defined
-
-2024-04-29 14:23:54.344  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:23:54.344  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 14:23:55.874  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:23:55.874  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 14:55:49.787  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:55:49.788  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429145548_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429145548_XGBoost.pkl
-
-2024-04-29 14:56:53.568  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:56:53.569  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 14:56:55.114  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:56:55.114  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 14:57:06.935  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:57:06.935  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.06327174]
-
-2024-04-29 14:57:07.660  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:57:07.660  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.06327174]
-
-2024-04-29 14:57:35.033  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:57:35.033  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429145732_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429145732_XGBoost.pkl
-
-2024-04-29 14:57:39.016  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:57:39.017  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 14:57:40.532  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:57:40.532  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 14:57:50.885  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:57:50.886  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.06327174]
-
-2024-04-29 14:57:51.650  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 14:57:51.650  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.06327174]
-
-2024-04-29 15:13:18.906  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:13:18.906  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429151316_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151316_LR.pkl
-
-2024-04-29 15:13:21.160  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:13:21.160  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429151320_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151320_DT.pkl
-
-2024-04-29 15:13:24.022  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:13:24.022  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429151322_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151322_SVM.pkl
-
-2024-04-29 15:13:27.859  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:13:27.859  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.61111, 'precision': 0.72973, 'recall': 0.71053, 'f1': 0.72} E:\soft\Software9-v2.0-1220\src\assets\20240429151326_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151325_RF.pkl
-
-2024-04-29 15:13:31.044  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:13:31.045  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429151329_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151329_XGBoost.pkl
-
-2024-04-29 15:17:22.583  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:17:22.583  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429151721_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151721_LR.pkl
-
-2024-04-29 15:17:24.788  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:17:24.788  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429151723_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151723_DT.pkl
-
-2024-04-29 15:17:27.041  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:17:27.042  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429151725_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151725_SVM.pkl
-
-2024-04-29 15:17:29.539  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:17:29.539  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429151728_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151728_XGBoost.pkl
-
-2024-04-29 15:17:32.971  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:17:32.971  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.62963, 'precision': 0.75, 'recall': 0.71053, 'f1': 0.72973} E:\soft\Software9-v2.0-1220\src\assets\20240429151731_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151731_RF.pkl
-
-2024-04-29 15:17:51.202  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:17:51.202  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:17:52.699  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:17:52.700  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:17:54.210  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:17:54.211  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:17:55.708  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:17:55.708  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:17:57.220  INFO 31948 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:17:57.220  INFO 31948 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:17:58.750  INFO 31948 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:17:58.750  INFO 31948 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:18:00.341  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:18:00.341  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:18:01.977  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:18:01.977  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:18:03.684  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:18:03.684  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:18:05.156  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:18:05.157  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:19:12.354  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:19:12.355  INFO 31948 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429151911_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429151911_LR.pkl
-
-2024-04-29 15:20:13.421  INFO 31948 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:20:13.421  INFO 31948 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429152012_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429152012_LR.pkl
-
-2024-04-29 15:20:17.823  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:20:17.824  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:20:19.352  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:20:19.352  INFO 31948 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:28:50.757  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:28:50.757  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429152849_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429152849_LR.pkl
-
-2024-04-29 15:28:52.856  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:28:52.856  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429152851_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429152851_DT.pkl
-
-2024-04-29 15:28:55.024  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:28:55.024  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429152854_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429152854_SVM.pkl
-
-2024-04-29 15:28:57.534  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:28:57.534  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.59259, 'precision': 0.72222, 'recall': 0.68421, 'f1': 0.7027} E:\soft\Software9-v2.0-1220\src\assets\20240429152856_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429152856_RF.pkl
-
-2024-04-29 15:28:59.815  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:28:59.815  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429152858_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429152858_XGBoost.pkl
-
-2024-04-29 15:30:47.883  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:30:47.884  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429153046_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429153046_LR.pkl
-
-2024-04-29 15:30:49.991  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:30:49.991  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429153049_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429153049_DT.pkl
-
-2024-04-29 15:30:52.113  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:30:52.113  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429153051_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429153051_SVM.pkl
-
-2024-04-29 15:30:54.626  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:30:54.626  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.66667, 'precision': 0.76316, 'recall': 0.76316, 'f1': 0.76316} E:\soft\Software9-v2.0-1220\src\assets\20240429153053_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429153053_RF.pkl
-
-2024-04-29 15:30:56.853  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:30:56.853  INFO 31948 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429153055_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429153055_XGBoost.pkl
-
-2024-04-29 15:31:06.256  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:31:06.256  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:31:07.771  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:31:07.772  INFO 31948 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:31:09.350  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:31:09.351  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:31:10.871  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:31:10.871  INFO 31948 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:31:12.365  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:31:12.365  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:31:13.856  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:31:13.856  INFO 31948 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:31:15.376  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:31:15.376  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:31:16.852  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:31:16.852  INFO 31948 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:31:18.370  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:31:18.371  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:31:19.851  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 15:31:19.851  INFO 31948 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 15:35:50.966  INFO 31948 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2024-04-29 15:35:50.969  INFO 31948 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-04-29 15:35:50.973  INFO 31948 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-04-29 15:36:01.017  INFO 33868 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 33868 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
-2024-04-29 15:36:01.018  INFO 33868 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
-2024-04-29 15:36:02.443  INFO 33868 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-04-29 15:36:02.443  INFO 33868 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-04-29 15:36:03.337  INFO 33868 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-04-29 15:36:03.368  INFO 33868 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 JDBC repository interfaces.
-2024-04-29 15:36:03.798  INFO 33868 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2024-04-29 15:36:03.803  INFO 33868 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-04-29 15:36:03.803  INFO 33868 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2024-04-29 15:36:03.869  INFO 33868 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-04-29 15:36:03.869  INFO 33868 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1426 ms
-2024-04-29 15:36:04.812  WARN 33868 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 15:36:04.980  WARN 33868 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 15:36:05.041  WARN 33868 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 15:36:05.049  WARN 33868 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 15:36:05.271  WARN 33868 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 15:36:05.391  WARN 33868 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 15:36:05.630  INFO 33868 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2024-04-29 15:36:05.807  INFO 33868 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-04-29 15:36:05.906  INFO 33868 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-04-29 15:36:06.076  INFO 33868 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b837663, org.springframework.security.web.context.SecurityContextPersistenceFilter@4d152171, org.springframework.security.web.header.HeaderWriterFilter@c75751a, org.springframework.security.web.authentication.logout.LogoutFilter@303556dd, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@445133c0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7cd55e94, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a59c1f5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c6534c3, org.springframework.security.web.session.SessionManagementFilter@198987d7, org.springframework.security.web.access.ExceptionTranslationFilter@423e52a5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@35353a6]
-2024-04-29 15:36:06.105  INFO 33868 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-04-29 15:36:06.144  INFO 33868 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2024-04-29 15:36:06.149  INFO 33868 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 5.501 seconds (JVM running for 6.212)
-2024-04-29 15:36:17.335  INFO 33868 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-04-29 15:36:17.335  INFO 33868 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-04-29 15:36:17.349  INFO 33868 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
-2024-04-29 16:08:16.559  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:08:16.559  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429160814_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160814_LR.pkl
-
-2024-04-29 16:08:19.125  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:08:19.126  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429160817_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160817_DT.pkl
-
-2024-04-29 16:08:22.574  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:08:22.574  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429160821_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160821_SVM.pkl
-
-2024-04-29 16:08:26.144  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:08:26.144  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.59259, 'precision': 0.71053, 'recall': 0.71053, 'f1': 0.71053} E:\soft\Software9-v2.0-1220\src\assets\20240429160824_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160824_RF.pkl
-
-2024-04-29 16:08:28.519  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:08:28.520  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429160827_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160827_XGBoost.pkl
-
-2024-04-29 16:09:47.601  INFO 33868 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:09:47.601  INFO 33868 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429160946_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160946_LR.pkl
-
-2024-04-29 16:09:49.778  INFO 33868 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:09:49.779  INFO 33868 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429160948_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160948_DT.pkl
-
-2024-04-29 16:09:51.951  INFO 33868 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:09:51.952  INFO 33868 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429160951_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429160951_SVM.pkl
-
-2024-04-29 16:10:41.771  INFO 33868 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:10:41.771  INFO 33868 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429161040_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429161040_LR.pkl
-
-2024-04-29 16:10:44.103  INFO 33868 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:10:44.103  INFO 33868 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429161043_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429161043_DT.pkl
-
-2024-04-29 16:10:46.349  INFO 33868 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:10:46.349  INFO 33868 --- [http-nio-8082-exec-5] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429161045_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429161045_SVM.pkl
-
-2024-04-29 16:10:51.193  INFO 33868 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:10:51.194  INFO 33868 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:10:52.678  INFO 33868 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:10:52.678  INFO 33868 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:10:54.255  INFO 33868 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:10:54.255  INFO 33868 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:10:55.803  INFO 33868 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:10:55.803  INFO 33868 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:10:57.349  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:10:57.349  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:10:58.888  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:10:58.888  INFO 33868 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:36:41.053  INFO 33868 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2024-04-29 16:36:41.055  INFO 33868 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-04-29 16:36:41.056  INFO 33868 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-04-29 16:36:45.133  INFO 24956 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 24956 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
-2024-04-29 16:36:45.135  INFO 24956 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
-2024-04-29 16:36:46.419  INFO 24956 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-04-29 16:36:46.419  INFO 24956 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-04-29 16:36:46.767  INFO 24956 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-04-29 16:36:46.792  INFO 24956 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 JDBC repository interfaces.
-2024-04-29 16:36:47.173  INFO 24956 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2024-04-29 16:36:47.181  INFO 24956 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-04-29 16:36:47.181  INFO 24956 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2024-04-29 16:36:47.239  INFO 24956 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-04-29 16:36:47.239  INFO 24956 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 820 ms
-2024-04-29 16:36:47.814  WARN 24956 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 16:36:47.932  WARN 24956 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 16:36:47.998  WARN 24956 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 16:36:48.006  WARN 24956 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 16:36:48.135  WARN 24956 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 16:36:48.224  WARN 24956 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 16:36:48.327  INFO 24956 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2024-04-29 16:36:48.456  INFO 24956 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-04-29 16:36:48.545  INFO 24956 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-04-29 16:36:48.641  INFO 24956 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@70cdc6f5, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f08bccb, org.springframework.security.web.header.HeaderWriterFilter@68df20b7, org.springframework.security.web.authentication.logout.LogoutFilter@d94147b, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@28609bae, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a16db28, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4473923d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@445ab39d, org.springframework.security.web.session.SessionManagementFilter@31f1a899, org.springframework.security.web.access.ExceptionTranslationFilter@1b9fa5a9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@20564da0]
-2024-04-29 16:36:48.664  INFO 24956 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-04-29 16:36:48.702  INFO 24956 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2024-04-29 16:36:48.708  INFO 24956 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 3.812 seconds (JVM running for 4.31)
-2024-04-29 16:41:08.402  INFO 24956 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2024-04-29 16:41:08.404  INFO 24956 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-04-29 16:41:08.406  INFO 24956 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-04-29 16:41:10.965  INFO 32584 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 32584 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
-2024-04-29 16:41:10.966  INFO 32584 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
-2024-04-29 16:41:11.040  INFO 32584 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-04-29 16:41:11.040  INFO 32584 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-04-29 16:41:11.332  INFO 32584 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-04-29 16:41:11.353  INFO 32584 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 JDBC repository interfaces.
-2024-04-29 16:41:11.659  INFO 32584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2024-04-29 16:41:11.663  INFO 32584 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-04-29 16:41:11.663  INFO 32584 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2024-04-29 16:41:11.705  INFO 32584 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-04-29 16:41:11.705  INFO 32584 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 665 ms
-2024-04-29 16:41:12.226  WARN 32584 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 16:41:12.320  WARN 32584 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 16:41:12.362  WARN 32584 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 16:41:12.369  WARN 32584 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 16:41:12.466  WARN 32584 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 16:41:12.535  WARN 32584 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2024-04-29 16:41:12.630  INFO 32584 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2024-04-29 16:41:12.758  INFO 32584 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-04-29 16:41:12.846  INFO 32584 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-04-29 16:41:12.952  INFO 32584 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a5098f1, org.springframework.security.web.context.SecurityContextPersistenceFilter@46a846d9, org.springframework.security.web.header.HeaderWriterFilter@785a4cc9, org.springframework.security.web.authentication.logout.LogoutFilter@75000b30, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@abb3607, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2dce45bf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36a8f129, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20c8f91c, org.springframework.security.web.session.SessionManagementFilter@7813b265, org.springframework.security.web.access.ExceptionTranslationFilter@53dfdf13, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@40895eff]
-2024-04-29 16:41:12.974  INFO 32584 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-04-29 16:41:13.004  INFO 32584 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2024-04-29 16:41:13.009  INFO 32584 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 2.231 seconds (JVM running for 2.636)
-2024-04-29 16:41:18.357  INFO 32584 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-04-29 16:41:18.357  INFO 32584 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-04-29 16:41:18.360  INFO 32584 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-04-29 16:49:06.123  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:49:06.123  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240429164904_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429164904_LR.pkl
-
-2024-04-29 16:49:09.229  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:49:09.229  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429164907_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429164907_DT.pkl
-
-2024-04-29 16:49:12.445  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:49:12.445  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240429164910_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429164910_SVM.pkl
-
-2024-04-29 16:49:16.159  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:49:16.159  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.62963, 'precision': 0.73684, 'recall': 0.73684, 'f1': 0.73684} E:\soft\Software9-v2.0-1220\src\assets\20240429164914_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429164914_RF.pkl
-
-2024-04-29 16:49:19.871  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:49:19.872  INFO 32584 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
-{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240429164917_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240429164917_XGBoost.pkl
-
-2024-04-29 16:49:36.272  INFO 32584 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:49:36.273  INFO 32584 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:49:37.892  INFO 32584 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:49:37.892  INFO 32584 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:49:39.483  INFO 32584 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:49:39.484  INFO 32584 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:49:41.040  INFO 32584 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:49:41.040  INFO 32584 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:49:42.621  INFO 32584 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:49:42.621  INFO 32584 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:49:44.201  INFO 32584 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:49:44.202  INFO 32584 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:49:45.780  INFO 32584 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:49:45.780  INFO 32584 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:49:47.256  INFO 32584 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:49:47.256  INFO 32584 --- [http-nio-8082-exec-2] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:49:49.205  INFO 32584 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:49:49.205  INFO 32584 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:49:50.815  INFO 32584 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
-2024-04-29 16:49:50.816  INFO 32584 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
-
-2024-04-29 16:51:57.581  WARN 32584 --- [http-nio-8082-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'disease' is not present]
-2024-04-29 16:52:03.683  WARN 32584 --- [http-nio-8082-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'disease' is not present]
-2024-04-29 16:54:18.110  WARN 32584 --- [http-nio-8082-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required Integer parameter 'pageNum' is not present]
-2024-04-29 19:03:02.859  INFO 32584 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2024-04-29 19:03:02.861  INFO 32584 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-04-29 19:03:02.863  INFO 32584 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-08 08:39:29.377  INFO 30488 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-05-08 08:39:29.434  INFO 30488 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-08 08:39:29.439  INFO 30488 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-08 08:39:37.701  INFO 16324 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 16324 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-05-08 08:39:37.703  INFO 16324 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-05-08 08:39:39.319  INFO 16324 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-08 08:39:39.320  INFO 16324 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-08 08:39:40.177  INFO 16324 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-08 08:39:40.211  INFO 16324 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 JDBC repository interfaces.
+2024-05-08 08:39:40.678  INFO 16324 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-05-08 08:39:40.684  INFO 16324 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-08 08:39:40.684  INFO 16324 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-05-08 08:39:40.738  INFO 16324 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-08 08:39:40.738  INFO 16324 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1417 ms
+2024-05-08 08:39:41.644  WARN 16324 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:39:41.785  WARN 16324 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:39:41.832  WARN 16324 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:39:41.838  WARN 16324 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:39:42.013  WARN 16324 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:39:42.097  WARN 16324 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:39:42.406  INFO 16324 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-05-08 08:39:42.573  INFO 16324 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-08 08:39:42.716  INFO 16324 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-08 08:39:42.929  INFO 16324 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75bd98e7, org.springframework.security.web.context.SecurityContextPersistenceFilter@247fe825, org.springframework.security.web.header.HeaderWriterFilter@7b6be5e6, org.springframework.security.web.authentication.logout.LogoutFilter@36361539, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@67e1a0bb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@16dced74, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@733cabed, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@79f902c8, org.springframework.security.web.session.SessionManagementFilter@515466fd, org.springframework.security.web.access.ExceptionTranslationFilter@7ed3995, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4c00ac36]
+2024-05-08 08:39:42.964  INFO 16324 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-08 08:39:43.002  INFO 16324 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-05-08 08:39:43.008  INFO 16324 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 5.657 seconds (JVM running for 6.436)
+2024-05-08 08:40:02.250  INFO 16324 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-08 08:40:02.250  INFO 16324 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-08 08:40:02.253  INFO 16324 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-05-08 08:40:42.713  INFO 16324 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:40:42.713  INFO 16324 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[[0.07233326137065887, 0.993457019329071], [0.9877550005912781, 1.0], [0.9992697834968567, 1.0], [0.9999089241027832, 0.9999572038650513], [0.999982476234436, 1.0], [0.9999537467956543, 1.0], [0.8998435735702515, 1.0], [0.9311345815658569, 1.0], [1.0, 1.0], [0.9990934133529663, 0.9987820982933044], [0.9651277661323547, 0.9729966521263123], [1.0, 1.0], [0.06425290554761887, 0.0938543975353241], [1.0, 1.0], [0.9996658563613892, 1.0], [0.9996658563613892, 1.0], [0.9996658563613892, 1.0], [0.9991520643234253, 0.9995249509811401], [0.999990701675415, 1.0], [0.0027776937931776047, 0.924957811832428], [0.982541561126709, 0.9994757771492004], [0.9999998807907104, 0.9999985694885254], [0.9999094009399414, 1.0], [0.999948263168335, 1.0], [0.99998939037323, 1.0], [1.0, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.1403268426656723, 0.9980023503303528], [0.03883954882621765, 0.9177864789962769], [0.9885172843933105, 0.3097778558731079], [0.987785816192627, 0.981462836265564], [0.9999380111694336, 0.9999998807907104], [0.9860214591026306, 0.9999929666519165], [1.0, 1.0], [0.9999936819076538, 0.9999418258666992], [1.0, 1.0], [1.0, 1.0], [0.9989556074142456, 0.999976634979248], [1.0, 1.0], [1.0, 1.0], [0.9986352324485779, 0.9991711378097534], [0.8427770137786865, 0.8642948269844055], [0.9996525049209595, 0.9974315762519836], [0.9717417359352112, 0.9997476935386658], [1.0, 1.0], [1.0, 1.0], [0.0126537149772048, 0.9814955592155457], [0.08392661809921265, 0.9613068699836731], [0.08392661809921265, 0.9613068699836731], [0.08392661809921265, 0.9613068699836731], [0.9507011771202087, 0.8161828517913818], [0.8550289869308472, 0.7696330547332764], [1.0, 1.0], [1.0, 1.0], [0.9981874823570251, 0.9472678303718567], [1.0, 1.0], [0.9999936819076538, 0.9999997615814209], [0.9999936819076538, 0.9999997615814209], [0.9999936819076538, 0.9999997615814209], [0.8602871298789978, 1.0], [1.0, 1.0], [0.9999091625213623, 0.9998592138290405], [0.9857131242752075, 0.9996768236160278], [0.10286837071180344, 0.2834579348564148], [1.0, 1.0], [0.9999531507492065, 0.9999911785125732], [0.9999979734420776, 1.0], [1.0, 1.0], [0.9999353885650635, 1.0], [1.0, 1.0], [1.0, 1.0], [1.0, 1.0], [0.5802875757217407, 1.0], [0.9638014435768127, 1.0], [0.9978612065315247, 0.9999980926513672], [0.7666222453117371, 0.999392032623291], [0.565186083316803, 1.0], [0.9997900128364563, 0.9992803931236267], [0.9999927282333374, 0.9999992847442627], [0.9999927282333374, 0.9999992847442627], [0.9999927282333374, 0.9999992847442627], [0.9999996423721313, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9967564940452576, 0.9999829530715942], [0.9998036026954651, 0.9999517202377319], [1.0, 1.0], [1.0, 1.0], [0.982541561126709, 0.9994757771492004], [0.982541561126709, 0.9994757771492004], [0.9991439580917358, 0.9986758828163147], [0.16455596685409546, 0.521926999092102], [0.30759552121162415, 0.9990838766098022], [0.6630305647850037, 0.898294985294342], [1.0, 1.0], [0.9248137474060059, 0.9998383522033691], [0.999988317489624, 0.9999655485153198], [0.9462073445320129, 0.489604651927948], [0.999991774559021, 1.0], [0.9792466759681702, 0.9984431862831116], [0.9999985694885254, 1.0], [3.9723276131553575e-05, 0.979907751083374], [0.03140825033187866, 0.8864614963531494], [1.0, 1.0], [0.9495766758918762, 0.991675615310669], [0.012609664350748062, 0.9999990463256836], [0.9999983310699463, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9917729496955872, 1.0], [0.9990334510803223, 1.0], [0.9999797344207764, 1.0], [1.0, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9999901056289673, 0.9999691247940063], [1.0, 1.0], [1.0, 1.0], [0.8435006737709045, 0.995827853679657], [1.0, 1.0], [0.9999998807907104, 0.9999409914016724], [0.9992390871047974, 0.9999306201934814], [0.0870731920003891, 0.9993994235992432], [0.004734276793897152, 0.7977002859115601], [0.8765121698379517, 0.9998400211334229], [0.8765121698379517, 0.9998400211334229], [0.8765121698379517, 0.9998400211334229], [0.9997319579124451, 0.9999969005584717], [0.1713198721408844, 0.15112851560115814], [1.0, 1.0], [1.0, 1.0], [0.9999526739120483, 0.9999990463256836], [0.792820155620575, 0.9999022483825684], [0.9693445563316345, 0.9997518658638], [0.9693445563316345, 0.9997518658638], [0.9693445563316345, 0.9997518658638], [0.12123524397611618, 0.9783081412315369], [0.12123524397611618, 0.9783081412315369], [0.8303905725479126, 0.8517022728919983], [1.0, 1.0], [1.0, 1.0], [0.9999586343765259, 0.9999574422836304], [1.0, 1.0], [0.9456169009208679, 1.0], [0.9622142910957336, 0.9999892711639404], [0.17017877101898193, 0.2895723879337311], [1.0, 1.0], [0.9999904632568359, 1.0], [0.9999996423721313, 0.9999982118606567], [0.9999998807907104, 0.9999997615814209], [1.0, 1.0], [0.13757045567035675, 0.07622355222702026], [1.0, 1.0], [0.47673168778419495, 1.0], [0.9986408352851868, 0.999496340751648], [0.9999388456344604, 0.9999996423721313], [0.8749722242355347, 0.39179563522338867], [1.0, 1.0], [0.4411108195781708, 0.9963794350624084], [1.0, 1.0], [0.9997296929359436, 0.9999864101409912], [0.9997296929359436, 0.9999864101409912], [0.9997296929359436, 0.9999864101409912], [0.9999966621398926, 1.0], [0.9996721744537354, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9887356162071228, 0.9999707937240601], [0.9997130036354065, 0.9999998807907104], [0.8002437353134155, 0.6251733303070068], [0.9999744892120361, 0.9997497200965881], [0.9950189590454102, 1.0], [0.9982765913009644, 0.31489476561546326], [0.9999812841415405, 0.9993816614151001], [0.9999986886978149, 1.0], [0.7965047359466553, 0.9981756210327148], [1.0, 1.0], [1.0, 1.0], [0.9999920129776001, 1.0], [1.0, 0.9999998807907104], [0.9980092644691467, 0.906103253364563], [1.0, 1.0], [0.9999426603317261, 0.9999997615814209], [1.0, 1.0], [1.0, 1.0], [0.999496579170227, 0.9999871253967285], [0.999496579170227, 0.9999871253967285], [1.0, 1.0], [0.2510162889957428, 0.008680153638124466], [0.9999659061431885, 0.9999998807907104], [1.0, 1.0], [0.9999083280563354, 0.9993069171905518], [0.9999376535415649, 0.9995900988578796], [1.0, 1.0], [0.9999880790710449, 0.9999998807907104], [0.9999768733978271, 0.9935213923454285], [0.999987006187439, 1.0], [0.99998939037323, 0.9999997615814209], [1.0, 1.0], [0.9999978542327881, 0.9999834299087524], [0.9999960660934448, 0.9994662404060364], [0.9999986886978149, 0.9999997615814209], [0.04490170627832413, 1.0], [0.9992771744728088, 0.9999942779541016], [0.9983794689178467, 0.999976396560669], [0.9999997615814209, 0.09781809151172638], [0.9420480132102966, 0.09492985159158707], [0.9964446425437927, 0.9876070618629456], [0.9964446425437927, 0.9876070618629456], [0.99662846326828, 0.02617665007710457], [0.8354121446609497, 0.21209391951560974], [0.9999998807907104, 0.9999998807907104], [0.9995957016944885, 1.0], [0.9670029878616333, 0.2957017421722412], [0.9999998807907104, 0.9995150566101074], [0.9999998807907104, 0.9995150566101074], [0.9991594552993774, 0.9998562335968018], [0.999995231628418, 1.0], [0.9999192953109741, 0.999998927116394], [0.9980389475822449, 0.9997420907020569], [0.999454915523529, 0.9793785214424133], [0.9995285272598267, 0.9994555115699768], [0.9999986886978149, 0.9999443292617798], [0.9990422129631042, 0.9601957201957703], [0.6705848574638367, 0.11656298488378525], [0.6705848574638367, 0.11656298488378525], [0.9999998807907104, 0.9999988079071045], [0.9999998807907104, 0.9999988079071045], [0.9999943971633911, 1.0], [0.9998579025268555, 1.0], [0.9350287914276123, 0.9997848868370056], [0.9999715089797974, 0.9999920129776001], [0.999442994594574, 0.9999964237213135], [1.0, 1.0], [0.999996542930603, 0.9999769926071167], [1.0, 1.0], [0.9999997615814209, 1.0], [0.9840998649597168, 0.9800373315811157], [1.0, 1.0], [0.9983794689178467, 0.999976396560669], [0.9997130036354065, 0.9999998807907104], [0.8002437353134155, 0.6251733303070068], [0.9999744892120361, 0.9997497200965881], [0.9950189590454102, 1.0], [0.9982765913009644, 0.31489476561546326], [0.9999812841415405, 0.9993816614151001], [0.9999986886978149, 1.0], [0.7965047359466553, 0.9981756210327148], [1.0, 1.0], [1.0, 1.0], [0.9995285272598267, 0.9994555115699768], [0.9999920129776001, 1.0], [1.0, 0.9999998807907104], [0.9980092644691467, 0.906103253364563], [1.0, 1.0], [0.9999426603317261, 0.9999997615814209], [1.0, 1.0], [1.0, 1.0], [0.999496579170227, 0.9999871253967285], [0.999496579170227, 0.9999871253967285], [1.0, 1.0], [0.2510162889957428, 0.008680153638124466], [0.9999659061431885, 0.9999998807907104], [1.0, 1.0], [0.9999083280563354, 0.9993069171905518], [0.9999376535415649, 0.9995900988578796], [1.0, 1.0], [0.9999768733978271, 0.9935213923454285], [0.999987006187439, 1.0], [0.9999880790710449, 0.9999998807907104], [0.99998939037323, 0.9999997615814209], [1.0, 1.0], [0.9999978542327881, 0.9999834299087524], [0.9999960660934448, 0.9994662404060364], [0.9999986886978149, 0.9999997615814209], [0.04490170627832413, 1.0], [0.9992771744728088, 0.9999942779541016], [0.9999997615814209, 0.09781809151172638], [0.9420480132102966, 0.09492985159158707], [0.9964446425437927, 0.9876070618629456], [0.9964446425437927, 0.9876070618629456], [0.99662846326828, 0.02617665007710457], [0.8354121446609497, 0.21209391951560974], [0.9999998807907104, 0.9999998807907104], [0.9995957016944885, 1.0], [0.9670029878616333, 0.2957017421722412], [0.9999998807907104, 0.9995150566101074], [0.9999998807907104, 0.9995150566101074], [0.9991594552993774, 0.9998562335968018], [0.999995231628418, 1.0], [0.9999192953109741, 0.999998927116394], [0.9980389475822449, 0.9997420907020569], [0.9999986886978149, 0.9999443292617798], [0.999454915523529, 0.9793785214424133], [0.9990422129631042, 0.9601957201957703], [0.6705848574638367, 0.11656298488378525], [0.6705848574638367, 0.11656298488378525], [0.9999998807907104, 0.9999988079071045], [0.9999998807907104, 0.9999988079071045], [0.9999943971633911, 1.0], [0.9998579025268555, 1.0], [0.9350287914276123, 0.9997848868370056], [0.9999715089797974, 0.9999920129776001], [0.999442994594574, 0.9999964237213135], [1.0, 1.0], [0.999996542930603, 0.9999769926071167], [1.0, 1.0], [0.9999997615814209, 1.0], [0.9840998649597168, 0.9800373315811157], [1.0, 1.0], [0.3971445560455322, 0.04133353382349014], [7.24156852811575e-05, 0.001486696768552065], [0.0007018800242803991, 0.004985826555639505], [0.0035813916474580765, 0.007374738808721304], [0.0033689986448735, 0.0025081890635192394], [1.0, 1.0], [1.0, 1.0], [0.02471069060266018, 0.027543289586901665]]
+
+2024-05-08 08:40:44.647  INFO 16324 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:40:44.647  INFO 16324 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[[0.07233326137065887, 0.993457019329071], [0.9877550005912781, 1.0], [0.9992697834968567, 1.0], [0.9999089241027832, 0.9999572038650513], [0.999982476234436, 1.0], [0.9999537467956543, 1.0], [0.8998435735702515, 1.0], [0.9311345815658569, 1.0], [1.0, 1.0], [0.9990934133529663, 0.9987820982933044], [0.9651277661323547, 0.9729966521263123], [1.0, 1.0], [0.06425290554761887, 0.0938543975353241], [1.0, 1.0], [0.9996658563613892, 1.0], [0.9996658563613892, 1.0], [0.9996658563613892, 1.0], [0.9991520643234253, 0.9995249509811401], [0.999990701675415, 1.0], [0.0027776937931776047, 0.924957811832428], [0.982541561126709, 0.9994757771492004], [0.9999998807907104, 0.9999985694885254], [0.9999094009399414, 1.0], [0.999948263168335, 1.0], [0.99998939037323, 1.0], [1.0, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.1403268426656723, 0.9980023503303528], [0.03883954882621765, 0.9177864789962769], [0.9885172843933105, 0.3097778558731079], [0.987785816192627, 0.981462836265564], [0.9999380111694336, 0.9999998807907104], [0.9860214591026306, 0.9999929666519165], [1.0, 1.0], [0.9999936819076538, 0.9999418258666992], [1.0, 1.0], [1.0, 1.0], [0.9989556074142456, 0.999976634979248], [1.0, 1.0], [1.0, 1.0], [0.9986352324485779, 0.9991711378097534], [0.8427770137786865, 0.8642948269844055], [0.9996525049209595, 0.9974315762519836], [0.9717417359352112, 0.9997476935386658], [1.0, 1.0], [1.0, 1.0], [0.0126537149772048, 0.9814955592155457], [0.08392661809921265, 0.9613068699836731], [0.08392661809921265, 0.9613068699836731], [0.08392661809921265, 0.9613068699836731], [0.9507011771202087, 0.8161828517913818], [0.8550289869308472, 0.7696330547332764], [1.0, 1.0], [1.0, 1.0], [0.9981874823570251, 0.9472678303718567], [1.0, 1.0], [0.9999936819076538, 0.9999997615814209], [0.9999936819076538, 0.9999997615814209], [0.9999936819076538, 0.9999997615814209], [0.8602871298789978, 1.0], [1.0, 1.0], [0.9999091625213623, 0.9998592138290405], [0.9857131242752075, 0.9996768236160278], [0.10286837071180344, 0.2834579348564148], [1.0, 1.0], [0.9999531507492065, 0.9999911785125732], [0.9999979734420776, 1.0], [1.0, 1.0], [0.9999353885650635, 1.0], [1.0, 1.0], [1.0, 1.0], [1.0, 1.0], [0.5802875757217407, 1.0], [0.9638014435768127, 1.0], [0.9978612065315247, 0.9999980926513672], [0.7666222453117371, 0.999392032623291], [0.565186083316803, 1.0], [0.9997900128364563, 0.9992803931236267], [0.9999927282333374, 0.9999992847442627], [0.9999927282333374, 0.9999992847442627], [0.9999927282333374, 0.9999992847442627], [0.9999996423721313, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9967564940452576, 0.9999829530715942], [0.9998036026954651, 0.9999517202377319], [1.0, 1.0], [1.0, 1.0], [0.982541561126709, 0.9994757771492004], [0.982541561126709, 0.9994757771492004], [0.9991439580917358, 0.9986758828163147], [0.16455596685409546, 0.521926999092102], [0.30759552121162415, 0.9990838766098022], [0.6630305647850037, 0.898294985294342], [1.0, 1.0], [0.9248137474060059, 0.9998383522033691], [0.999988317489624, 0.9999655485153198], [0.9462073445320129, 0.489604651927948], [0.999991774559021, 1.0], [0.9792466759681702, 0.9984431862831116], [0.9999985694885254, 1.0], [3.9723276131553575e-05, 0.979907751083374], [0.03140825033187866, 0.8864614963531494], [1.0, 1.0], [0.9495766758918762, 0.991675615310669], [0.012609664350748062, 0.9999990463256836], [0.9999983310699463, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9917729496955872, 1.0], [0.9990334510803223, 1.0], [0.9999797344207764, 1.0], [1.0, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9999901056289673, 0.9999691247940063], [1.0, 1.0], [1.0, 1.0], [0.8435006737709045, 0.995827853679657], [1.0, 1.0], [0.9999998807907104, 0.9999409914016724], [0.9992390871047974, 0.9999306201934814], [0.0870731920003891, 0.9993994235992432], [0.004734276793897152, 0.7977002859115601], [0.8765121698379517, 0.9998400211334229], [0.8765121698379517, 0.9998400211334229], [0.8765121698379517, 0.9998400211334229], [0.9997319579124451, 0.9999969005584717], [0.1713198721408844, 0.15112851560115814], [1.0, 1.0], [1.0, 1.0], [0.9999526739120483, 0.9999990463256836], [0.792820155620575, 0.9999022483825684], [0.9693445563316345, 0.9997518658638], [0.9693445563316345, 0.9997518658638], [0.9693445563316345, 0.9997518658638], [0.12123524397611618, 0.9783081412315369], [0.12123524397611618, 0.9783081412315369], [0.8303905725479126, 0.8517022728919983], [1.0, 1.0], [1.0, 1.0], [0.9999586343765259, 0.9999574422836304], [1.0, 1.0], [0.9456169009208679, 1.0], [0.9622142910957336, 0.9999892711639404], [0.17017877101898193, 0.2895723879337311], [1.0, 1.0], [0.9999904632568359, 1.0], [0.9999996423721313, 0.9999982118606567], [0.9999998807907104, 0.9999997615814209], [1.0, 1.0], [0.13757045567035675, 0.07622355222702026], [1.0, 1.0], [0.47673168778419495, 1.0], [0.9986408352851868, 0.999496340751648], [0.9999388456344604, 0.9999996423721313], [0.8749722242355347, 0.39179563522338867], [1.0, 1.0], [0.4411108195781708, 0.9963794350624084], [1.0, 1.0], [0.9997296929359436, 0.9999864101409912], [0.9997296929359436, 0.9999864101409912], [0.9997296929359436, 0.9999864101409912], [0.9999966621398926, 1.0], [0.9996721744537354, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9887356162071228, 0.9999707937240601], [0.9997130036354065, 0.9999998807907104], [0.8002437353134155, 0.6251733303070068], [0.9999744892120361, 0.9997497200965881], [0.9950189590454102, 1.0], [0.9982765913009644, 0.31489476561546326], [0.9999812841415405, 0.9993816614151001], [0.9999986886978149, 1.0], [0.7965047359466553, 0.9981756210327148], [1.0, 1.0], [1.0, 1.0], [0.9999920129776001, 1.0], [1.0, 0.9999998807907104], [0.9980092644691467, 0.906103253364563], [1.0, 1.0], [0.9999426603317261, 0.9999997615814209], [1.0, 1.0], [1.0, 1.0], [0.999496579170227, 0.9999871253967285], [0.999496579170227, 0.9999871253967285], [1.0, 1.0], [0.2510162889957428, 0.008680153638124466], [0.9999659061431885, 0.9999998807907104], [1.0, 1.0], [0.9999083280563354, 0.9993069171905518], [0.9999376535415649, 0.9995900988578796], [1.0, 1.0], [0.9999880790710449, 0.9999998807907104], [0.9999768733978271, 0.9935213923454285], [0.999987006187439, 1.0], [0.99998939037323, 0.9999997615814209], [1.0, 1.0], [0.9999978542327881, 0.9999834299087524], [0.9999960660934448, 0.9994662404060364], [0.9999986886978149, 0.9999997615814209], [0.04490170627832413, 1.0], [0.9992771744728088, 0.9999942779541016], [0.9983794689178467, 0.999976396560669], [0.9999997615814209, 0.09781809151172638], [0.9420480132102966, 0.09492985159158707], [0.9964446425437927, 0.9876070618629456], [0.9964446425437927, 0.9876070618629456], [0.99662846326828, 0.02617665007710457], [0.8354121446609497, 0.21209391951560974], [0.9999998807907104, 0.9999998807907104], [0.9995957016944885, 1.0], [0.9670029878616333, 0.2957017421722412], [0.9999998807907104, 0.9995150566101074], [0.9999998807907104, 0.9995150566101074], [0.9991594552993774, 0.9998562335968018], [0.999995231628418, 1.0], [0.9999192953109741, 0.999998927116394], [0.9980389475822449, 0.9997420907020569], [0.999454915523529, 0.9793785214424133], [0.9995285272598267, 0.9994555115699768], [0.9999986886978149, 0.9999443292617798], [0.9990422129631042, 0.9601957201957703], [0.6705848574638367, 0.11656298488378525], [0.6705848574638367, 0.11656298488378525], [0.9999998807907104, 0.9999988079071045], [0.9999998807907104, 0.9999988079071045], [0.9999943971633911, 1.0], [0.9998579025268555, 1.0], [0.9350287914276123, 0.9997848868370056], [0.9999715089797974, 0.9999920129776001], [0.999442994594574, 0.9999964237213135], [1.0, 1.0], [0.999996542930603, 0.9999769926071167], [1.0, 1.0], [0.9999997615814209, 1.0], [0.9840998649597168, 0.9800373315811157], [1.0, 1.0], [0.9983794689178467, 0.999976396560669], [0.9997130036354065, 0.9999998807907104], [0.8002437353134155, 0.6251733303070068], [0.9999744892120361, 0.9997497200965881], [0.9950189590454102, 1.0], [0.9982765913009644, 0.31489476561546326], [0.9999812841415405, 0.9993816614151001], [0.9999986886978149, 1.0], [0.7965047359466553, 0.9981756210327148], [1.0, 1.0], [1.0, 1.0], [0.9995285272598267, 0.9994555115699768], [0.9999920129776001, 1.0], [1.0, 0.9999998807907104], [0.9980092644691467, 0.906103253364563], [1.0, 1.0], [0.9999426603317261, 0.9999997615814209], [1.0, 1.0], [1.0, 1.0], [0.999496579170227, 0.9999871253967285], [0.999496579170227, 0.9999871253967285], [1.0, 1.0], [0.2510162889957428, 0.008680153638124466], [0.9999659061431885, 0.9999998807907104], [1.0, 1.0], [0.9999083280563354, 0.9993069171905518], [0.9999376535415649, 0.9995900988578796], [1.0, 1.0], [0.9999768733978271, 0.9935213923454285], [0.999987006187439, 1.0], [0.9999880790710449, 0.9999998807907104], [0.99998939037323, 0.9999997615814209], [1.0, 1.0], [0.9999978542327881, 0.9999834299087524], [0.9999960660934448, 0.9994662404060364], [0.9999986886978149, 0.9999997615814209], [0.04490170627832413, 1.0], [0.9992771744728088, 0.9999942779541016], [0.9999997615814209, 0.09781809151172638], [0.9420480132102966, 0.09492985159158707], [0.9964446425437927, 0.9876070618629456], [0.9964446425437927, 0.9876070618629456], [0.99662846326828, 0.02617665007710457], [0.8354121446609497, 0.21209391951560974], [0.9999998807907104, 0.9999998807907104], [0.9995957016944885, 1.0], [0.9670029878616333, 0.2957017421722412], [0.9999998807907104, 0.9995150566101074], [0.9999998807907104, 0.9995150566101074], [0.9991594552993774, 0.9998562335968018], [0.999995231628418, 1.0], [0.9999192953109741, 0.999998927116394], [0.9980389475822449, 0.9997420907020569], [0.9999986886978149, 0.9999443292617798], [0.999454915523529, 0.9793785214424133], [0.9990422129631042, 0.9601957201957703], [0.6705848574638367, 0.11656298488378525], [0.6705848574638367, 0.11656298488378525], [0.9999998807907104, 0.9999988079071045], [0.9999998807907104, 0.9999988079071045], [0.9999943971633911, 1.0], [0.9998579025268555, 1.0], [0.9350287914276123, 0.9997848868370056], [0.9999715089797974, 0.9999920129776001], [0.999442994594574, 0.9999964237213135], [1.0, 1.0], [0.999996542930603, 0.9999769926071167], [1.0, 1.0], [0.9999997615814209, 1.0], [0.9840998649597168, 0.9800373315811157], [1.0, 1.0], [0.3971445560455322, 0.04133353382349014], [7.24156852811575e-05, 0.001486696768552065], [0.0007018800242803991, 0.004985826555639505], [0.0035813916474580765, 0.007374738808721304], [0.0033689986448735, 0.0025081890635192394], [1.0, 1.0], [1.0, 1.0], [0.02471069060266018, 0.027543289586901665]]
+
+2024-05-08 08:50:26.331  INFO 16324 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-05-08 08:50:26.352  INFO 16324 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-08 08:50:26.354  INFO 16324 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-08 08:50:30.532  INFO 19192 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 19192 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-05-08 08:50:30.534  INFO 19192 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-05-08 08:50:31.576  INFO 19192 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-08 08:50:31.576  INFO 19192 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-08 08:50:31.954  INFO 19192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-08 08:50:31.970  INFO 19192 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 JDBC repository interfaces.
+2024-05-08 08:50:32.284  INFO 19192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-05-08 08:50:32.291  INFO 19192 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-08 08:50:32.291  INFO 19192 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-05-08 08:50:32.346  INFO 19192 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-08 08:50:32.347  INFO 19192 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 744 ms
+2024-05-08 08:50:32.895  WARN 19192 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:50:33.006  WARN 19192 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:50:33.047  WARN 19192 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:50:33.054  WARN 19192 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:50:33.192  WARN 19192 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:50:33.269  WARN 19192 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:50:33.378  INFO 19192 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-05-08 08:50:33.493  INFO 19192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-08 08:50:33.574  INFO 19192 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-08 08:50:33.651  INFO 19192 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@473bcdfa, org.springframework.security.web.context.SecurityContextPersistenceFilter@2be8f9b0, org.springframework.security.web.header.HeaderWriterFilter@5ea61e45, org.springframework.security.web.authentication.logout.LogoutFilter@58184bbf, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@6d241f16, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@760bc7eb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61309442, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@707be2b0, org.springframework.security.web.session.SessionManagementFilter@4f31bc23, org.springframework.security.web.access.ExceptionTranslationFilter@50efa892, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@66f589c3]
+2024-05-08 08:50:33.675  INFO 19192 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-08 08:50:33.706  INFO 19192 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-05-08 08:50:33.712  INFO 19192 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 3.41 seconds (JVM running for 3.872)
+2024-05-08 08:50:43.876  INFO 19192 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-08 08:50:43.877  INFO 19192 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-08 08:50:43.880  INFO 19192 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-05-08 08:51:05.570  INFO 19192 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:51:05.570  INFO 19192 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[[0.07233326137065887, 0.993457019329071], [0.9877550005912781, 1.0], [0.9992697834968567, 1.0], [0.9999089241027832, 0.9999572038650513], [0.999982476234436, 1.0], [0.9999537467956543, 1.0], [0.8998435735702515, 1.0], [0.9311345815658569, 1.0], [1.0, 1.0], [0.9990934133529663, 0.9987820982933044], [0.9651277661323547, 0.9729966521263123], [1.0, 1.0], [0.06425290554761887, 0.0938543975353241], [1.0, 1.0], [0.9996658563613892, 1.0], [0.9996658563613892, 1.0], [0.9996658563613892, 1.0], [0.9991520643234253, 0.9995249509811401], [0.999990701675415, 1.0], [0.0027776937931776047, 0.924957811832428], [0.982541561126709, 0.9994757771492004], [0.9999998807907104, 0.9999985694885254], [0.9999094009399414, 1.0], [0.999948263168335, 1.0], [0.99998939037323, 1.0], [1.0, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.1403268426656723, 0.9980023503303528], [0.03883954882621765, 0.9177864789962769], [0.9885172843933105, 0.3097778558731079], [0.987785816192627, 0.981462836265564], [0.9999380111694336, 0.9999998807907104], [0.9860214591026306, 0.9999929666519165], [1.0, 1.0], [0.9999936819076538, 0.9999418258666992], [1.0, 1.0], [1.0, 1.0], [0.9989556074142456, 0.999976634979248], [1.0, 1.0], [1.0, 1.0], [0.9986352324485779, 0.9991711378097534], [0.8427770137786865, 0.8642948269844055], [0.9996525049209595, 0.9974315762519836], [0.9717417359352112, 0.9997476935386658], [1.0, 1.0], [1.0, 1.0], [0.0126537149772048, 0.9814955592155457], [0.08392661809921265, 0.9613068699836731], [0.08392661809921265, 0.9613068699836731], [0.08392661809921265, 0.9613068699836731], [0.9507011771202087, 0.8161828517913818], [0.8550289869308472, 0.7696330547332764], [1.0, 1.0], [1.0, 1.0], [0.9981874823570251, 0.9472678303718567], [1.0, 1.0], [0.9999936819076538, 0.9999997615814209], [0.9999936819076538, 0.9999997615814209], [0.9999936819076538, 0.9999997615814209], [0.8602871298789978, 1.0], [1.0, 1.0], [0.9999091625213623, 0.9998592138290405], [0.9857131242752075, 0.9996768236160278], [0.10286837071180344, 0.2834579348564148], [1.0, 1.0], [0.9999531507492065, 0.9999911785125732], [0.9999979734420776, 1.0], [1.0, 1.0], [0.9999353885650635, 1.0], [1.0, 1.0], [1.0, 1.0], [1.0, 1.0], [0.5802875757217407, 1.0], [0.9638014435768127, 1.0], [0.9978612065315247, 0.9999980926513672], [0.7666222453117371, 0.999392032623291], [0.565186083316803, 1.0], [0.9997900128364563, 0.9992803931236267], [0.9999927282333374, 0.9999992847442627], [0.9999927282333374, 0.9999992847442627], [0.9999927282333374, 0.9999992847442627], [0.9999996423721313, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9967564940452576, 0.9999829530715942], [0.9998036026954651, 0.9999517202377319], [1.0, 1.0], [1.0, 1.0], [0.982541561126709, 0.9994757771492004], [0.982541561126709, 0.9994757771492004], [0.9991439580917358, 0.9986758828163147], [0.16455596685409546, 0.521926999092102], [0.30759552121162415, 0.9990838766098022], [0.6630305647850037, 0.898294985294342], [1.0, 1.0], [0.9248137474060059, 0.9998383522033691], [0.999988317489624, 0.9999655485153198], [0.9462073445320129, 0.489604651927948], [0.999991774559021, 1.0], [0.9792466759681702, 0.9984431862831116], [0.9999985694885254, 1.0], [3.9723276131553575e-05, 0.979907751083374], [0.03140825033187866, 0.8864614963531494], [1.0, 1.0], [0.9495766758918762, 0.991675615310669], [0.012609664350748062, 0.9999990463256836], [0.9999983310699463, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9917729496955872, 1.0], [0.9990334510803223, 1.0], [0.9999797344207764, 1.0], [1.0, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9999901056289673, 0.9999691247940063], [1.0, 1.0], [1.0, 1.0], [0.8435006737709045, 0.995827853679657], [1.0, 1.0], [0.9999998807907104, 0.9999409914016724], [0.9992390871047974, 0.9999306201934814], [0.0870731920003891, 0.9993994235992432], [0.004734276793897152, 0.7977002859115601], [0.8765121698379517, 0.9998400211334229], [0.8765121698379517, 0.9998400211334229], [0.8765121698379517, 0.9998400211334229], [0.9997319579124451, 0.9999969005584717], [0.1713198721408844, 0.15112851560115814], [1.0, 1.0], [1.0, 1.0], [0.9999526739120483, 0.9999990463256836], [0.792820155620575, 0.9999022483825684], [0.9693445563316345, 0.9997518658638], [0.9693445563316345, 0.9997518658638], [0.9693445563316345, 0.9997518658638], [0.12123524397611618, 0.9783081412315369], [0.12123524397611618, 0.9783081412315369], [0.8303905725479126, 0.8517022728919983], [1.0, 1.0], [1.0, 1.0], [0.9999586343765259, 0.9999574422836304], [1.0, 1.0], [0.9456169009208679, 1.0], [0.9622142910957336, 0.9999892711639404], [0.17017877101898193, 0.2895723879337311], [1.0, 1.0], [0.9999904632568359, 1.0], [0.9999996423721313, 0.9999982118606567], [0.9999998807907104, 0.9999997615814209], [1.0, 1.0], [0.13757045567035675, 0.07622355222702026], [1.0, 1.0], [0.47673168778419495, 1.0], [0.9986408352851868, 0.999496340751648], [0.9999388456344604, 0.9999996423721313], [0.8749722242355347, 0.39179563522338867], [1.0, 1.0], [0.4411108195781708, 0.9963794350624084], [1.0, 1.0], [0.9997296929359436, 0.9999864101409912], [0.9997296929359436, 0.9999864101409912], [0.9997296929359436, 0.9999864101409912], [0.9999966621398926, 1.0], [0.9996721744537354, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9887356162071228, 0.9999707937240601], [0.9997130036354065, 0.9999998807907104], [0.8002437353134155, 0.6251733303070068], [0.9999744892120361, 0.9997497200965881], [0.9950189590454102, 1.0], [0.9982765913009644, 0.31489476561546326], [0.9999812841415405, 0.9993816614151001], [0.9999986886978149, 1.0], [0.7965047359466553, 0.9981756210327148], [1.0, 1.0], [1.0, 1.0], [0.9999920129776001, 1.0], [1.0, 0.9999998807907104], [0.9980092644691467, 0.906103253364563], [1.0, 1.0], [0.9999426603317261, 0.9999997615814209], [1.0, 1.0], [1.0, 1.0], [0.999496579170227, 0.9999871253967285], [0.999496579170227, 0.9999871253967285], [1.0, 1.0], [0.2510162889957428, 0.008680153638124466], [0.9999659061431885, 0.9999998807907104], [1.0, 1.0], [0.9999083280563354, 0.9993069171905518], [0.9999376535415649, 0.9995900988578796], [1.0, 1.0], [0.9999880790710449, 0.9999998807907104], [0.9999768733978271, 0.9935213923454285], [0.999987006187439, 1.0], [0.99998939037323, 0.9999997615814209], [1.0, 1.0], [0.9999978542327881, 0.9999834299087524], [0.9999960660934448, 0.9994662404060364], [0.9999986886978149, 0.9999997615814209], [0.04490170627832413, 1.0], [0.9992771744728088, 0.9999942779541016], [0.9983794689178467, 0.999976396560669], [0.9999997615814209, 0.09781809151172638], [0.9420480132102966, 0.09492985159158707], [0.9964446425437927, 0.9876070618629456], [0.9964446425437927, 0.9876070618629456], [0.99662846326828, 0.02617665007710457], [0.8354121446609497, 0.21209391951560974], [0.9999998807907104, 0.9999998807907104], [0.9995957016944885, 1.0], [0.9670029878616333, 0.2957017421722412], [0.9999998807907104, 0.9995150566101074], [0.9999998807907104, 0.9995150566101074], [0.9991594552993774, 0.9998562335968018], [0.999995231628418, 1.0], [0.9999192953109741, 0.999998927116394], [0.9980389475822449, 0.9997420907020569], [0.999454915523529, 0.9793785214424133], [0.9995285272598267, 0.9994555115699768], [0.9999986886978149, 0.9999443292617798], [0.9990422129631042, 0.9601957201957703], [0.6705848574638367, 0.11656298488378525], [0.6705848574638367, 0.11656298488378525], [0.9999998807907104, 0.9999988079071045], [0.9999998807907104, 0.9999988079071045], [0.9999943971633911, 1.0], [0.9998579025268555, 1.0], [0.9350287914276123, 0.9997848868370056], [0.9999715089797974, 0.9999920129776001], [0.999442994594574, 0.9999964237213135], [1.0, 1.0], [0.999996542930603, 0.9999769926071167], [1.0, 1.0], [0.9999997615814209, 1.0], [0.9840998649597168, 0.9800373315811157], [1.0, 1.0], [0.9983794689178467, 0.999976396560669], [0.9997130036354065, 0.9999998807907104], [0.8002437353134155, 0.6251733303070068], [0.9999744892120361, 0.9997497200965881], [0.9950189590454102, 1.0], [0.9982765913009644, 0.31489476561546326], [0.9999812841415405, 0.9993816614151001], [0.9999986886978149, 1.0], [0.7965047359466553, 0.9981756210327148], [1.0, 1.0], [1.0, 1.0], [0.9995285272598267, 0.9994555115699768], [0.9999920129776001, 1.0], [1.0, 0.9999998807907104], [0.9980092644691467, 0.906103253364563], [1.0, 1.0], [0.9999426603317261, 0.9999997615814209], [1.0, 1.0], [1.0, 1.0], [0.999496579170227, 0.9999871253967285], [0.999496579170227, 0.9999871253967285], [1.0, 1.0], [0.2510162889957428, 0.008680153638124466], [0.9999659061431885, 0.9999998807907104], [1.0, 1.0], [0.9999083280563354, 0.9993069171905518], [0.9999376535415649, 0.9995900988578796], [1.0, 1.0], [0.9999768733978271, 0.9935213923454285], [0.999987006187439, 1.0], [0.9999880790710449, 0.9999998807907104], [0.99998939037323, 0.9999997615814209], [1.0, 1.0], [0.9999978542327881, 0.9999834299087524], [0.9999960660934448, 0.9994662404060364], [0.9999986886978149, 0.9999997615814209], [0.04490170627832413, 1.0], [0.9992771744728088, 0.9999942779541016], [0.9999997615814209, 0.09781809151172638], [0.9420480132102966, 0.09492985159158707], [0.9964446425437927, 0.9876070618629456], [0.9964446425437927, 0.9876070618629456], [0.99662846326828, 0.02617665007710457], [0.8354121446609497, 0.21209391951560974], [0.9999998807907104, 0.9999998807907104], [0.9995957016944885, 1.0], [0.9670029878616333, 0.2957017421722412], [0.9999998807907104, 0.9995150566101074], [0.9999998807907104, 0.9995150566101074], [0.9991594552993774, 0.9998562335968018], [0.999995231628418, 1.0], [0.9999192953109741, 0.999998927116394], [0.9980389475822449, 0.9997420907020569], [0.9999986886978149, 0.9999443292617798], [0.999454915523529, 0.9793785214424133], [0.9990422129631042, 0.9601957201957703], [0.6705848574638367, 0.11656298488378525], [0.6705848574638367, 0.11656298488378525], [0.9999998807907104, 0.9999988079071045], [0.9999998807907104, 0.9999988079071045], [0.9999943971633911, 1.0], [0.9998579025268555, 1.0], [0.9350287914276123, 0.9997848868370056], [0.9999715089797974, 0.9999920129776001], [0.999442994594574, 0.9999964237213135], [1.0, 1.0], [0.999996542930603, 0.9999769926071167], [1.0, 1.0], [0.9999997615814209, 1.0], [0.9840998649597168, 0.9800373315811157], [1.0, 1.0], [0.3971445560455322, 0.04133353382349014], [7.24156852811575e-05, 0.001486696768552065], [0.0007018800242803991, 0.004985826555639505], [0.0035813916474580765, 0.007374738808721304], [0.0033689986448735, 0.0025081890635192394], [1.0, 1.0], [1.0, 1.0], [0.02471069060266018, 0.027543289586901665]]
+
+2024-05-08 08:51:07.268  INFO 19192 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:51:07.269  INFO 19192 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[[0.07233326137065887, 0.993457019329071], [0.9877550005912781, 1.0], [0.9992697834968567, 1.0], [0.9999089241027832, 0.9999572038650513], [0.999982476234436, 1.0], [0.9999537467956543, 1.0], [0.8998435735702515, 1.0], [0.9311345815658569, 1.0], [1.0, 1.0], [0.9990934133529663, 0.9987820982933044], [0.9651277661323547, 0.9729966521263123], [1.0, 1.0], [0.06425290554761887, 0.0938543975353241], [1.0, 1.0], [0.9996658563613892, 1.0], [0.9996658563613892, 1.0], [0.9996658563613892, 1.0], [0.9991520643234253, 0.9995249509811401], [0.999990701675415, 1.0], [0.0027776937931776047, 0.924957811832428], [0.982541561126709, 0.9994757771492004], [0.9999998807907104, 0.9999985694885254], [0.9999094009399414, 1.0], [0.999948263168335, 1.0], [0.99998939037323, 1.0], [1.0, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.9999998807907104, 1.0], [0.1403268426656723, 0.9980023503303528], [0.03883954882621765, 0.9177864789962769], [0.9885172843933105, 0.3097778558731079], [0.987785816192627, 0.981462836265564], [0.9999380111694336, 0.9999998807907104], [0.9860214591026306, 0.9999929666519165], [1.0, 1.0], [0.9999936819076538, 0.9999418258666992], [1.0, 1.0], [1.0, 1.0], [0.9989556074142456, 0.999976634979248], [1.0, 1.0], [1.0, 1.0], [0.9986352324485779, 0.9991711378097534], [0.8427770137786865, 0.8642948269844055], [0.9996525049209595, 0.9974315762519836], [0.9717417359352112, 0.9997476935386658], [1.0, 1.0], [1.0, 1.0], [0.0126537149772048, 0.9814955592155457], [0.08392661809921265, 0.9613068699836731], [0.08392661809921265, 0.9613068699836731], [0.08392661809921265, 0.9613068699836731], [0.9507011771202087, 0.8161828517913818], [0.8550289869308472, 0.7696330547332764], [1.0, 1.0], [1.0, 1.0], [0.9981874823570251, 0.9472678303718567], [1.0, 1.0], [0.9999936819076538, 0.9999997615814209], [0.9999936819076538, 0.9999997615814209], [0.9999936819076538, 0.9999997615814209], [0.8602871298789978, 1.0], [1.0, 1.0], [0.9999091625213623, 0.9998592138290405], [0.9857131242752075, 0.9996768236160278], [0.10286837071180344, 0.2834579348564148], [1.0, 1.0], [0.9999531507492065, 0.9999911785125732], [0.9999979734420776, 1.0], [1.0, 1.0], [0.9999353885650635, 1.0], [1.0, 1.0], [1.0, 1.0], [1.0, 1.0], [0.5802875757217407, 1.0], [0.9638014435768127, 1.0], [0.9978612065315247, 0.9999980926513672], [0.7666222453117371, 0.999392032623291], [0.565186083316803, 1.0], [0.9997900128364563, 0.9992803931236267], [0.9999927282333374, 0.9999992847442627], [0.9999927282333374, 0.9999992847442627], [0.9999927282333374, 0.9999992847442627], [0.9999996423721313, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9967564940452576, 0.9999829530715942], [0.9998036026954651, 0.9999517202377319], [1.0, 1.0], [1.0, 1.0], [0.982541561126709, 0.9994757771492004], [0.982541561126709, 0.9994757771492004], [0.9991439580917358, 0.9986758828163147], [0.16455596685409546, 0.521926999092102], [0.30759552121162415, 0.9990838766098022], [0.6630305647850037, 0.898294985294342], [1.0, 1.0], [0.9248137474060059, 0.9998383522033691], [0.999988317489624, 0.9999655485153198], [0.9462073445320129, 0.489604651927948], [0.999991774559021, 1.0], [0.9792466759681702, 0.9984431862831116], [0.9999985694885254, 1.0], [3.9723276131553575e-05, 0.979907751083374], [0.03140825033187866, 0.8864614963531494], [1.0, 1.0], [0.9495766758918762, 0.991675615310669], [0.012609664350748062, 0.9999990463256836], [0.9999983310699463, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9917729496955872, 1.0], [0.9990334510803223, 1.0], [0.9999797344207764, 1.0], [1.0, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9999901056289673, 0.9999691247940063], [1.0, 1.0], [1.0, 1.0], [0.8435006737709045, 0.995827853679657], [1.0, 1.0], [0.9999998807907104, 0.9999409914016724], [0.9992390871047974, 0.9999306201934814], [0.0870731920003891, 0.9993994235992432], [0.004734276793897152, 0.7977002859115601], [0.8765121698379517, 0.9998400211334229], [0.8765121698379517, 0.9998400211334229], [0.8765121698379517, 0.9998400211334229], [0.9997319579124451, 0.9999969005584717], [0.1713198721408844, 0.15112851560115814], [1.0, 1.0], [1.0, 1.0], [0.9999526739120483, 0.9999990463256836], [0.792820155620575, 0.9999022483825684], [0.9693445563316345, 0.9997518658638], [0.9693445563316345, 0.9997518658638], [0.9693445563316345, 0.9997518658638], [0.12123524397611618, 0.9783081412315369], [0.12123524397611618, 0.9783081412315369], [0.8303905725479126, 0.8517022728919983], [1.0, 1.0], [1.0, 1.0], [0.9999586343765259, 0.9999574422836304], [1.0, 1.0], [0.9456169009208679, 1.0], [0.9622142910957336, 0.9999892711639404], [0.17017877101898193, 0.2895723879337311], [1.0, 1.0], [0.9999904632568359, 1.0], [0.9999996423721313, 0.9999982118606567], [0.9999998807907104, 0.9999997615814209], [1.0, 1.0], [0.13757045567035675, 0.07622355222702026], [1.0, 1.0], [0.47673168778419495, 1.0], [0.9986408352851868, 0.999496340751648], [0.9999388456344604, 0.9999996423721313], [0.8749722242355347, 0.39179563522338867], [1.0, 1.0], [0.4411108195781708, 0.9963794350624084], [1.0, 1.0], [0.9997296929359436, 0.9999864101409912], [0.9997296929359436, 0.9999864101409912], [0.9997296929359436, 0.9999864101409912], [0.9999966621398926, 1.0], [0.9996721744537354, 1.0], [1.0, 1.0], [1.0, 1.0], [0.9887356162071228, 0.9999707937240601], [0.9997130036354065, 0.9999998807907104], [0.8002437353134155, 0.6251733303070068], [0.9999744892120361, 0.9997497200965881], [0.9950189590454102, 1.0], [0.9982765913009644, 0.31489476561546326], [0.9999812841415405, 0.9993816614151001], [0.9999986886978149, 1.0], [0.7965047359466553, 0.9981756210327148], [1.0, 1.0], [1.0, 1.0], [0.9999920129776001, 1.0], [1.0, 0.9999998807907104], [0.9980092644691467, 0.906103253364563], [1.0, 1.0], [0.9999426603317261, 0.9999997615814209], [1.0, 1.0], [1.0, 1.0], [0.999496579170227, 0.9999871253967285], [0.999496579170227, 0.9999871253967285], [1.0, 1.0], [0.2510162889957428, 0.008680153638124466], [0.9999659061431885, 0.9999998807907104], [1.0, 1.0], [0.9999083280563354, 0.9993069171905518], [0.9999376535415649, 0.9995900988578796], [1.0, 1.0], [0.9999880790710449, 0.9999998807907104], [0.9999768733978271, 0.9935213923454285], [0.999987006187439, 1.0], [0.99998939037323, 0.9999997615814209], [1.0, 1.0], [0.9999978542327881, 0.9999834299087524], [0.9999960660934448, 0.9994662404060364], [0.9999986886978149, 0.9999997615814209], [0.04490170627832413, 1.0], [0.9992771744728088, 0.9999942779541016], [0.9983794689178467, 0.999976396560669], [0.9999997615814209, 0.09781809151172638], [0.9420480132102966, 0.09492985159158707], [0.9964446425437927, 0.9876070618629456], [0.9964446425437927, 0.9876070618629456], [0.99662846326828, 0.02617665007710457], [0.8354121446609497, 0.21209391951560974], [0.9999998807907104, 0.9999998807907104], [0.9995957016944885, 1.0], [0.9670029878616333, 0.2957017421722412], [0.9999998807907104, 0.9995150566101074], [0.9999998807907104, 0.9995150566101074], [0.9991594552993774, 0.9998562335968018], [0.999995231628418, 1.0], [0.9999192953109741, 0.999998927116394], [0.9980389475822449, 0.9997420907020569], [0.999454915523529, 0.9793785214424133], [0.9995285272598267, 0.9994555115699768], [0.9999986886978149, 0.9999443292617798], [0.9990422129631042, 0.9601957201957703], [0.6705848574638367, 0.11656298488378525], [0.6705848574638367, 0.11656298488378525], [0.9999998807907104, 0.9999988079071045], [0.9999998807907104, 0.9999988079071045], [0.9999943971633911, 1.0], [0.9998579025268555, 1.0], [0.9350287914276123, 0.9997848868370056], [0.9999715089797974, 0.9999920129776001], [0.999442994594574, 0.9999964237213135], [1.0, 1.0], [0.999996542930603, 0.9999769926071167], [1.0, 1.0], [0.9999997615814209, 1.0], [0.9840998649597168, 0.9800373315811157], [1.0, 1.0], [0.9983794689178467, 0.999976396560669], [0.9997130036354065, 0.9999998807907104], [0.8002437353134155, 0.6251733303070068], [0.9999744892120361, 0.9997497200965881], [0.9950189590454102, 1.0], [0.9982765913009644, 0.31489476561546326], [0.9999812841415405, 0.9993816614151001], [0.9999986886978149, 1.0], [0.7965047359466553, 0.9981756210327148], [1.0, 1.0], [1.0, 1.0], [0.9995285272598267, 0.9994555115699768], [0.9999920129776001, 1.0], [1.0, 0.9999998807907104], [0.9980092644691467, 0.906103253364563], [1.0, 1.0], [0.9999426603317261, 0.9999997615814209], [1.0, 1.0], [1.0, 1.0], [0.999496579170227, 0.9999871253967285], [0.999496579170227, 0.9999871253967285], [1.0, 1.0], [0.2510162889957428, 0.008680153638124466], [0.9999659061431885, 0.9999998807907104], [1.0, 1.0], [0.9999083280563354, 0.9993069171905518], [0.9999376535415649, 0.9995900988578796], [1.0, 1.0], [0.9999768733978271, 0.9935213923454285], [0.999987006187439, 1.0], [0.9999880790710449, 0.9999998807907104], [0.99998939037323, 0.9999997615814209], [1.0, 1.0], [0.9999978542327881, 0.9999834299087524], [0.9999960660934448, 0.9994662404060364], [0.9999986886978149, 0.9999997615814209], [0.04490170627832413, 1.0], [0.9992771744728088, 0.9999942779541016], [0.9999997615814209, 0.09781809151172638], [0.9420480132102966, 0.09492985159158707], [0.9964446425437927, 0.9876070618629456], [0.9964446425437927, 0.9876070618629456], [0.99662846326828, 0.02617665007710457], [0.8354121446609497, 0.21209391951560974], [0.9999998807907104, 0.9999998807907104], [0.9995957016944885, 1.0], [0.9670029878616333, 0.2957017421722412], [0.9999998807907104, 0.9995150566101074], [0.9999998807907104, 0.9995150566101074], [0.9991594552993774, 0.9998562335968018], [0.999995231628418, 1.0], [0.9999192953109741, 0.999998927116394], [0.9980389475822449, 0.9997420907020569], [0.9999986886978149, 0.9999443292617798], [0.999454915523529, 0.9793785214424133], [0.9990422129631042, 0.9601957201957703], [0.6705848574638367, 0.11656298488378525], [0.6705848574638367, 0.11656298488378525], [0.9999998807907104, 0.9999988079071045], [0.9999998807907104, 0.9999988079071045], [0.9999943971633911, 1.0], [0.9998579025268555, 1.0], [0.9350287914276123, 0.9997848868370056], [0.9999715089797974, 0.9999920129776001], [0.999442994594574, 0.9999964237213135], [1.0, 1.0], [0.999996542930603, 0.9999769926071167], [1.0, 1.0], [0.9999997615814209, 1.0], [0.9840998649597168, 0.9800373315811157], [1.0, 1.0], [0.3971445560455322, 0.04133353382349014], [7.24156852811575e-05, 0.001486696768552065], [0.0007018800242803991, 0.004985826555639505], [0.0035813916474580765, 0.007374738808721304], [0.0033689986448735, 0.0025081890635192394], [1.0, 1.0], [1.0, 1.0], [0.02471069060266018, 0.027543289586901665]]
+
+2024-05-08 08:54:35.383  INFO 19192 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:54:35.383  INFO 19192 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240508085432_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240508085432_LR.pkl
+
+2024-05-08 08:54:37.959  INFO 19192 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:54:37.960  INFO 19192 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240508085436_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240508085436_DT.pkl
+
+2024-05-08 08:54:40.487  INFO 19192 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:54:40.487  INFO 19192 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240508085439_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240508085439_SVM.pkl
+
+2024-05-08 08:54:43.865  INFO 19192 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:54:43.865  INFO 19192 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.57407, 'precision': 0.7027, 'recall': 0.68421, 'f1': 0.69333} E:\soft\Software9-v2.0-1220\src\assets\20240508085442_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240508085442_RF.pkl
+
+2024-05-08 08:54:47.222  INFO 19192 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:54:47.222  INFO 19192 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240508085445_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240508085445_XGBoost.pkl
+
+2024-05-08 08:56:41.110  INFO 19192 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-05-08 08:56:41.112  INFO 19192 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-08 08:56:41.113  INFO 19192 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-08 08:56:44.585  INFO 29424 --- [restartedMain] c.cqupt.software_9.Software9Application  : Starting Software9Application on DESKTOP-RNEPHEV with PID 29424 (E:\soft\software9-3\software9\target\classes started by hp-pc in E:\soft\software9-3\software9)
+2024-05-08 08:56:44.586  INFO 29424 --- [restartedMain] c.cqupt.software_9.Software9Application  : No active profile set, falling back to default profiles: default
+2024-05-08 08:56:44.659  INFO 29424 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-08 08:56:44.659  INFO 29424 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-08 08:56:44.935  INFO 29424 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-05-08 08:56:44.951  INFO 29424 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 JDBC repository interfaces.
+2024-05-08 08:56:45.249  INFO 29424 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2024-05-08 08:56:45.254  INFO 29424 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-08 08:56:45.254  INFO 29424 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2024-05-08 08:56:45.293  INFO 29424 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-08 08:56:45.293  INFO 29424 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 634 ms
+2024-05-08 08:56:45.808  WARN 29424 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.DatabaseManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:56:45.897  WARN 29424 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.Detail ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:56:45.938  WARN 29424 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:56:45.944  WARN 29424 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:56:46.045  WARN 29424 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.StasticOne ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:56:46.120  WARN 29424 --- [restartedMain] c.b.m.core.injector.DefaultSqlInjector   : class com.cqupt.software_9.entity.HeartManager ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2024-05-08 08:56:46.210  INFO 29424 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-05-08 08:56:46.344  INFO 29424 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-08 08:56:46.429  INFO 29424 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-08 08:56:46.547  INFO 29424 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@707be2b0, org.springframework.security.web.context.SecurityContextPersistenceFilter@3419b5ef, org.springframework.security.web.header.HeaderWriterFilter@3bbfbcd8, org.springframework.security.web.authentication.logout.LogoutFilter@129a6579, com.cqupt.software_9.common.security.JwtAuthencationTokenFilter@1492a4fc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@618811dd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@49423686, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77d89c54, org.springframework.security.web.session.SessionManagementFilter@1fb104ab, org.springframework.security.web.access.ExceptionTranslationFilter@32393e75, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@32c2a189]
+2024-05-08 08:56:46.582  INFO 29424 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-08 08:56:46.615  INFO 29424 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2024-05-08 08:56:46.621  INFO 29424 --- [restartedMain] c.cqupt.software_9.Software9Application  : Started Software9Application in 2.21 seconds (JVM running for 2.573)
+2024-05-08 08:57:50.102  INFO 29424 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-08 08:57:50.103  INFO 29424 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-08 08:57:50.107  INFO 29424 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-05-08 08:58:50.186  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:58:50.187  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.64815, 'precision': 0.73171, 'recall': 0.78947, 'f1': 0.75949} E:\soft\Software9-v2.0-1220\src\assets\20240508085849_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240508085849_LR.pkl
+
+2024-05-08 08:58:52.584  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:58:52.584  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240508085851_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240508085851_DT.pkl
+
+2024-05-08 08:58:54.920  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:58:54.920  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.7037, 'precision': 0.7037, 'recall': 1.0, 'f1': 0.82609} E:\soft\Software9-v2.0-1220\src\assets\20240508085853_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240508085853_SVM.pkl
+
+2024-05-08 08:58:57.942  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:58:57.942  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.64815, 'precision': 0.77143, 'recall': 0.71053, 'f1': 0.73973} E:\soft\Software9-v2.0-1220\src\assets\20240508085856_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240508085856_RF.pkl
+
+2024-05-08 08:59:00.249  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:59:00.249  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'heart1test' written to 'output.csv' successfully.
+{'accuracy': 0.57407, 'precision': 0.69231, 'recall': 0.71053, 'f1': 0.7013} E:\soft\Software9-v2.0-1220\src\assets\20240508085859_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240508085859_XGBoost.pkl
+
+2024-05-08 08:59:18.494  INFO 29424 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:59:18.495  INFO 29424 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 08:59:20.076  INFO 29424 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:59:20.076  INFO 29424 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 08:59:21.944  INFO 29424 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:59:21.945  INFO 29424 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 08:59:23.513  INFO 29424 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:59:23.513  INFO 29424 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 08:59:25.045  INFO 29424 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:59:25.046  INFO 29424 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 08:59:26.567  INFO 29424 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:59:26.567  INFO 29424 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 08:59:28.140  INFO 29424 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:59:28.140  INFO 29424 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 08:59:29.687  INFO 29424 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:59:29.687  INFO 29424 --- [http-nio-8082-exec-10] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 08:59:31.489  INFO 29424 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:59:31.489  INFO 29424 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 08:59:33.049  INFO 29424 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 08:59:33.050  INFO 29424 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 09:00:17.707  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:00:17.707  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'gastriccancer' written to 'output.csv' successfully.
+{'accuracy': 0.94641, 'precision': 0.92557, 'recall': 0.98326, 'f1': 0.95354} E:\soft\Software9-v2.0-1220\src\assets\20240508090009_LR E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240508090009_LR.pkl
+
+2024-05-08 09:00:27.616  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:00:27.617  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'gastriccancer' written to 'output.csv' successfully.
+{'accuracy': 0.55931, 'precision': 0.55931, 'recall': 1.0, 'f1': 0.71738} E:\soft\Software9-v2.0-1220\src\assets\20240508090019_DT E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240508090019_DT.pkl
+
+2024-05-08 09:00:42.207  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:00:42.207  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'gastriccancer' written to 'output.csv' successfully.
+{'accuracy': 0.95317, 'precision': 0.92275, 'recall': 1.0, 'f1': 0.95982} E:\soft\Software9-v2.0-1220\src\assets\20240508090033_SVM E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240508090033_SVM.pkl
+
+2024-05-08 09:00:54.632  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:00:54.632  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'gastriccancer' written to 'output.csv' successfully.
+{'accuracy': 0.95838, 'precision': 0.94066, 'recall': 0.98791, 'f1': 0.9637} E:\soft\Software9-v2.0-1220\src\assets\20240508090046_RF E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240508090046_RF.pkl
+
+2024-05-08 09:01:04.599  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:01:04.600  INFO 29424 --- [http-nio-8082-exec-3] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：Data from table 'gastriccancer' written to 'output.csv' successfully.
+{'accuracy': 0.95838, 'precision': 0.94699, 'recall': 0.98047, 'f1': 0.96344} E:\soft\Software9-v2.0-1220\src\assets\20240508090056_XGBoost E:\soft\software9-3\software9\src\main\resources\Algorithm\PKL\20240508090056_XGBoost.pkl
+
+2024-05-08 09:01:36.642  INFO 29424 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:01:36.642  INFO 29424 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 09:01:41.728  INFO 29424 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:01:41.729  INFO 29424 --- [http-nio-8082-exec-6] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 09:01:46.814  INFO 29424 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:01:46.815  INFO 29424 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 09:01:52.156  INFO 29424 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:01:52.157  INFO 29424 --- [http-nio-8082-exec-9] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 09:01:57.339  INFO 29424 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:01:57.339  INFO 29424 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 09:02:02.522  INFO 29424 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:02:02.522  INFO 29424 --- [http-nio-8082-exec-7] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 09:02:07.653  INFO 29424 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:02:07.653  INFO 29424 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 09:02:12.816  INFO 29424 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:02:12.816  INFO 29424 --- [http-nio-8082-exec-8] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 09:02:18.017  INFO 29424 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:02:18.017  INFO 29424 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 09:02:23.243  INFO 29424 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:02:23.243  INFO 29424 --- [http-nio-8082-exec-1] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[1]
+
+2024-05-08 09:15:52.882  INFO 29424 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:15:52.883  INFO 29424 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.6237910417934626]
+
+2024-05-08 09:15:53.531  INFO 29424 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python exitValue：0
+2024-05-08 09:15:53.531  INFO 29424 --- [http-nio-8082-exec-4] com.cqupt.software_9.tool.PythonRun      : Python 代码结果：[0.6237910417934626]
+
+2024-05-08 10:52:30.742  INFO 29424 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2024-05-08 10:52:30.780  INFO 29424 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-08 10:52:30.784  INFO 29424 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

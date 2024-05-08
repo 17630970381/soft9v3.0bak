@@ -33,5 +33,9 @@ public class AdminDataManage implements Serializable {
 
     private float tableSize;
 
+    private String checkApproving;
+
+    private String checkApproved;
+
     private static final long serialVersionUID = 1L;
 }

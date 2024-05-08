@@ -22,6 +22,10 @@ public class DetailController {
 
     @GetMapping("/getAll/{modelname}")
     public List<Detail> getAll(@PathVariable("modelname") String modelname){
+        if (modelname.contains("-")) {
+            // 如果包含 -，则将 - 替换为空字符串
+            modelname = modelname.replace("-", "");
+        }
         QueryWrapper<Detail> wrapper = new QueryWrapper<>();
         wrapper.eq("modelname",modelname);
         return detailMapper.selectList(wrapper);

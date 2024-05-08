@@ -59,5 +59,5 @@ public interface ModelMapper extends BaseMapper<Model> {
     List<String>  getMaritalStatus();
 
 
-
+    Integer getModelNumPre();
 }

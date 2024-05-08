@@ -44,7 +44,12 @@
         SELECT * FROM category WHERE is_common = 0 and is_leafs = 1;
     </select>
     <select id="getComDisease" resultType="com.cqupt.software_9.entity.CategoryEntity">
-    SELECT * FROM category WHERE is_common = 1 and is_leafs = 1; </select>
+        SELECT * FROM category WHERE is_common = 1 and is_leafs = 1;
+    </select>
+
+    <select id="getParentTYpeById" resultType="java.lang.String">
+        SELECT label from category where id = #{id};
+    </select>
     <update id="updateTableNameByTableId">
         update category set label=#{tableName}, status=#{tableStatus} where id = CAST(#{tableid} AS VARCHAR);;
     </update>

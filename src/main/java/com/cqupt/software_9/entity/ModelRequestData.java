@@ -26,4 +26,6 @@ public class ModelRequestData {
     private float  p_calculation_rates;
     private float  b_calculation_rates;
     private String  target;
+    private String  mostacc;
+    private String  alname;
 }

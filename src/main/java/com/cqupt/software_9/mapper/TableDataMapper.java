@@ -36,4 +36,6 @@ public interface TableDataMapper {
     List<FeatureMatch> searchFeatures(List<String> fea);
 
     List<Map<String, Object>> getInfoByTableName(String tableName);
+
+
 }

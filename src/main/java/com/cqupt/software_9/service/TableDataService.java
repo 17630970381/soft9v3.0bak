@@ -25,4 +25,6 @@ public interface TableDataService {
     List<Map<String, Object>> getInfoByTableName(String tableName);
 
     void createTable(String dataName, List<CreateTableFeatureVo> characterList, String createUser, CategoryEntity nodeData, String uid, String username, String isFilter, String isUpload);
+
+
 }

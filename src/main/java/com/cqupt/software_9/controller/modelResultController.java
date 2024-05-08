@@ -25,6 +25,12 @@ public class modelResultController {
     public List<Map<String,String>> getTableName(){
         return modelResultMapper.getTableName();
     }
+    @GetMapping("/getTableNamePre")
+    public List<Map<String,String>> getTableNamePre(){
+        return modelResultMapper.getTableNamePre();
+    }
+
+
 
 
     /**

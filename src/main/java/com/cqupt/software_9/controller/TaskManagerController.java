@@ -30,12 +30,12 @@ public class TaskManagerController {
     public Result selectByPage(@RequestParam Integer pageNum,
                                @RequestParam Integer pageSize,
                                @RequestParam String disease,
-                               @RequestParam String taskname,
-                               @RequestParam String creator){
+                               @RequestParam String modelname,
+                               @RequestParam String publisher){
         QueryWrapper<TaskManager> queryWrapper = new QueryWrapper<TaskManager>().orderByDesc("id");
         queryWrapper.like(StringUtils.isNotBlank(disease),"diseasename",disease);
-        queryWrapper.like(StringUtils.isNotBlank(taskname),"modelname",taskname);
-        queryWrapper.like(StringUtils.isNotBlank(creator),"publisher",creator);
+        queryWrapper.like(StringUtils.isNotBlank(modelname),"modelname",modelname);
+        queryWrapper.like(StringUtils.isNotBlank(publisher),"publisher",publisher);
         Page<TaskManager> page = taskManagerService.page(new Page<>(pageNum, pageSize), queryWrapper);
         return Result.success(page);
     }

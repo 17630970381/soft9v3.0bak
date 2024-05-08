@@ -78,6 +78,7 @@ public class TableDataController {
         }
     }
 
+
     // 检查上传文件是数据文件的表名在数据库中是否重复
     @GetMapping("/DataTable/inspection")
     public Result tableInspection(@RequestParam("newname") String name){
@@ -137,4 +138,6 @@ public class TableDataController {
         List<Map<String, Object>> res = tableDataService.getInfoByTableName(tableName);
         return Result.success(200, "成功", res);
     }
+
+
 }
