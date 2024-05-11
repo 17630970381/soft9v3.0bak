@@ -38,4 +38,5 @@ public interface TableDataMapper {
     List<Map<String, Object>> getInfoByTableName(String tableName);
 
 
+    String checkRepeat(String tablename);
 }

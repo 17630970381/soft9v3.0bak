@@ -34,6 +34,7 @@ public class DataManager implements Serializable {
     private String tabletype;
     private String uploadmethod;
     private String uid;
+    private String uidList;
 
 
 }

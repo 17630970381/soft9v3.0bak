@@ -587,4 +587,19 @@ public class UserController {
         return Result.success(page);
     }
 
+    @GetMapping("/getTransferUserList")
+    public Result getTransferUserList(@RequestParam("uid") String uid) {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.ne("uid", uid);
+        List<User> userList = userMapper.selectList(queryWrapper);
+        List<Map<String, Object>> resultList = new ArrayList<>();
+        for (User user : userList) {
+            Map<String, Object> resultMap = new HashMap<>();
+            resultMap.put("key", user.getUid());
+            resultMap.put("label", user.getUsername());
+            resultList.add(resultMap);
+        }
+        return  Result.success(200,"获得成功",resultList);
+    }
+
 }

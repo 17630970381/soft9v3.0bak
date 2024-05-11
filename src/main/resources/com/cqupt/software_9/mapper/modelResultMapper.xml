@@ -42,5 +42,19 @@
     </select>
 
 
+    <select id="getPicture" resultType="java.lang.String">
+        SELECT picture FROM modelresult WHERE modelname LIKE CONCAT(#{modelname}, '%')
+    </select>
+    <select id="getPKL" resultType="java.lang.String">
+        SELECT PKL FROM modelresult WHERE modelname LIKE CONCAT(#{modelname}, '%')
+    </select>
+    <select id="getAllPKL" resultType="java.lang.String">
+        SELECT PKL FROM modelresult
+    </select>
+    <select id="getAllPicture" resultType="java.lang.String">
+        SELECT picture FROM modelresult
+    </select>
+
+
 </mapper>
 

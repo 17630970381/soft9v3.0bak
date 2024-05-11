@@ -7,19 +7,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
-@TableName(value ="user_log")
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserLog {
+@TableName(value ="filter_data_col")
+@Data
+public class FilterDataCol {
     @TableId(type = IdType.AUTO)
     private Integer id;
-    private String uid;
-    private String username;
-    private Date opTime;
-    private String opType;
-    private Integer role;
-    private static final long serialVersionUID = 1L;
+    private Integer  characterId;
+    private String featureName;
+    private String chName;
+    private String computeOpt;
+    private String unit;
+    private String type;
+    private String value;
+    private Integer opt;
+    private Integer filterDataInfoId;
+    private String range;
 }

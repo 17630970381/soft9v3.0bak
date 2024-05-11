@@ -24,5 +24,6 @@ public class TableDescribeEntity {
     private String uid;
     private String tableStatus;
     private Double tableSize;
-
+    private String checkApproving;
+    private String checkApproved;
 }

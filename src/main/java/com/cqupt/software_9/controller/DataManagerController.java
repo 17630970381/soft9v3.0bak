@@ -112,8 +112,8 @@ public class DataManagerController {
     /**
      * 获取疾病和表名的对应关系
      */
-    @GetMapping("/getDiseaseTableName")
-    public List<Map<String,String>> getDiseaseTableName(){
-        return  dataManagerMapper.getDiseaseTableName();
+    @GetMapping("/getDiseaseTableName/{uid}")
+    public List<Map<String,String>> getDiseaseTableName(@PathVariable("uid")String uid ){
+        return  dataManagerMapper.getDiseaseTableName(uid);
     }
 }

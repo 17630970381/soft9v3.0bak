@@ -40,6 +40,11 @@
     <update id="updataTableName">
         UPDATE data_manager set tablename = #{tableName} WHERE  tablename = #{oldTableName}
     </update>
+    <update id="updateUserList">
+        UPDATE data_manager
+        SET uid_list = #{uidList}
+        WHERE tablename = #{tablename};
+    </update>
 
     <select id="getTableNameByUiD" resultType="com.cqupt.software_9.entity.DataManager">
         SELECT tablename FROM data_manager WHERE uid = #{uid}
@@ -77,7 +82,11 @@
         SELECT DISTINCT tablename from data_manager
     </select>
     <select id="getDiseaseTableName" resultType="java.util.Map">
-        SELECT diseasename, tablename FROM data_manager WHERE uploadmethod IS NULL OR uploadmethod != '纳排';
+        SELECT diseasename, tablename
+        FROM data_manager
+        WHERE (',' || uid_list || ',' LIKE CONCAT('%,', #{uid}, ',%')
+            OR	uid =#{uid})
+          AND (uploadmethod != '纳排' OR uploadmethod IS NULL);
     </select>
 
 

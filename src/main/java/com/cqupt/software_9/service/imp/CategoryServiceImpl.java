@@ -56,7 +56,7 @@ public class CategoryServiceImpl extends CategoryServiceAdapter {
 
         CategoryEntity copiedTree1 = copyPrivareTreeStructure(treeData.get(0),uid);
         copiedTree1.setLabel("私有数据集");
-        CategoryEntity copiedTree2 = copyShareTreeStructure(treeData.get(0));
+        CategoryEntity copiedTree2 = copyShareTreeStructure(treeData.get(0),uid);
         copiedTree2.setLabel("共享数据集");
         CategoryEntity copiedTree3 = copyCommonTreeStructure(treeData.get(0));
         copiedTree3.setLabel("公共数据集");
@@ -65,6 +65,7 @@ public class CategoryServiceImpl extends CategoryServiceAdapter {
         res.add(copiedTree2);
         res.add(copiedTree3);
         return res;
+
     }
 
 
@@ -271,7 +272,7 @@ public class CategoryServiceImpl extends CategoryServiceAdapter {
     //添加病种
     @Override
     public Integer addCategory(AddDiseaseVo addDiseaseVo){
-        CategoryEntity category = new CategoryEntity(null,addDiseaseVo.getCatLevel(),addDiseaseVo.getFirstDisease(),addDiseaseVo.getParentId(),0,0,addDiseaseVo.getUid(),null,addDiseaseVo.getUsername(),null,null,addDiseaseVo.getIcdCode(),null,0,0,0);
+        CategoryEntity category = new CategoryEntity(null,addDiseaseVo.getCatLevel(),addDiseaseVo.getFirstDisease(),addDiseaseVo.getParentId(),0,0,addDiseaseVo.getUid(),null,addDiseaseVo.getUsername(),null,null,addDiseaseVo.getIcdCode(),null);
         return categoryMapper.insert(category);
     }
 

@@ -23,4 +23,12 @@ public interface modelResultMapper extends BaseMapper<modelResult> {
     List<modelAndModelResultDTO> getModelResultAndModel(String modelname);
 
     List<Map<String, String>> getTableNamePre();
+
+    List<String> getPKL(String modelname);
+
+    List<String> getPicture(String modelname);
+
+    List<String> getAllPKL();
+
+    List<String> getAllPicture();
 }

@@ -5,20 +5,19 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.cqupt.software_9.common.FeatureMatch;
 import com.cqupt.software_9.common.Result;
 import com.cqupt.software_9.entity.CategoryEntity;
-import com.cqupt.software_9.mapper.CategoryMapper;
-import com.cqupt.software_9.mapper.DataManagerMapper;
-import com.cqupt.software_9.mapper.TableDataMapper;
+import com.cqupt.software_9.entity.FilterDataCol;
+import com.cqupt.software_9.entity.FilterDataInfo;
+import com.cqupt.software_9.entity.UserLog;
+import com.cqupt.software_9.mapper.*;
 import com.cqupt.software_9.service.*;
+import com.cqupt.software_9.vo.FilterConditionVo;
 import com.cqupt.software_9.vo.FilterTableDataVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 // TODO 公共模块新增类
 
@@ -35,16 +34,28 @@ public class TableDataController {
     private CategoryService categoryService;
     @Resource
     private CategoryMapper categoryMapper;
+
+    @Resource
+    private UserLogMapper userLogMapper;
     @Autowired
     TableDescribeService tableDescribeService;
 
     @Resource
     private TableDataMapper tableDataMapper;
 
+    @Autowired
+    private UserLogService userLogService;
+
     @Resource
     private DataManagerMapper dataManagerMapper;
     @Resource
     private StasticOneService stasticOneService;
+
+    @Resource
+    private FilterDataInfoMapper filterDataInfoMapper;
+
+    @Resource
+    private FilterDataColMapper filterDataColMapper;
 
     @GetMapping("/getTableData")
     public Result getTableData(@RequestParam("tableId") String tableId, @RequestParam("tableName") String tableName){
@@ -138,6 +149,64 @@ public class TableDataController {
         List<Map<String, Object>> res = tableDataService.getInfoByTableName(tableName);
         return Result.success(200, "成功", res);
     }
+
+
+    /**
+     * 检查数据库中是否已存在该表名存在
+     * @param tablename
+     * @return
+     */
+    @GetMapping("/checkRepeat/{tablename}")
+    public Result checkRepeat(@PathVariable("tablename")String tablename){
+        return Result.success(200,"成功",tableDataService.checkRepeat(tablename));
+    }
+
+    @GetMapping("/getFilterConditionInfos")
+    public Result getFilterInfo(){
+        ArrayList<FilterConditionVo> vos = new ArrayList<>();
+        List<FilterDataInfo> filterDataInfos = filterDataInfoMapper.selectList(null);
+        for (FilterDataInfo filterDataInfo : filterDataInfos) {
+            FilterConditionVo filterConditionVo = new FilterConditionVo();
+            filterConditionVo.setFilterDataInfo(filterDataInfo);
+            List<FilterDataCol> filterDataCols = filterDataColMapper.selectList(new QueryWrapper<FilterDataCol>().eq("filter_data_info_id", filterDataInfo.getId()));
+            filterConditionVo.setFilterDataCols(filterDataCols);
+            vos.add(filterConditionVo);
+        }
+        return Result.success("200",vos);
+    }
+
+    //纳排
+    @PostMapping("/createFilterBtnTable")
+    public Result createFilterBtnTable(@RequestBody FilterTableDataVo filterTableDataVo,
+                                       @RequestHeader("uid") String userId,
+                                       @RequestHeader("username") String username,
+                                       @RequestHeader("role") Integer role){
+        tableDataService.createFilterBtnTable(filterTableDataVo.getAddDataForm().getDataName(),filterTableDataVo.getAddDataForm().getCharacterList(),
+                filterTableDataVo.getAddDataForm().getCreateUser(),filterTableDataVo.getStatus(),
+                filterTableDataVo.getAddDataForm().getUid(),
+                filterTableDataVo.getAddDataForm().getUsername(),
+                filterTableDataVo.getAddDataForm().getIsFilter(),
+                filterTableDataVo.getAddDataForm().getIsUpload(),
+                filterTableDataVo.getAddDataForm().getUid_list(),
+                filterTableDataVo.getNodeid());
+        UserLog userLog = new UserLog();
+        // userLog.setId(1);
+        userLog.setUsername(username);
+        userLog.setUid(userId);
+        userLog.setRole(role);
+        userLog.setOpTime(new Date());
+        userLog.setOpType("用户建表"+filterTableDataVo.getAddDataForm().getDataName());
+        userLogMapper.insert(userLog);
+        return Result.success(200,"SUCCESS");
+    }
+
+    @PostMapping("/getFilterDataByConditionsByDieaseId")
+    public Result<List<Map<String,Object>>> getFilterDataByConditionsByDieaseId(@RequestBody FilterTableDataVo filterTableDataVo){
+        List<LinkedHashMap<String, Object>> filterDataByConditions = tableDataService.getFilterDataByConditionsByDieaseId(filterTableDataVo.getAddDataForm().getCharacterList(), filterTableDataVo.getAddDataForm().getUid(),filterTableDataVo.getAddDataForm().getUsername(),filterTableDataVo.getNodeid());
+        System.out.println("筛选数据长度为："+filterDataByConditions.size());
+        return Result.success("200",filterDataByConditions);
+    }
+
 
 
 }

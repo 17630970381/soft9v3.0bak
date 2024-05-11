@@ -9,17 +9,17 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@TableName(value ="user_log")
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserLog {
+@TableName(value ="filter_data_info")
+@Data
+public class FilterDataInfo {
     @TableId(type = IdType.AUTO)
     private Integer id;
     private String uid;
     private String username;
-    private Date opTime;
-    private String opType;
-    private Integer role;
-    private static final long serialVersionUID = 1L;
+    private String createUser;
+    private String cateId;
+    private String parentId;
+    private Date filterTime;
 }

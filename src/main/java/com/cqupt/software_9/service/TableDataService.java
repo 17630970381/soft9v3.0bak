@@ -18,6 +18,7 @@ public interface TableDataService {
 
 
     List<LinkedHashMap<String, Object>> getFilterDataByConditions(List<CreateTableFeatureVo> characterList,CategoryEntity nodeData);
+    List<LinkedHashMap<String, Object>> getFilterDataByConditionsCreateTable(List<CreateTableFeatureVo> characterList,CategoryEntity nodeData);
 
 
     List<String> ParseFileCol(MultipartFile file, String tableName) throws IOException;
@@ -27,4 +28,7 @@ public interface TableDataService {
     void createTable(String dataName, List<CreateTableFeatureVo> characterList, String createUser, CategoryEntity nodeData, String uid, String username, String isFilter, String isUpload);
 
 
+    boolean checkRepeat(String tablename);
+    void createFilterBtnTable(String tableName, List<CreateTableFeatureVo> characterList, String createUser,String status,String uid,String username,String IsFilter,String IsUpload,String uid_list,String nodeid);
+    List<LinkedHashMap<String, Object>> getFilterDataByConditionsByDieaseId(List<CreateTableFeatureVo> characterList,String uid,String username,String nodeid);
 }

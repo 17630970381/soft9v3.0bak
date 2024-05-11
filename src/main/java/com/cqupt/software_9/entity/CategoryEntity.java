@@ -30,6 +30,7 @@ public class CategoryEntity {
     private String isFilter;
     private String isUpload;
     private String icdCode;
+    private String uidList;
 
     @TableField(exist = false)
     private List<CategoryEntity> children;
@@ -45,7 +46,7 @@ public class CategoryEntity {
 
 
     //数据管理新增
-    public CategoryEntity(String id, int catLevel, String label, String parentId, int isLeafs, int isDelete, String uid, String status, String username,String isUpload,String isFilter) {
+    public CategoryEntity(String id, int catLevel, String label, String parentId, int isLeafs, int isDelete, String uid, String status, String username,String isUpload,String isFilter,String icdCode,String uidList){
         this.id = id;
         this.catLevel = catLevel;
         this.label = label;
@@ -58,7 +59,12 @@ public class CategoryEntity {
         this.isUpload = isUpload;
         this.isFilter = isFilter;
         this.children = new ArrayList<>();
+        this.icdCode = icdCode;
+        this.uidList = uidList;
     }
+
+
+
 
     public void addChild(CategoryEntity child) {
         if (this.children == null) {
@@ -68,43 +74,43 @@ public class CategoryEntity {
     }
 
     // 递归复制符合条件的节点
-    public static CategoryEntity copyPrivareTreeStructure(CategoryEntity node,String uid) {
-        if (node.isLeafs == 0 || (node.isLeafs == 1 && "0".equals(node.status) && uid.equals(node.uid))) {
-            CategoryEntity newNode = new CategoryEntity(node.id, node.catLevel, node.label, node.parentId, node.isLeafs, node.isDelete, node.uid, "0", node.username,node.isUpload,node.isFilter);
-            if (node.children != null) {
-                for (CategoryEntity child : node.children) {
-                    CategoryEntity copiedChild = copyPrivareTreeStructure(child,uid);
-                    if (copiedChild != null) {
-                        newNode.addChild(copiedChild);
-                    }
-                }
-            }
-            return newNode;
-        } else {
-            return null;
-        }
-    }
-
-    public static CategoryEntity copyShareTreeStructure(CategoryEntity node) {
-        if (node.isLeafs == 0 || (node.isLeafs == 1 && "1".equals(node.status))) {
-            CategoryEntity newNode = new CategoryEntity(node.id, node.catLevel, node.label, node.parentId, node.isLeafs, node.isDelete, node.uid, "1", node.username,node.isUpload,node.isFilter);
-            if (node.children != null) {
-                for (CategoryEntity child : node.children) {
-                    CategoryEntity copiedChild = copyShareTreeStructure(child);
-                    if (copiedChild != null) {
-                        newNode.addChild(copiedChild);
-                    }
-                }
-            }
-            return newNode;
-        } else {
-            return null;
-        }
-    }
-
+//    public static CategoryEntity copyPrivareTreeStructure(CategoryEntity node,String uid) {
+//        if (node.isLeafs == 0 || (node.isLeafs == 1 && "0".equals(node.status) && uid.equals(node.uid))) {
+//            CategoryEntity newNode = new CategoryEntity(node.id, node.catLevel, node.label, node.parentId, node.isLeafs, node.isDelete, node.uid, "0", node.username,node.isUpload,node.isFilter);
+//            if (node.children != null) {
+//                for (CategoryEntity child : node.children) {
+//                    CategoryEntity copiedChild = copyPrivareTreeStructure(child,uid);
+//                    if (copiedChild != null) {
+//                        newNode.addChild(copiedChild);
+//                    }
+//                }
+//            }
+//            return newNode;
+//        } else {
+//            return null;
+//        }
+//    }
+//
+//
+//    public static CategoryEntity copyShareTreeStructure(CategoryEntity node,String uid) {
+//        if (node.isLeafs == 0 || (node.isLeafs == 1 && "1".equals(node.status) && (node.uidList.contains(uid)||uid.equals(node.uid)) )) {
+//            CategoryEntity newNode = new CategoryEntity(node.id, node.catLevel, node.label, node.parentId, node.isLeafs, node.isDelete, node.uid, "1", node.username,node.isUpload,node.isFilter);
+//            if (node.children != null) {
+//                for (CategoryEntity child : node.children) {
+//                    CategoryEntity copiedChild = copyShareTreeStructure(child,uid);
+//                    if (copiedChild != null) {
+//                        newNode.addChild(copiedChild);
+//                    }
+//                }
+//            }
+//            return newNode;
+//        } else {
+//            return null;
+//        }
+//    }
     public static CategoryEntity copyCommonTreeStructure(CategoryEntity node) {
         if (node.isLeafs == 0 || (node.isLeafs == 1 && "2".equals(node.status))) {
-            CategoryEntity newNode = new CategoryEntity(node.id, node.catLevel, node.label, node.parentId, node.isLeafs, node.isDelete, node.uid, "2", node.username,node.isUpload,node.isFilter);
+            CategoryEntity newNode = new CategoryEntity(node.id, node.catLevel, node.label, node.parentId, node.isLeafs, node.isDelete, node.uid, "1", node.username,node.isUpload,node.isFilter,node.icdCode,node.uidList);
             if (node.children != null) {
                 for (CategoryEntity child : node.children) {
                     CategoryEntity copiedChild = copyCommonTreeStructure(child);
@@ -119,9 +125,45 @@ public class CategoryEntity {
         }
     }
 
+    // 新增可共享用户列表
+    // 递归复制符合条件的节点
+    public static CategoryEntity copyPrivareTreeStructure(CategoryEntity node,String uid) {
+        if (node.isLeafs == 0 || (node.isLeafs == 1 && "0".equals(node.status) && uid.equals(node.uid))) {
+            CategoryEntity newNode = new CategoryEntity(node.id, node.catLevel, node.label, node.parentId, node.isLeafs, node.isDelete, node.uid, "0", node.username,node.isUpload,node.isFilter,node.icdCode,node.uidList);
+            if (node.children != null) {
+                for (CategoryEntity child : node.children) {
+                    CategoryEntity copiedChild = copyPrivareTreeStructure(child,uid);
+                    if (copiedChild != null) {
+                        newNode.addChild(copiedChild);
+                    }
+                }
+            }
+            return newNode;
+        } else {
+            return null;
+        }
+    }
 
 
-
+    public static CategoryEntity copyShareTreeStructure(CategoryEntity node,String uid) {
+        if(node.uidList == null){
+            node.uidList = "";
+        }
+        if (node.isLeafs == 0 || (node.isLeafs == 1 && "1".equals(node.status) && (node.uidList.contains(uid)||uid.equals(node.uid)) )) {
+            CategoryEntity newNode = new CategoryEntity(node.id, node.catLevel, node.label, node.parentId, node.isLeafs, node.isDelete, node.uid, "1", node.username,node.isUpload,node.isFilter,node.icdCode,node.uidList);
+            if (node.children != null) {
+                for (CategoryEntity child : node.children) {
+                    CategoryEntity copiedChild = copyShareTreeStructure(child,uid);
+                    if (copiedChild != null) {
+                        newNode.addChild(copiedChild);
+                    }
+                }
+            }
+            return newNode;
+        } else {
+            return null;
+        }
+    }
     //数据管理新增结束
 
 

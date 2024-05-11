@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.File;
 import java.util.*;
 
 @RequestMapping("/Model")
@@ -277,6 +278,26 @@ public class ModelController {
         User user = userMapper.selectByUid(uid);
         userLog.setRole(user.getRole());
         // userLog.setId(1);
+        List<String> pklAdress =  modelResultMapper.getPKL(modelname);
+        List<String> pictureAdress =  modelResultMapper.getPicture(modelname);
+        System.out.println(pklAdress);
+        System.out.println(pictureAdress);
+        for (String filePath : pklAdress) {
+            File file = new File(filePath);
+            if (file.exists()) { // 检查文件是否存在
+                if (file.delete()) { // 尝试删除文件
+                    System.out.println("文件删除成功：" + filePath);
+                } else {
+                    System.out.println("文件删除失败：" + filePath);
+                }
+            } else {
+                System.out.println("文件不存在：" + filePath);
+            }
+        }
+        for (String filePath2 : pictureAdress) {
+            File folder = new File(filePath2);
+            deleteFolder(folder);
+        }
         userLog.setUid(uid);
         boolean a = modelMapper.removeModel(modelname);
         boolean b = modelResultMapper.removeModelResult(modelname);
@@ -296,6 +317,58 @@ public class ModelController {
             return false;
         }
 
+    }
+
+    @GetMapping("/removeWithoutSave")
+    public  boolean removeWithoutSave(){
+        List<String> pklAdress =  modelResultMapper.getAllPKL();
+        List<String> pictureAdress =  modelResultMapper.getAllPicture();
+        String pklAdressFolder = "E:\\soft\\software9-3\\software9\\src\\main\\resources\\Algorithm\\PKL";
+        File folder = new File(pklAdressFolder);
+        if (folder.isDirectory()) {
+            File[] files = folder.listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    if (!pklAdress.contains(file.getName())) {
+                        if (file.delete()) {
+                            System.out.println("删除成功：" + file.getAbsolutePath());
+                        } else {
+                            System.out.println("删除失败：" + file.getAbsolutePath());
+                        }
+                    }
+                }
+            }
+        }
+        String pictureAdressFolder = "E:\\soft\\Software9-v2.0-1220\\src\\assets";
+        File folder2 = new File(pictureAdressFolder);
+        if (folder2.isDirectory()) {
+            File[] files = folder2.listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    if (!pictureAdress.contains(file.getName())) {
+                        deleteFolder(folder2);
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+
+    public static void deleteFolder(File folder) {
+        if (folder.isDirectory()) {
+            File[] files = folder.listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    deleteFolder(file); // 递归删除子文件夹或文件
+                }
+            }
+        }
+        if (folder.delete()) { // 删除文件夹本身
+            System.out.println("文件夹删除成功：" + folder.getAbsolutePath());
+        } else {
+            System.out.println("文件夹删除失败：" + folder.getAbsolutePath());
+        }
     }
 
     /**

@@ -18,4 +18,5 @@ public class AddDataFormVo {
     private String isUpload;
     private String isFilter;
     private List<CreateTableFeatureVo> characterList;
+    private String Uid_list;
 }

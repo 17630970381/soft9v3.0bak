@@ -41,7 +41,7 @@ public interface DataManagerMapper extends BaseMapper<DataManager> {
 
     List<String> getTableName();
 
-    List<Map<String, String>> getDiseaseTableName();
+    List<Map<String, String>> getDiseaseTableName(String uid);
 
     Boolean deleteByTableName(String tablename);
 
@@ -50,4 +50,6 @@ public interface DataManagerMapper extends BaseMapper<DataManager> {
     void remove(String label);
 
     void updataTableName(String oldTableName, String tableName);
+
+    boolean updateUserList(String tablename, String uidList);
 }
