@@ -60,4 +60,6 @@ public interface ModelMapper extends BaseMapper<Model> {
 
 
     Integer getModelNumPre();
+
+    List<String> getTargetByTableNam(String tableName);
 }

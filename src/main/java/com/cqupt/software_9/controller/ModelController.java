@@ -174,6 +174,35 @@ public class ModelController {
         return modelMapper.getFeaByTableName(tableName);
     }
 
+    @GetMapping("/getTargetByTableNam/{tableName}")
+    public List<String> getTargetByTableNam(@PathVariable("tableName")String tableName){
+        List<String> zeroOneColumns = new ArrayList<>();
+
+        // 获取表中所有列名
+        List<String> columnNames = jdbcTemplate.queryForList(
+                "SELECT column_name FROM information_schema.columns WHERE table_name = ? AND table_schema = 'public'",
+                String.class, tableName);
+
+        // 对于每个列名，检查是否只包含0或1的值
+        for (String columnName : columnNames) {
+            int rowCount = jdbcTemplate.queryForObject(
+                    "SELECT COUNT(*) FROM " + tableName + " WHERE \"" + columnName + "\" IS NOT NULL",
+                    Integer.class);
+
+            int zeroOneCount = jdbcTemplate.queryForObject(
+                    "SELECT COUNT(*) FROM " + tableName + " WHERE \"" + columnName + "\" IN ('0', '1')",
+                    Integer.class);
+
+
+            // 如果列中所有值都是0或1，则添加到结果中
+            if (rowCount == zeroOneCount) {
+                zeroOneColumns.add(columnName);
+            }
+        }
+
+        return zeroOneColumns;
+    }
+
 
     @GetMapping("/getInfoByTableName/{tableName}")
     public R<List<Map<String,Object>>> getInfoByTableName(@PathVariable("tableName") String tableName){

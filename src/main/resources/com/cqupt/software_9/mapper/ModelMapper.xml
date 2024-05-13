@@ -89,6 +89,9 @@
     <select id="getModelNumPre" resultType="java.lang.Integer">
         SELECT COUNT(modelname)  FROM model;
     </select>
+    <select id="getTargetByTableNam" resultType="java.lang.String">
+        SELECT column_name FROM get_columns_with_zero_or_one(#{tableName, jdbcType=VARCHAR})
+    </select>
 
 
 </mapper>

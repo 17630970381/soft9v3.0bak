@@ -22,7 +22,8 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
 from xgboost import XGBClassifier
 # 加载数据
-def load_data(tableName,output_file):
+def load_data(tableName):
+
     try:
         # 连接到 PostgreSQL 数据库
         connection = psycopg2.connect(
@@ -36,6 +37,19 @@ def load_data(tableName,output_file):
         # 创建游标对象
         cursor = connection.cursor()
 
+        # 定义查询语句
+        query = "SELECT uploadmethod,diseasename FROM data_manager WHERE tablename = %s"
+        tablename = tableName  # 假设 heart1test 是动态的
+        cursor.execute(query, (tablename,))
+        result = cursor.fetchone()
+        isFliter = False
+        if result[0] == '纳排':
+            isFliter = True
+        diseasename = result[1]
+
+
+
+
         # 获取表的列名
         cursor.execute("SELECT column_name FROM information_schema.columns WHERE table_name = %s", (tableName,))
         columns = [row[0] for row in cursor.fetchall()]
@@ -43,17 +57,19 @@ def load_data(tableName,output_file):
         # 获取表的数据
         cursor.execute("SELECT * FROM {}".format(tableName))
         rows = cursor.fetchall()
-
+        df = pd.DataFrame(rows, columns=columns)
+        return  isFliter,diseasename,df
         # 将数据和列名写入 CSV 文件
-        with open(output_file, mode='w', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow(columns)  # 写入列名
-            writer.writerows(rows)  # 写入数据
+        # with open(output_file, mode='w', newline='') as file:
+        #     writer = csv.writer(file)
+        #     writer.writerow(columns)  # 写入列名
+        #     writer.writerows(rows)  # 写入数据
 
-        print("Data from table '{}' written to '{}' successfully.".format(tableName, output_file))
+
 
     except (Exception, psycopg2.Error) as error:
         print("Error fetching data from PostgreSQL table:", error)
+        return None, None
 
     finally:
         # 关闭游标和连接
@@ -120,12 +136,22 @@ def evaluate_model(model, X_test, y_test):
 
 def publicAl(tableName, target, fea, algorithmName, algorithmAttributes):
     # 加载数据
-    output_file = 'output.csv'
-    fetch_data_and_columns = load_data(tableName, output_file)
-    data = pd.read_csv(output_file)
+
+    flag, diseasename ,data= load_data(tableName)
+
+    # 将 DataFrame 中的所有列转换为数值类型
+    data = data.apply(pd.to_numeric, errors='ignore')
+    data.interpolate(method='linear', inplace=True)
     # 划分特征和标签
-    X = data[fea]
-    y = data[target]
+    if flag:
+
+        X = data[fea]
+        data[target] = (data[target] == diseasename).astype(int)
+        y = data[target]
+
+    else:
+        X = data[fea]
+        y = data[target]
     feature_names = len(fea)
     # 划分训练集和测试集
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
